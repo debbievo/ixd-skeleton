@@ -1,14 +1,12 @@
 {
-  "name": "IntroHCI",
+  "name": "Progress",
   "version": "0.0.1",
-  "author": "Intro HCI Staff",
-
+  "author": "G3",
   "repository": {
     "type": "git",
-    "url": "https://github.com/IntroHCI/lab4"
+    "url": "https://github.com/debbievo/progress"
   },
   "license": "MIT",
-
   "private": true,
   "scripts": {
     "start": "node app.js"
@@ -21,5 +19,5 @@
   },
   "engines": {
     "node": "8.9.x"
-  }  
+  }
 }
