@@ -9,6 +9,9 @@
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="/css/calendar.css" rel="stylesheet">
 	<link href="/css/main.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/index.js"></script>
 </head>
 
 <body>
@@ -25,7 +28,7 @@
 				<button id="forwardButton" onclick="forwardButtonClick()" class="btn btn-default btn-lg btn-outline-*" aria-label="Next Month">
 				  <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
 				</button>
-				<a href="#" id="addContent" style="float:right" aria-label="Add Task">
+				<a href="/addTask" id="addScreen" style="float:right" aria-label="Add Task">
 				  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 			  </a>
 		</h1>
@@ -36,17 +39,68 @@
 				<p>
 					<table id="calendar">
 						<tr id="daysOfWeek">
-							<th>Sun</th>
-							<th>Mon</th>
-							<th>Tues</th>
-							<th>Wed</th>
-							<th>Thurs</th>
-							<th>Fri</th>
-							<th>Sat</th>
+							<th id = "sunday">Sun</th>
+							<th id ="monday">Mon</th>
+							<th id = "tuesday">Tues</th>
+							<th id = "wednesday">Wed</th>
+							<th id = "thursday">Thurs</th>
+							<th id = "friday">Fri</th>
+							<th id = "saturday">Sat</th>
 						</tr>
-						{{#each week}}
-
-						{{/each}}
+						<tr id = "calendarFillDays">
+							<td>27</td>
+							<td>28</td>
+							<td>29</td>
+							<td>30</td>
+							<td>31</td>
+							<td>1</td>
+							<td>2</td>
+						</tr>
+						<tr id = "calendarFillDays">
+							<td>3</td>
+							<td>4</td>
+							<td>5</td>
+							<td>6</td>
+							<td>7</td>
+							<td>8</td>
+							<td>9</td>
+						</tr>
+						<tr id = "calendarFillDays">
+							<td>10</td>
+							<td>11</td>
+							<td>12</td>
+							<td>13</td>
+							<td>14</td>
+							<td>15</td>
+							<td>16</td>
+						</tr>
+						<tr id = "calendarFillDays">
+							<td>17</td>
+							<td>18</td>
+							<td>19</td>
+							<td>20</td>
+							<td>21</td>
+							<td>22</td>
+							<td>23</td>
+						</tr>
+						<tr id = "calendarFillDays">
+							<td>24</td>
+							<td>25</td>
+							<td>26</td>
+							<td>27</td>
+							<td>28</td>
+							<td>1</td>
+							<td>2</td>
+						</tr>
+						<tr id = "calendarFillDays">
+							<td>3</td>
+							<td>4</td>
+							<td>5</td>
+							<td>6</td>
+							<td>7</td>
+							<td>8</td>
+							<td>9</td>
+						</tr>
 					</table>
 				</p>
 		</div>
@@ -59,24 +113,57 @@
 							<th></th>
 							<th>Streak</th>
 						</tr>
-						<tr>
+						<tr id = "assignmentList">
 							<td>
-								Placeholder Task
+								History Essay
 							</td>
-							<td style="float:right">Due Date</td>
+							<td style="float:right">Due 2/5/19</td>
 							<td>
-								<a href="#" style="float:right" id="statsScreen" aria-label="Edit Tasks">
+								<a href="/editTask" style="float:right" id="statsScreen" aria-label="Edit Tasks">
 									<span class="glyphicon glyphicon-pencil" aria-hidden="true">
 								</a>
 							</td>
 							<td>1</td>
 						</tr>
+						<tr id = "assignmentList">
+							<td>
+								Cogs 120 A5
+							</td>
+							<td style="float:right">Due 2/7/19</td>
+							<td>
+								<a href="/editTask" style="float:right" id="statsScreen" aria-label="Edit Tasks">
+									<span class="glyphicon glyphicon-pencil" aria-hidden="true">
+								</a>
+							</td>
+							<td>4</td>
+						</tr>
+						<tr id = "assignmentList">
+							<td>
+								Cogs 108 A2
+							</td>
+							<td style="float:right">Due 2/10/19</td>
+							<td>
+								<a href="/editTask" style="float:right" id="statsScreen" aria-label="Edit Tasks">
+									<span class="glyphicon glyphicon-pencil" aria-hidden="true">
+								</a>
+							</td>
+							<td>3</td>
+						</tr>
+						<tr id = "assignmentList">
+							<td>
+								EDS Week 5
+							</td>
+							<td style="float:right">Due 2/17/19</td>
+							<td>
+								<a href="/editTask" style="float:right" id="statsScreen" aria-label="Edit Tasks">
+									<span class="glyphicon glyphicon-pencil" aria-hidden="true">
+								</a>
+							</td>
+							<td>0</td>
+						</tr>
 					</table>
 				</p>
 		</div>
 	</div>
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
-	<script src="/js/index.js"></script>
 </body>
 </html>

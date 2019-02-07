@@ -1,22 +1,21 @@
 'use strict';
 
+/*
+ * Function that is called when the document is ready.
+ */
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
 })
-
-//credit to https://coderwall.com/p/yrhbfg/get-full-name-of-a-month-from-a-javascript-date-object
 var today = new Date();
 var currmm = today.getMonth();
 var year = today.getFullYear();
+//credit to https://coderwall.com/p/yrhbfg/get-full-name-of-a-month-from-a-javascript-date-object
 Date.prototype.getMonthName = function() {
 	var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 	return months[this.getMonth()];
 };
 
-/*
- * Function that is called when the document is ready.
- */
 function checkMonth(givenMonth){
 	switch(givenMonth) {
 	  case 0:
@@ -71,6 +70,9 @@ function initializePage() {
 	$('#forwardButton').on("click", forwardButtonClick);
 //	$('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("active");
 	$('#addContent').click(addContentClick);
+//	$('#calendarFillDays').innerHTML = "";
+
+	//$('#calendarFillDays').text(fillCalendar(currmm,year));
 }
 
 function backButtonClick(e){
@@ -80,7 +82,6 @@ function backButtonClick(e){
 		year--;
 	}
 	currmm = (currmm-1) % 12;
-
 	checkMonth(currmm);
 }
 
@@ -89,23 +90,11 @@ function forwardButtonClick(e){
 	if(currmm+1 == 12){
 		year++;
 	}
-
 	currmm = (currmm+1) % 12;
-
 	checkMonth(currmm);
 }
 
 function addContentClick(e){
 	console.log("Add content clicked");
 	e.preventDefault();
-//	$(this).css("background-color", "#7fff00");
-	var containingAddContent = $(this).closest(".addTask");
-	var addForm = $(containingAddContent).find(".addForm");
-	if (addForm.length == 0) {
-	   $(containingAddContent).append("<td><form><div class='addForm row'><label for='taskName' class='col-sm-2 col-form-label'>Project Name</label><div class='col-sm-10'><input type='name' class='form-control' id='addForm' placeholder='taskName'></div></div></form></td>");
-	} else {
-	   description.html("<td>Stop clicking on me! You just did it at " + (new Date()) + "</td>");
-	   $(addForm).fadeOut();
-//	   $(addForm).css("background-color", "transparent");
-	}
 }

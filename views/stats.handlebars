@@ -9,6 +9,9 @@
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="/css/stats.css" rel="stylesheet">
 	<link href="/css/main.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/stats.js"></script>
 	<script src="/js/index.js"></script>
 </head>
 
@@ -16,17 +19,34 @@
 	<div class="container">
 		<div class="jumbotron">
 			<h1>
-				<a href="calendar" style="float:left">
+				<a href="/calendar" style="float:left">
 		          <span class="glyphicon glyphicon-calendar"></span>
 		        </a>
 				Stats
 			</h1>
 			<h2 style="float:left">
-				Overall
+				<div class="statsLayout" style="overflow-x:auto;">
+					<table id="statsOverall">
+						<tr id="overallSection">
+							<th><span class = "overallDisplay">Overall</span></th>
+							<th><span class = "overallDonutChart"></span></th>
+						</tr>
+					</table>
+					<hr>
+					<table id="statsIndividual" style="text-align:left">
+						<tr id="individualSection">
+							<td><span id="individualDisplay">History Essay</span></td>
+						</tr>
+						<tr id ="individualSection">
+							<td><span id="individualDisplay"> Cogs120 A5</span></td>
+						</tr>
+						<tr id ="individualSection">
+							<td><span id="individualDisplay"> Cogs108 A2</span></td>
+						</tr>
+					</table>
+				</div>
 			</h2>
 		</div>
 	</div>
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
 </body>
 </html>

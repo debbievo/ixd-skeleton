@@ -2,7 +2,9 @@
 /*
  * GET home page.
  */
-
-exports.view = function(req, res){
-  res.render('stats');
+exports.viewIndividual = function(req, res){
+    var name = req.params.name;
+  res.render('stats', {
+      'projectName':name
+  });
 };
