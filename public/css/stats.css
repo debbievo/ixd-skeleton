@@ -1,6 +1,7 @@
 .stats{
     position: relative;
     background: none;
+    text-align: center;
 }
 
 .stats individual{
