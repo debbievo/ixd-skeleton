@@ -13,6 +13,7 @@ var index = require('./routes/index');
 // var user = require('./routes/user');
 var stats = require('./routes/stats');
 //var login = require('./routes/login');
+//var login = require('./routes/signup');
 
 var addTask = require('./routes/addTask');
 var editTask = require('./routes/editTask');
@@ -46,6 +47,7 @@ app.get('/calendar', index.view);
 app.get('/stats', stats.viewIndividual);
 app.get('/stats/:name', stats.viewIndividual);
 //app.get('/login', login.view);
+//app.get('/signup', signup.view);
 app.get('/addTask', addTask.view);
 app.get('/editTask', editTask.view);
 

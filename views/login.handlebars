@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Progress Login Screen</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="/css/stats.css" rel="stylesheet">
+	<link href="/css/main.css" rel="stylesheet">
+	<script src="/js/index.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<h1>
+				<a href="calendar" style="float:left">
+		          <span class="glyphicon glyphicon-calendar"></span>
+		        </a>
+				Login
+			</h1>
+			<h2 style="float:left">
+
+    		<form id="addTaskForm" role="form" method="get" action="/add">
+    		    <div class="form-group">
+    		      <label for="name">Username:</label>
+    		      <input type="text" class="form-control" id="projectName" placeholder="Name" name="name">
+    		    </div>
+    		    <div class="form-group">
+    		      <label for="dueDate">Password:</label>
+    		      <input type="text" class="form-control" id="dueDate" placeholder="DueDate" name="dueDate">
+    		    </div>
+    		    <input type="submit" id="submitBtn" class="btn btn-default" value="Add Task"></input>
+    		</form>
+
+			</h2>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
