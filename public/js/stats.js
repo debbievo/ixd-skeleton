@@ -4,23 +4,41 @@
 $(document).ready(function() {
 	initializePage();
 })
-var data = {
-    datasets: [{
-        data: [10, 20, 30]
-    }],
 
-    // These labels appear in the legend and in the tooltips when hovering different arcs
-    labels: [
-        'Red',
-        'Yellow',
-        'Blue'
-    ]
-};
-var overalDonutChart = new Chart(ctx, {
-    type: 'doughnut',
-    data: data,
-    options: options
-});
+window.onload = function drawOverallTotal(){
+	CanvasJS.addColorSet("greyShades",
+		[//colorSet Array
+			//"#f2f2f2",
+			"#e6e6e6",
+			//"#d9d9d9",
+			"#cccccc",
+			"#bfbfbf"
+		]);
+
+	var chart = new CanvasJS.Chart("totalProjects", {
+		//animationEnabled: true,
+		colorSet:"greyShades",
+		title:{
+			text: "Total: 8 Projects",
+			horizontalAlign: "center",
+			verticalAlign: "center"
+		},
+		data: [{
+			type: "doughnut",
+			startAngle: 60,
+			//innerRadius: 60,
+			indexLabelFontSize: 16,
+			indexLabel: "{label}: {y}",
+			toolTipContent: "<b>{label}:</b> {y} (#percent%)",
+			dataPoints: [
+				{ y: 3, label: "Complete" },
+				{ y: 5, label: "In Progress" }
+			]
+		}]
+	});
+	chart.render();
+}
+
 /*
  * Function that is called when the document is ready.
  */
@@ -28,7 +46,7 @@ function initializePage() {
 	// Add any additional listeners here
 	// example: $("#div-id").click(functionToCall);
 		//$("tr.individualSection").click(projectClick);
-        $("#overallDonutChart").text(overalDonutChart);
+        //$("#chartContainer").onload(drawOverallDonut());
 }
 
 function projectClick(e) { 
