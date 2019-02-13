@@ -20,21 +20,23 @@
 				<a href="#" style="float:right">Login</a>
 				<a href="#" style="float:right">Sign Up &nbsp;</a>
 		</div>
-		<div class="jumbotron">
+		<div>
 			<h1>
 				<a href="stats" style="float:left" id="statsScreen" aria-label="Stats Screen">
 					<span class="glyphicon glyphicon-dashboard" aria-hidden="true">
 				</a>
-				<button id="backButton" onclick="backButtonClick()"class="btn btn-default btn-lg btn-outline-*" aria-label="Previous Month">
-				  <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
-				</button>
+  				<a href="/addTask" id="addScreen" style="float:right" aria-label="Add Task">
+  				  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  			  </a>
+			  <div style="text-align:center;">
+				<span id="backButton" style="margin-left:10px;" onclick="backButtonClick()" aria-label="Previous Month">
+				  <span class="glyphicon glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			  </span>
 				<span id="currentMonth"> </span>
-				<button id="forwardButton" onclick="forwardButtonClick()" class="btn btn-default btn-lg btn-outline-*" aria-label="Next Month">
-				  <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-				</button>
-				<a href="/addTask" id="addScreen" style="float:right" aria-label="Add Task">
-				  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-			  </a>
+				<span id="forwardButton" style="margin-right:10px;"onclick="forwardButtonClick()" aria-label="Next Month">
+				  <span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			  </span>
+		  </div>
 		</h1>
 		</div>
 	</div>
