@@ -1,7 +1,40 @@
 {
-  "users": [
+	"users": [
+		{
+			"username": "Doug Engelbart",
+			"password": "trablegne",
+		},
+		{
+			"username": "Ivan Sutherland",
+			"password": "dnalrehrus",
+		},
+		{
+			"username": "Lucy Suchman",
+			"password": "namhcus",
+		},
+		{
+			"username": "Vannevar Bush",
+			"password": "hsubhsub",
+		},
+		{
+			"username": "Grace Hopper",
+			"password": "reppoh12",
+		},
+		{
+			"username": "Allen Newell",
+			"password": "llewen12",
+    },
     {
-      "name": "",
+      "username": "Angela Xu",
+      "password": "uxalegna",
+    },
+    {
+      "username": "Debbie Vo",
+      "password": "oveibbed"
+    },
+    {
+      "username": "Joycelyn Peng",
+      "password": "nylecyoj"
     }
-  ]
-  }
+	]
+}
