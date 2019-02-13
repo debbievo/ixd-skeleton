@@ -12,24 +12,24 @@ var currmm = today.getMonth();
 var year = today.getFullYear();
 //credit to https://coderwall.com/p/yrhbfg/get-full-name-of-a-month-from-a-javascript-date-object
 Date.prototype.getMonthName = function() {
-	var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+	var months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
 	return months[this.getMonth()];
 };
 
 function checkMonth(givenMonth){
 	switch(givenMonth) {
 	  case 0:
-		$('#currentMonth').text("January " + year);
+		$('#currentMonth').text("Jan " + year);
 		//current.setMonth(0);
 		break;
 	  case 1:
-		$('#currentMonth').text("February " + year);
+		$('#currentMonth').text("Feb " + year);
 		break;
 	  case 2:
-		$('#currentMonth').text("March " + year);
+		$('#currentMonth').text("Mar " + year);
 		break;
 	  case 3:
-		$('#currentMonth').text("April " + year);
+		$('#currentMonth').text("Apr " + year);
 		break;
 	  case 4:
 		$('#currentMonth').text("May " + year);
@@ -41,19 +41,19 @@ function checkMonth(givenMonth){
 		$('#currentMonth').text("July " + year);
 		break;
 	  case 7:
-		$('#currentMonth').text("August " + year);
+		$('#currentMonth').text("Aug " + year);
 		break;
 	  case 8:
-		$('#currentMonth').text("September " + year);
+		$('#currentMonth').text("Sept " + year);
 		break;
 	  case 9:
-		$('#currentMonth').text("October " + year);
+		$('#currentMonth').text("Oct " + year);
 		break;
 	  case 10:
-		$('#currentMonth').text("November " + year);
+		$('#currentMonth').text("Nov " + year);
 		break;
 	  case 11:
-		$('#currentMonth').text("December " + year);
+		$('#currentMonth').text("Dec " + year);
 		break;
 	  default:
 		$("#backButton").text("...").addClass("active").toggleClass("active");

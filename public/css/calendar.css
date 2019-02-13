@@ -20,13 +20,8 @@
 
 }
 
-span.glyphicon {
-  font-size:1.2em
-}
-
-.btn{
-  background-color: transparent;
-  border-color: #ccc;
+.glyphicon.glyphicon-chevron-left, .glyphicon.glyphicon-chevron-right{
+    font-size: 20px;
 }
 
 table {
