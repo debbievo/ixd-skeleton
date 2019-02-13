@@ -104,10 +104,10 @@ function addContentClick(e){
 
 function showAddProject(e) {
 	e.preventDefault();
-	$("#add-form").show();
+	$("#add-form").css("display", "block");
 }
 
 function hideAddProject(e) {
 	e.preventDefault();
-	$("#add-form").hide();
+	$("#add-form").css("display", "none");
 }
