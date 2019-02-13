@@ -12,7 +12,7 @@ var index = require('./routes/index');
 // Example route
 // var user = require('./routes/user');
 var stats = require('./routes/stats');
-//var login = require('./routes/login');
+var login = require('./routes/login');
 //var login = require('./routes/signup');
 
 var addTask = require('./routes/addTask');
@@ -46,7 +46,7 @@ app.get('/calendar', index.view);
 // app.get('/users', user.list);
 app.get('/stats', stats.viewIndividual);
 app.get('/stats/:name', stats.viewIndividual);
-//app.get('/login', login.view);
+app.get('/login', login.view);
 //app.get('/signup', signup.view);
 app.get('/addTask', addTask.view);
 app.get('/editTask', editTask.view);
