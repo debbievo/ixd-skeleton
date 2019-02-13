@@ -73,6 +73,9 @@ function initializePage() {
 //	$('#calendarFillDays').innerHTML = "";
 
 	//$('#calendarFillDays').text(fillCalendar(currmm,year));
+
+	$("#addScreen").click(showAddProject);
+	$("#cancel-add").click(hideAddProject);
 }
 
 function backButtonClick(e){
@@ -97,4 +100,14 @@ function forwardButtonClick(e){
 function addContentClick(e){
 	console.log("Add content clicked");
 	e.preventDefault();
+}
+
+function showAddProject(e) {
+	e.preventDefault();
+	$("#add-form").css("display", "block");
+}
+
+function hideAddProject(e) {
+	e.preventDefault();
+	$("#add-form").css("display", "none");
 }
