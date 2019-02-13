@@ -23,18 +23,18 @@
 		{
 			"username": "Allen Newell",
 			"password": "llewen12",
-    },
-    {
-      "username": "Angela Xu",
-      "password": "uxalegna",
-    },
-    {
-      "username": "Debbie Vo",
-      "password": "oveibbed"
-    },
-    {
-      "username": "Joycelyn Peng",
-      "password": "nylecyoj"
-    }
+	    },
+	    {
+	      "username": "Angela Xu",
+	      "password": "uxalegna",
+	    },
+	    {
+	      "username": "Debbie Vo",
+	      "password": "oveibbed"
+	    },
+	    {
+	      "username": "Joycelyn Peng",
+	      "password": "nylecyoj"
+	    }
 	]
 }
