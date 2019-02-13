@@ -1,0 +1,24 @@
+{
+	"projectList": [
+		{
+			"name": "History Essay",
+			"startDate": "Has awesome pet mice",
+			"dueDate": "2/14/19"
+		},
+		{
+			"name": "Cogs 120 A8",
+			"startDate": "Great at sketching",
+			"dueDate": "2/27/19"
+		},
+		{
+			"name": "Cogs 108 Final Project",
+			"startDate": "Loves Trukese navigators",
+			"dueDate": "3/17/19"
+		},
+		{
+			"name": "CodePath A3",
+			"startDate": "Has stellar associative memory",
+			"dueDate": "4/01/19"
+		}
+	]
+}
