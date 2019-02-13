@@ -8,9 +8,20 @@
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="/css/calendar.css" rel="stylesheet">
+	<link href="/css/calendarview.css" rel="stylesheet">
 	<link href="/css/main.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/prototype.js"></script>
+	<script src="/js/calendarview.js"></script>
+	<script type="text/javascript">
+		window.onload = function() {
+		  Calendar.setup({
+			dateField     : 'date',
+			parentElement : 'calendar'
+		  })
+		}
+    </script>
 	<script src="/js/index.js"></script>
 </head>
 
@@ -49,7 +60,7 @@
 	<!-- calendar + project list -->
 	<div class="container">
 		<!-- calendar -->
-		<div class="calendarLayout" style="overflow-x:auto;">
+		<!-- <div class="calendarLayout" style="overflow-x:auto;">
 				<p>
 					<table id="calendar">
 						<tr id="daysOfWeek">
@@ -117,7 +128,11 @@
 						</tr>
 					</table>
 				</p>
-		</div>
+		</div> -->
+
+		<div id="calendar"></div>
+    	<!-- <div id="date">Select Date</div> -->
+
 		<!-- project list -->
 		<div class="calendarList" style="overflow-x:auto;">
 				<p class = "addTask">
@@ -180,6 +195,8 @@
 				</p>
 		</div>
 	</div>
+
+
 
 	<!-- hidden add form -->
 	<div class="container" id="add-form">
