@@ -48,7 +48,7 @@ app.get('/stats', stats.viewIndividual);
 app.get('/stats/:name', stats.viewIndividual);
 app.get('/login', login.view);
 //app.get('/signup', signup.view);
-app.get('/addTask', addTask.view);
+app.get('/addTask', addTask.addProject);
 app.get('/editTask', editTask.view);
 
 http.createServer(app).listen(app.get('port'), function(){
