@@ -29,8 +29,9 @@
 	box-sizing: border-box;
 	margin: auto;
 	top: -400px;
+	z-index:2;
 }
 
 .titleHeader{
-	background-color: #a5b7a8;
+	background-color: #ced5e0;
 }
