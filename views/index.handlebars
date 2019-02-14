@@ -12,6 +12,7 @@
 	<link href="/css/main.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<link href="/css/fullcalendar.css" rel="stylesheet">
 	<script src="http://momentjs.com/downloads/moment.js"></script>
 	<script src="/js/fullcalendar.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
@@ -35,12 +36,13 @@
 	<!-- login -->
 	<div class="container">
 			<!--a href="/login" style="float:right" >Login</a-->
-		<div class ="facebookLogin">
-			<p class="facebookLogin" style="margin-left:80%; margin-top: 3%;">
-				<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+	<div class="titleHeader">
+	<div class ="facebookLogin">
+		<p class="facebookLogin" style="margin-left:83%; margin-top: 3%;">
+			<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 			</fb:login-button>
-			</p>
-		</div>
+		</p>
+	</div>
 	<div class="loginName"></div>
 		<div>
 			<h1 style="text-align:center;">
@@ -65,9 +67,7 @@
 		</h1>
 		</div>
 	</div>
-
 	<!-- calendar + project list -->
-	<div class="container">
 		<!-- calendar -->
 		<!-- <div class="calendarLayout" style="overflow-x:auto;">
 				<p>
