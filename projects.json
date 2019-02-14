@@ -2,23 +2,23 @@
 	"projectList": [
 		{
 			"name": "History Essay",
-			"startDate": "2/7/19",
-			"dueDate": "2/14/19"
+			"startDate": "2019-02-07",
+			"dueDate": "2019-02-07"
 		},
 		{
 			"name": "Cogs 120 A8",
-			"startDate": "2/22/19",
-			"dueDate": "2/27/19"
+			"startDate": "2019-02-22",
+			"dueDate": "2019-02-27"
 		},
 		{
 			"name": "Cogs 108 Final Project",
-			"startDate": "2/14/19",
-			"dueDate": "3/17/19"
+			"startDate": "2019-02-14",
+			"dueDate": "2019-03-17"
 		},
 		{
 			"name": "CodePath A3",
-			"startDate": "3/18/19",
-			"dueDate": "4/01/19"
+			"startDate": "2019-03-18",
+			"dueDate": "2019-04-19"
 		}
 	]
 }
