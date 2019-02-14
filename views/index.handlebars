@@ -15,6 +15,7 @@
 	<script src="http://momentjs.com/downloads/moment.js"></script>
 	<script src="/js/fullcalendar.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+	<script defer src="/js/all.js"></script>
 	<script src="/js/index.js"></script>
 	{{> facebook}}
 	<script src="/js/facebook.js"></script>
@@ -36,11 +37,11 @@
 		<div>
 			<h1 style="text-align:center;">
 				<a href="stats" style="float:left" id="statsScreen" aria-label="Stats Screen">
-					<span class="glyphicon glyphicon-dashboard" aria-hidden="true">
+					<i class="fas fa-chart-pie"></i>
 				</a>
 				Progress
   				<a href="/addTask" id="addScreen" style="float:right" aria-label="Add Task">
-  				  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  				  <i class="fas fa-plus"></i>
   			  </a>
 			  <!--
 			  <div style="text-align:center;">
@@ -104,7 +105,7 @@
 							<td style="float:right">Due {{dueDate}}</td>
 							<td>
 								<a href="/editTask" style="float:right" id="statsScreen" aria-label="Edit Tasks">
-									<span class="glyphicon glyphicon-pencil" aria-hidden="true">
+									<i class="fas fa-edit"></i>
 								</a>
 							</td>
 							<td>1</td>
