@@ -134,5 +134,21 @@
 		</form>
 	</div>
 
+	<!-- hidden edit form -->
+	<div class="container" id="edit-form">
+		<form action="/editTask" method="get" id="editing">
+			<div class="form-group">
+				<h3>Project Name:</h3>
+				<input type="text" class="form-control" placeholder="Project name" name="projectName">
+			</div>
+			<div class="form-group">
+				<h3>Due Date:</h3>
+				<input type="date" data-date-format="MM DD YYYY" class="form-control" placeholder="Due date" name="dueDate">
+			</div>
+			<button type="submit" class="btn btn-primary" id="submit-project">Edit Project</button>
+			<button type="submit" class="btn btn-default" id="cancel-add">Cancel</button>
+		</form>
+	</div>
+
 </body>
 </html>
