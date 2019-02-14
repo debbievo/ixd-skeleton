@@ -8,7 +8,6 @@
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="/css/calendar.css" rel="stylesheet">
-	<!-- <link href="/css/calendarview.css" rel="stylesheet"> -->
 	<link href="/css/main.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -16,16 +15,7 @@
 	<script src="http://momentjs.com/downloads/moment.js"></script>
 	<script src="/js/fullcalendar.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
-	<!-- <script src="/js/prototype.js"></script>
-	<script src="/js/calendarview.js"></script>
-	<script type="text/javascript">
-		window.onload = function() {
-		  Calendar.setup({
-			dateField     : 'date',
-			parentElement : 'calendar'
-		  })
-		}
-    </script> -->
+	<script defer src="/js/all.js"></script>
 	<script src="/js/index.js"></script>
 	{{> facebook}}
 	<script src="/js/facebook.js"></script>
@@ -47,11 +37,11 @@
 		<div>
 			<h1 style="text-align:center;">
 				<a href="stats" style="float:left" id="statsScreen" aria-label="Stats Screen">
-					<span class="glyphicon glyphicon-dashboard" aria-hidden="true">
+					<i class="fas fa-chart-pie"></i>
 				</a>
 				Progress
   				<a href="/addTask" id="addScreen" style="float:right" aria-label="Add Task">
-  				  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  				  <i class="fas fa-plus"></i>
   			  </a>
 			  <!--
 			  <div style="text-align:center;">
@@ -115,10 +105,10 @@
 							<td style="float:right">Due {{dueDate}}</td>
 							<td>
 								<a href="/editTask" style="float:right" id="statsScreen" aria-label="Edit Tasks">
-									<span class="glyphicon glyphicon-pencil" aria-hidden="true">
+									<i class="fas fa-edit"></i>
 								</a>
 							</td>
-							<td>1</td>
+							<td style="text-align:center;">1</td>
 						</tr>
 						{{/each}}
 					</table>
