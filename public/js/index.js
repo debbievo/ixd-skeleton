@@ -6,6 +6,14 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
+	$('#calendar').fullCalendar({
+        // weekends: false,
+        // dayClick: function() {
+        //   alert('a day has been clicked!');
+        // },
+        // defaultView: 'agendaWeek'
+
+    });
 })
 var today = new Date();
 var currmm = today.getMonth();
