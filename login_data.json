@@ -2,31 +2,31 @@
 	"users": [
 		{
 			"username": "Doug Engelbart",
-			"password": "trablegne",
+			"password": "trablegne"
 		},
 		{
 			"username": "Ivan Sutherland",
-			"password": "dnalrehrus",
+			"password": "dnalrehrus"
 		},
 		{
 			"username": "Lucy Suchman",
-			"password": "namhcus",
+			"password": "namhcus"
 		},
 		{
 			"username": "Vannevar Bush",
-			"password": "hsubhsub",
+			"password": "hsubhsub"
 		},
 		{
 			"username": "Grace Hopper",
-			"password": "reppoh12",
+			"password": "reppoh12"
 		},
 		{
 			"username": "Allen Newell",
-			"password": "llewen12",
+			"password": "llewen12"
 	    },
 	    {
 	      "username": "Angela Xu",
-	      "password": "uxalegna",
+	      "password": "uxalegna"
 	    },
 	    {
 	      "username": "Debbie Vo",
