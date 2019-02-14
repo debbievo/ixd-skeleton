@@ -24,8 +24,10 @@
 
 <body>
 	<!-- login -->
+	<div class="cotainer">
+			<a href="/login" style="margin-left:85%; margin-top:5%" >Login</a>
+	</div>
 	<div class="container">
-			<a href="/login" style="float:right" >Login</a>
 	<div class="titleHeader">
 	<!--div class ="facebookLogin">
 		<p class="facebookLogin" style="margin-left:83%; margin-top: 3%;">
@@ -94,20 +96,21 @@
 						<tr id="listTitles">
 							<th><span id="currentDay"></span></th>
 							<th></th>
-							<th></th>
-							<th>Streak</th>
+							<th>Due</th>
+							<th><i class="fa fa-bolt" aria-hidden="true"></i></th>
 						</tr>
 						{{#each projectList}}
-						<tr id = "assignmentList">
+						<tr id = "assignmentList" style=" border-bottom: 1px solid #ddd;">
 							<td><input type="checkbox" name="taskCheckbox" />&nbsp;
 								{{name}}
 							</td>
-							<td style="float:right; color:#dee1e5;">Due {{dueDate}}</td>
 							<td>
 								<a href="/editTask" style="float:right" id="statsScreen" aria-label="Edit Tasks">
 									<i class="fas fa-edit"></i>
 								</a>
 							</td>
+							<td style="float:right; color:#d4d7db;">{{dueDate}}</td>
+
 							<td style="text-align:center;">1</td>
 						</tr>
 						{{/each}}
