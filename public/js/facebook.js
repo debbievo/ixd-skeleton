@@ -19,9 +19,10 @@ function statusChangeCallback(response) {
 }
 
 function changeUser(response) {
-  //Add code to change name and image
+  $(".facebookLogin").hide();
+  $("#loginName").text(response.name);
 }
-
+/*
 var data = require("../login_data.json");
 
 exports.addFriend = function(req, res) { 
@@ -32,3 +33,4 @@ exports.addFriend = function(req, res) { 
 //	console.log(name, description);
 	res.render('index', data);
  };
+*/
