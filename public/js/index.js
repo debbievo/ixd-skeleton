@@ -15,7 +15,7 @@ Date.prototype.getMonthName = function() {
 	var months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
 	return months[this.getMonth()];
 };
-
+/*
 function checkMonth(givenMonth){
 	switch(givenMonth) {
 	  case 0:
@@ -59,15 +59,15 @@ function checkMonth(givenMonth){
 		$("#backButton").text("...").addClass("active").toggleClass("active");
 	}
 }
-
+*/
 function initializePage() {
 	$(".jumbotron p").addClass("active");
 // Add any additional listeners here
 // example: $("#div-id").click(functionToCall);
 	$('#currentDay').text(today.getMonthName()+ " " + today.getDate());
-	$('#currentMonth').text(today.getMonthName() + " " + today.getFullYear());
-	$('#backButton').on("click", backButtonClick);
-	$('#forwardButton').on("click", forwardButtonClick);
+//	$('#currentMonth').text(today.getMonthName() + " " + today.getFullYear());
+//	$('#backButton').on("click", backButtonClick);
+//	$('#forwardButton').on("click", forwardButtonClick);
 //	$('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("active");
 	$('#addContent').click(addContentClick);
 //	$('#calendarFillDays').innerHTML = "";
@@ -77,7 +77,7 @@ function initializePage() {
 	$("#addScreen").click(showAddProject);
 	$("#cancel-add").click(hideAddProject);
 }
-
+/*
 function backButtonClick(e){
 	e.preventDefault();
 	if (currmm-1 < 0) {
@@ -96,7 +96,7 @@ function forwardButtonClick(e){
 	currmm = (currmm+1) % 12;
 	checkMonth(currmm);
 }
-
+*/
 function addContentClick(e){
 	console.log("Add content clicked");
 	e.preventDefault();
