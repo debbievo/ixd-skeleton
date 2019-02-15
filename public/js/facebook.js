@@ -20,6 +20,22 @@ function statusChangeCallback(response) {
 
 function changeUser(response) {
   $(".facebookLogin").hide();
-  $(".loginButton").hide();
   $("#loginName").text(response.name);
+}
+
+function loginDetails(e) {
+	// Prevent following the link
+	e.preventDefault();
+	$.get("/calendar", changeLogin);
+
+}
+function changeLogin(result){
+  $(".loginButton").hide();
+  $("#loginName").text(result['name']);
+/*	var projectHTML = '<p>' + result['title'] + '</p>' +
+	'<p>' + result['date'] + '</p>' +
+	'<img src="' + result['image'] + ' " class="detailsImage">' +
+	'<p>' + result['summary'] + '</p>';
+  $("#project"+ result['id'] + " .details").html(projectHTML);
+*/
 }
