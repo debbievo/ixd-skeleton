@@ -144,7 +144,6 @@ function hideEditProject(e) {
 	$("#edit-form").css("display", "none");
 }
 
-function
 
 /*
 function loginContentClick(e){
