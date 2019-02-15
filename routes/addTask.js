@@ -22,13 +22,14 @@ if (mm < 10) {
 }
 
 exports.addProject = function(req, res) { 
-	console.log(req);
+	// console.log(req);
 	var name = req.query.projectName;
 	var dueDate = req.query.dueDate;
 	var today = new Date();
 	var startDate = mm +'/'+ dd +'/'+ yyyy;
-	var newProject = {"name":name, "startDate":startDate, "dueDate": dueDate};
+    var projectID = "project" + (data["projectList"].length + 1);
+	var newProject = {"name":name, "startDate":startDate, "dueDate": dueDate, "projectID": projectID};
 	data.projectList.push(newProject);
-	console.log(name, startDate, dueDate);
+	console.log(name, startDate, dueDate, projectID);
 	res.render('index', data);
  };
