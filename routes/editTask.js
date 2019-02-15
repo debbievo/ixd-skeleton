@@ -23,13 +23,11 @@ if (mm < 10) {
 
 exports.editProject = function(req, res) {
 	console.log(req);
-	var name = req.query.projectName;
-	var dueDate = req.query.dueDate;
+	var name = req.query.editProject;
+	var dueDate = req.query.editDueDate;
 	var today = new Date();
 	var startDate = mm +'/'+ dd +'/'+ yyyy;
-  var name2 = name.replace(req);
-  var dueDate2 = dueDate.replace(req);
-	var project = {"name":name2, "startDate":startDate, "dueDate": dueDate2};
+	var project = {"name":name, "startDate":startDate, "dueDate": dueDate};
 	//if we want to do a trash button
   //data.projectList.pop(project);
 	console.log(name, startDate, dueDate);
