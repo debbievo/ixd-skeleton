@@ -78,12 +78,15 @@ function initializePage() {
 //	$('#forwardButton').on("click", forwardButtonClick);
 //	$('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("active");
 	$('#addContent').click(addContentClick);
+	$('#editContent').click(editContentClick);
 //	$('#calendarFillDays').innerHTML = "";
 
 	//$('#calendarFillDays').text(fillCalendar(currmm,year));
 
 	$("#addScreen").click(showAddProject);
 	$("#cancel-add").click(hideAddProject);
+	$("#editScreen").click(showEditProject);
+	$("#cancel-edit").click(hideEditProject);
 }
 /*
 function backButtonClick(e){
@@ -118,4 +121,19 @@ function showAddProject(e) {
 function hideAddProject(e) {
 	e.preventDefault();
 	$("#add-form").css("display", "none");
+}
+
+function editContentClick(e){
+	console.log("Edit content clicked");
+	e.preventDefault();
+}
+
+function showEditProject(e) {
+	e.preventDefault();
+	$("#edit-form").css("display", "block");
+}
+
+function hideEditProject(e) {
+	e.preventDefault();
+	$("#edit-form").css("display", "none");
 }

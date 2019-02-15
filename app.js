@@ -49,7 +49,7 @@ app.get('/stats/:name', stats.viewIndividual);
 app.get('/login', login.view);
 //app.get('/signup', signup.view);
 app.get('/addTask', addTask.addProject);
-app.get('/editTask', editTask.view);
+app.get('/editTask', editTask.editProject);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
