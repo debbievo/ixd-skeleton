@@ -85,7 +85,7 @@ function initializePage() {
 
 	$("#addScreen").click(showAddProject);
 	$("#cancel-add").click(hideAddProject);
-	$("#editScreen").click(showEditProject);
+	$(".editScreen").click(showEditProject);
 	$("#cancel-edit").click(hideEditProject);
 }
 /*
