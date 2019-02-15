@@ -54,18 +54,6 @@ function projectClick(e) { 
 	console.log("Project Clicked")
     // prevent the page from reloading 
     e.preventDefault();
-    // In an event handler, $(this) refers to 
-    // the object that triggered the event 
-    $(this).css("background-color", "#7fff00");
-    var containingProject = $(this).closest(".individualSection");
-    var description = $(containingProject).find(".individual-description");
-    if (description.length == 0) {
-       $(containingProject).append("<div class='individual-description'><p>Description of the project.</p></div>");
-    } else {
-       //description.html("<p>Stop clicking on me! You just did it at " + (new Date()) + "</p>");
-       $(description).fadeOut();
-       $(this).css("background-color", "transparent");
-    }
 }
 
 function overallStats() {
@@ -87,4 +75,15 @@ function overallStats() {
 			legend: { display: false },
 		}
 	});
+}
+
+function calculateLongestStreak(){
+
+}
+
+function calculateProjLifetime(){
+
+}
+function calculateDaysRemaining(){
+
 }
