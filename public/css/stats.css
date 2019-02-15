@@ -24,6 +24,7 @@ circle {
     border-radius: 50%;
     display: inline-block;
     text-align: center;
+    line-height: 100px;
     /* line-height: 100px; */
     margin-right:5px;
 }
