@@ -28,7 +28,7 @@
 	</div>
 	<div class="container">
 		<div class="titleHeader">
-			<h1>
+			<h1 id="loginName">
 				<a href="/calendar" style="float:left">
 		          <i class="fas fa-calendar-alt"></i>
 		        </a>
@@ -38,16 +38,16 @@
 			<h2 style="float:left">
 
     		<form id="loginForm" role="form" method="get" action="/login">
-						<form action="/login" method="get" id="adding">
+				<!--<form action="/login" method="get" id="adding"> -->
     		    <div class="form-group">
     		      <label for="name">Username:</label>
-    		      <input type="text" class="form-control" id="projectName" placeholder="Username" name="name">
+    		      <input type="text" class="form-control" id="userName" placeholder="Username" name="name">
     		    </div>
     		    <div class="form-group">
-    		      <label for="dueDate">Password:</label>
-    		      <input type="password" class="form-control" id="dueDate" placeholder="Password" name="dueDate">
+    		      <label for="password">Password:</label>
+    		      <input type="password" class="form-control" id="password" placeholder="Password" name="password">
     		    </div>
-    		    <input type="submit" id="submitBtn" class="btn btn-default" value="Login" ></input>
+    		    <input type="submit" id="submitBtn" class="btn btn-default" value="Login" onclick= "changeUser()" ></input>
     		</form>
 
 			</h2>

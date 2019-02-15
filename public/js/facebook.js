@@ -20,17 +20,6 @@ function statusChangeCallback(response) {
 
 function changeUser(response) {
   $(".facebookLogin").hide();
+  $(".loginButton").hide();
   $("#loginName").text(response.name);
 }
-/*
-var data = require("../login_data.json");
-
-exports.addFriend = function(req, res) { 
-	var name = req.query.name;
-	var password = req.query.password;
-	var newUser = {"username":name, "password":password};
-	data.friends.push(newUser);
-//	console.log(name, description);
-	res.render('index', data);
- };
-*/
