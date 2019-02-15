@@ -145,6 +145,7 @@ function hideEditProject(e) {
 }
 
 
+
 /*
 function loginContentClick(e){
 	console.log("Login content clicked");
