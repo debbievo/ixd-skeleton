@@ -136,12 +136,16 @@ function editContentClick(e){
 function showEditProject(e) {
 	e.preventDefault();
 	$("#edit-form").css("display", "block");
+	var projectID = $(this).closest('tr').attr('id');
 }
 
 function hideEditProject(e) {
 	e.preventDefault();
 	$("#edit-form").css("display", "none");
 }
+
+function
+
 /*
 function loginContentClick(e){
 	console.log("Login content clicked");
