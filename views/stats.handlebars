@@ -12,7 +12,8 @@
 	<link href="/css/fullcalendar.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
-	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<!-- <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 	<script src="http://momentjs.com/downloads/moment.js"></script>
 	<script src="/js/fullcalendar.js"></script>
 	<script defer src="/js/all.js"></script>
@@ -55,35 +56,9 @@
 				</div>
 				<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
 				  <div class="card-body">
-					  <h2>
-		  				<!-- <span style="float:left;"> Overall Breakdown</span> -->
-		  				<div id="totalProjects" style="height: 500px; width: 500px; text-align:center !important;"></div>
-		  				<div class="statsLayout" style="overflow-x:auto;">
-		  					<!-- <table id="statsOverall">
-		  						<tr id="overallSection">
-		  							<th><span class = "overallDisplay">Overall</span></th>
-		  							<th><span class = "overallDonutChart"></span></th>
-		  						</tr>
-		  					</table> -->
-		  					<circle style="float:center;">18 days</circle> &nbsp;
-		  					<circle style="float:center;">30 days</circle>
-		  					<br>
-		  					<span style = "font-size: 16px;"> Longest Streak </span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-		  					<span style = "font-size: 16px;"> Longest Project </span>
-		  					<!-- <hr> -->
-		  					<!-- <table id="statsIndividual" style="text-align:left">
-		  						<tr id="individualSection">
-		  							<td><span id="individualDisplay">History Essay</span></td>
-		  						</tr>
-		  						<tr id ="individualSection">
-		  							<td><span id="individualDisplay"> Cogs120 A5</span></td>
-		  						</tr>
-		  						<tr id ="individualSection">
-		  							<td><span id="individualDisplay"> Cogs108 A2</span></td>
-		  						</tr>
-		  					</table> -->
-		  				</div>
-		  			</h2>
+
+					  <canvas id="myChart" width="400" height="400"></canvas>
+
 				  </div>
 				</div>
 			  </div>
@@ -118,6 +93,36 @@
 				</div>
 			  </div>
 			</div>
+
+			<h2>
+			  <!-- <span style="float:left;"> Overall Breakdown</span> -->
+			  <div id="totalProjects" style="height: 500px; width: 500px; text-align:center !important;"></div>
+			  <div class="statsLayout" style="overflow-x:auto;">
+				  <!-- <table id="statsOverall">
+					  <tr id="overallSection">
+						  <th><span class = "overallDisplay">Overall</span></th>
+						  <th><span class = "overallDonutChart"></span></th>
+					  </tr>
+				  </table> -->
+				  <circle style="float:center;">18 days</circle> &nbsp;
+				  <circle style="float:center;">30 days</circle>
+				  <br>
+				  <span style = "font-size: 16px;"> Longest Streak </span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+				  <span style = "font-size: 16px;"> Longest Project </span>
+				  <!-- <hr> -->
+				  <!-- <table id="statsIndividual" style="text-align:left">
+					  <tr id="individualSection">
+						  <td><span id="individualDisplay">History Essay</span></td>
+					  </tr>
+					  <tr id ="individualSection">
+						  <td><span id="individualDisplay"> Cogs120 A5</span></td>
+					  </tr>
+					  <tr id ="individualSection">
+						  <td><span id="individualDisplay"> Cogs108 A2</span></td>
+					  </tr>
+				  </table> -->
+			  </div>
+			</h2>
 
 		</div>
 	</div>
