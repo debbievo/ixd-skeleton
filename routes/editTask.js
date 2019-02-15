@@ -23,8 +23,8 @@ if (mm < 10) {
 
 exports.editProject = function(req, res) {
 	console.log(req);
-	var name = req.query.projectName);
-	var dueDate = req.query.dueDate);
+	var name = req.query.projectName;
+	var dueDate = req.query.dueDate;
 	var today = new Date();
 	var startDate = mm +'/'+ dd +'/'+ yyyy;
   var name2 = name.replace(req);
