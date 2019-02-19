@@ -27,14 +27,9 @@ exports.editProject = function(req, res) {
 	var dueDate = req.query.editDueDate;
 	var today = new Date();
 	var startDate = mm +'/'+ dd +'/'+ yyyy;
-<<<<<<< HEAD
-	var project = {"name":name, "startDate":startDate, "dueDate": dueDate};
-=======
-
     var name2 = name.replace(req);
     var dueDate2 = dueDate.replace(req);
 	var project = {"name":name2, "startDate":startDate, "dueDate": dueDate2};
->>>>>>> 6edcf797879a12947ac34e702d1568a88a2e9aee
 	//if we want to do a trash button
     //data.projectList.pop(project);
 

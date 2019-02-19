@@ -5,11 +5,12 @@
 
  var loginData = require('../login_data.json');
 
-exports.view = function(req, res){
+/*exports.view = function(req, res){
   var name = req.params.name;
-  res.render('login');
+  res.render('index');
 };
-/*
+*/
+
 exports.loginBox = function(req, res) { 
 	console.log(req);
 	var username = req.query.username;
@@ -19,4 +20,3 @@ exports.loginBox = function(req, res) { 
 	console.log(newUser);
 	res.render('index', loginData);
  };
-*/

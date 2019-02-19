@@ -47,7 +47,7 @@ app.get('/calendar', index.view);
 app.get('/stats', stats.viewIndividual);
 app.get('/stats/:name', stats.viewIndividual);
 //app.get('/login', login.loginBox);
-app.get('/login', login.view);
+app.get('/login', login.loginBox);
 //app.get('/signup', signup.view);
 app.get('/addTask', addTask.addProject);
 app.get('/editTask', editTask.editProject);
