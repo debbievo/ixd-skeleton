@@ -52,6 +52,25 @@ app.get('/login', login.loginBox);
 app.get('/addTask', addTask.addProject);
 app.get('/editTask', editTask.editProject);
 
+app.post('/login',function(req,res){
+    var username = req.body.username;
+    var password = req.body.password;
+    console.log("post received: %s %s", username, password);
+    res.json(
+            {
+               message: 'signup success',
+                username : username,
+                 password : password,
+            }
+        );
+    res.redirect('/calendar');
+//    User.addUser(username, password, function(err, user) {
+//        if (err) throw err;
+//        res.redirect('/form');
+//    });
+});
+
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
