@@ -31,7 +31,7 @@ exports.editProject = function(req, res) {
     var dueDate2 = dueDate.replace(req);
 	var project = {"name":name2, "startDate":startDate, "dueDate": dueDate2};
 	//if we want to do a trash button
-    //data.projectList.pop(project);
+    data.projectList.pop(project);
 
 	// console.log(name, startDate, dueDate);
     // console.log(data["projectList"].length);
