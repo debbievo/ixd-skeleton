@@ -61,3 +61,8 @@
 	background-color: #ced5e0;
 	text-align: center;
 }
+
+
+.fc-body .fc-row{
+	height: 4.5em;
+}

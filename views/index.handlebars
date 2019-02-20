@@ -103,8 +103,8 @@
 							<th><i class="fa fa-bolt" aria-hidden="true"></i></th>
 						</tr>
 						{{#each projectList}}
-						<tr id={{projectID}} style=" border-bottom: 1px solid #ddd;">
-							<td><input type="checkbox" name="taskCheckbox" />&nbsp;
+						<tr class="project" id={{projectID}} style=" border-bottom: 1px solid #ddd;">
+							<td class="pName"><input type="checkbox" name="taskCheckbox" class="check"/>&nbsp;
 								{{name}}
 							</td>
 							<td><!--
@@ -115,7 +115,7 @@
 									<i class="fas fa-trash"></i>
 								</a>
 							</td>
-							<td style="float:right; color:#d4d7db;">{{dueDate}}</td>
+							<td class="duedate" style="float:right; color:#d4d7db;">{{dueDate}}</td>
 
 							<td style="text-align:center;">1</td>
 						</tr>

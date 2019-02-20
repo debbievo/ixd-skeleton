@@ -7,13 +7,30 @@
 $(document).ready(function() {
 	initializePage();
 	$('#calendar').fullCalendar({
-        // weekends: false,
-        // dayClick: function() {
-        //   alert('a day has been clicked!');
-        // },
-        // defaultView: 'agendaWeek'
+        defaultView: 'month',
+		themeSystem: "bootstrap4",
+		eventLimit: true,
+		contentHeight: "auto",
 
+		dayClick: function(date, jsEvent, view) {
+          alert('Clicked on: ' + date.format());
+		  $(this).css('background-color', 'red');
+        }
     });
+
+	$(".pName").each(function(i) {
+		var projectName = $.trim($(this).text());
+		var dueDate = $(this).siblings(".duedate").html();
+		// var dueDate = "2019-02-22";
+
+		$("#calendar").fullCalendar("renderEvent", {
+			title: projectName,
+			start: dueDate,
+			allDay: true
+		});
+
+		// console.log(projectName + " " + dueDate);
+	});
 })
 var today = new Date();
 var currmm = today.getMonth();
@@ -90,6 +107,11 @@ function initializePage() {
 	$("#cancel-edit").click(hideEditProject);
 	$("#loginScreen").click(showLogin);
 	$("#cancel-login").click(hideLogin);
+
+	// $(".check").each(function(i) {
+	// 	console.log($(this).is(":checked"));
+	// 	console.log(i);
+	// });
 }
 /*
 function backButtonClick(e){
