@@ -18,5 +18,6 @@ exports.loginBox = function(req, res) { 
 	var newUser = {"username":username, "password": password};
 	//data.users.push(newUser);
 	console.log(newUser);
-	res.render('index', loginData);
+    res.redirect('/calendar');
+	//res.render('index', loginData);
  };
