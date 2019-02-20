@@ -28,7 +28,7 @@
 	position: relative;
 	box-sizing: border-box;
 	margin: auto;
-	top: -400px;
+	top: -475px;
 	z-index:2;
 }
 
@@ -41,7 +41,7 @@
 	position: relative;
 	box-sizing: border-box;
 	margin: auto;
-	top: -400px;
+	top: -475px;
 	z-index:2;
 }
 #login-form {
@@ -53,11 +53,16 @@
 	position: relative;
 	box-sizing: border-box;
 	margin: auto;
-	top: -400px;
+	top: -475px;
 	z-index:2;
 }
 
 .titleHeader{
 	background-color: #ced5e0;
 	text-align: center;
+}
+
+#project-bottom{
+	overflow-y: scroll;
+	height: 400px
 }
