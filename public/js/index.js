@@ -6,6 +6,8 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
+	console.log(moment().format("MMM Do YYYY"));
+
 	$('#calendar').fullCalendar({
         defaultView: 'month',
 		themeSystem: "bootstrap4",
@@ -33,6 +35,7 @@ $(document).ready(function() {
 		// console.log(projectName + " " + dueDate);
 	});
 })
+
 var today = new Date();
 var currmm = today.getMonth();
 var year = today.getFullYear();
