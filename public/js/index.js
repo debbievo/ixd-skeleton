@@ -11,6 +11,7 @@ $(document).ready(function() {
 		themeSystem: "bootstrap4",
 		eventLimit: true,
 		contentHeight: "auto",
+		titleFormat: "MMM YYYY",
 
 		dayClick: function(date, jsEvent, view) {
           alert('Clicked on: ' + date.format());
