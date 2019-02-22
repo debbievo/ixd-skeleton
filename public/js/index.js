@@ -197,6 +197,7 @@ function hideEditProject(e) {
 function loginContentClick(e){
 	console.log("Login content clicked");
 	e.preventDefault();
+		$("#loginScreen").css("color","white");
 }
 
 function showLogin(e) {

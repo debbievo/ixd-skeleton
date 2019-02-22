@@ -21,6 +21,7 @@ function statusChangeCallback(response) {
 function changeUser(response) {
   $(".facebookLogin").hide();
   $("#username").text(response.name);
+  $("#username").css("color","blue");
 }
 
 function loginDetails(e) {
@@ -29,7 +30,7 @@ function loginDetails(e) {
 
 }
 function changeLogin(response){
-  $(".loginButton").hide();
+  $("#loginScreen").hide();
   // $(".loginScreen").text(response.name);
 /*	var projectHTML = '<p>' + result['title'] + '</p>' +
 	'<p>' + result['date'] + '</p>' +
