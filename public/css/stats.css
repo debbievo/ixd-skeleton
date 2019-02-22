@@ -16,6 +16,7 @@ CanvasJS{
 }
 
 circle {
+    margin-top: 7px;
     background: #fff;
     color: #000;
     width: 100px;
