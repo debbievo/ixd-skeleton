@@ -67,7 +67,7 @@ function initializePage() {
 // Add any additional listeners here
 // example: $("#div-id").click(functionToCall);
 	// $('#currentDay').text(today.getMonthName()+ " " + today.getDate());
-	$("#currentDay").text(moment().format("MMM D YYYY"));
+	$("#currentDay").html(moment().format("MMM D YYYY"));
 
 //	$('#currentMonth').text(today.getMonthName() + " " + today.getFullYear());
 //	$('#backButton').on("click", backButtonClick);
@@ -98,8 +98,10 @@ function initializePage() {
 			// console.log('Clicked on: ' + date.format());
 			// console.log(date.isSameOrBefore());
 
+			var selectedDate = date.format("MMM D YYYY");
+
 			if(date.isSameOrBefore()) {
-			  $("#currentDay").text(date.format("MMM D YYYY"));
+			  $("#currentDay").html(selectedDate);
 			}
 
 			// var startDate = moment($(".project").children(".startdate").text()).format("MMM D");
@@ -134,7 +136,7 @@ function initializePage() {
 				start: eventStart,
 				allDay: true
 			}, true);
-			console.log(eventID);
+			// console.log(eventID);
 		}
 		// console.log(checked);
 		// console.log(projectName + " " + dueDate);
@@ -146,9 +148,14 @@ function initializePage() {
 			var eventStart = moment($("#currentDay").text());
 			var eventID = "event-" + eventStart.format("YYYY-MM-YY") + "-" + i;
 			var checked = $(this).prop("checked");
-			var counter = parseInt($(".streakCounter").html());
+			// var counter = parseInt($(".streakCounter").html());
+
+			var counterSelect = $(this).parent().siblings(".streakCounter");
+			var counter = parseInt(counterSelect.html());
+
 			// console.log(typeof(counter));
 			// console.log(eventStart);
+			// console.log(counter);
 
 			if(checked) {
 				$("#calendar").fullCalendar("renderEvent", {
@@ -158,41 +165,58 @@ function initializePage() {
 					allDay: true,
 				}, true);
 				counter += 1;
-				$(".streakCounter").text(counter);
-				console.log(eventID);
+				counterSelect.html(counter);
+				// console.log(eventID);
 			} else {
 				$("#calendar").fullCalendar("removeEvents", eventID);
 				counter -= 1;
-				$(".streakCounter").text(counter);
-				console.log(eventID);
+				counterSelect.html(counter);
+				// console.log(eventID);
 			}
 		});
 		// console.log($.trim($(this).parent().text()));
 	});
-	$(".projLife").each(calcProjLife);
+
+	$(".projLife").each(function(i) {
+		var start = moment($(this).siblings(".startdate").html());
+		var due = moment($(this).siblings(".duedate").html());
+		//var momStart = moment(start);
+		//var momDue = moment(due);
+		var diffDays = start.diff(due, "day") * -1;
+		console.log(diffDays);
+		$(this).html(diffDays + " days");
+	});
 	//$(".longestStreak").each(calcLongStr);
-	$(".remainingDays").each(calcDaysRemaining);
+
+	$(".remainingDays").each(function(i) {
+		var current = moment().startOf('day');
+		var given = moment($(this).siblings(".duedate").html());
+		var temp = moment.duration(given.diff(current)).asDays();
+		$(this).html(Math.round(temp) + " days");
+	});
 
 }
 
-function calcLongStr(){
+// function calcLongStr(){
+//
+// }
 
-}
-function calcProjLife(){
-	var start = moment($(this).siblings(".startdate").html());
-	var due = moment($(this).siblings(".duedate").html());
-	//var momStart = moment(start);
-	//var momDue = moment(due);
-	var diffDays = start.diff(due, "day") * -1;
-	console.log(start, due, diffDays);
-	$(".projLife").text(diffDays + " days");
-}
-function calcDaysRemaining(){
-	var current = moment().startOf('day');
-	var given = moment($(this).siblings(".duedate").html());
-	var temp = moment.duration(given.diff(current)).asDays();
-	$(".remainingDays").text(Math.round(temp) + " days");
-}
+// function calcProjLife(){
+// 	var start = moment($(this).siblings(".startdate").html());
+// 	var due = moment($(this).siblings(".duedate").html());
+// 	//var momStart = moment(start);
+// 	//var momDue = moment(due);
+// 	var diffDays = start.diff(due, "day") * -1;
+// 	console.log(start, due, diffDays);
+// 	$(".projLife").text(diffDays + " days");
+// }
+
+// function calcDaysRemaining(){
+// 	var current = moment().startOf('day');
+// 	var given = moment($(this).siblings(".duedate").html());
+// 	var temp = moment.duration(given.diff(current)).asDays();
+// 	$(".remainingDays").text(Math.round(temp) + " days");
+// }
 
 
 /*

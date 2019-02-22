@@ -30,8 +30,9 @@ exports.addProject = function(req, res) { 
 	var startDate = mm +'/'+ dd +'/'+ yyyy;
     var projectID = "project" + projectNum;
     var checkID = "check" + projectNum;
-	var newProject = {"name":name, "startDate":startDate, "dueDate": dueDate, "projectID": projectID, "checkID": checkID};
+	var newProject = {"name":name, "startDate":startDate, "dueDate": dueDate, "projectID": projectID, "checkID": checkID, "currStreak": 0};
 	data.projectList.push(newProject);
 	console.log(name, startDate, dueDate, projectID);
+    res.redirect('/');
 	res.render('index', data);
  };
