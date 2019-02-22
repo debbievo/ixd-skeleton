@@ -41,7 +41,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', index.view);
-app.get('/calendar', index.view);
+// app.get('/calendar', index.view);
 // Example route
 // app.get('/users', user.list);
 app.get('/stats', stats.viewIndividual);
