@@ -98,6 +98,13 @@ function initializePage() {
 			// console.log('Clicked on: ' + date.format());
 			// console.log(date.isSameOrBefore());
 
+			// $(".fc-day").css("background-color", "white");
+			// $(this).css("border-box", "black");
+			// $(this).css('background-color', "rgba(255, 99, 132, 0.8)");
+			// $(".fc-past").not(this).css("background-color", "#eeeeee");
+			// $(this).siblings(".fc-day-top").css('background-color', "rgba(255, 99, 132, 0.8)");
+			// console.log(this);
+
 			var selectedDate = date.format("MMM D YYYY");
 
 			if(date.isSameOrBefore()) {
