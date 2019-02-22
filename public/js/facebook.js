@@ -20,18 +20,17 @@ function statusChangeCallback(response) {
 
 function changeUser(response) {
   $(".facebookLogin").hide();
-  $("#loginName").text(response.name);
+  $("#username").text(response.name);
 }
 
 function loginDetails(e) {
-	// Prevent following the link
 	e.preventDefault();
-	$.get("/calendar", changeLogin);
+//	$.get("/calendar", changeLogin());
 
 }
-function changeLogin(result){
+function changeLogin(response){
   $(".loginButton").hide();
-  $("#loginName").text(result['name']);
+  // $(".loginScreen").text(response.name);
 /*	var projectHTML = '<p>' + result['title'] + '</p>' +
 	'<p>' + result['date'] + '</p>' +
 	'<img src="' + result['image'] + ' " class="detailsImage">' +
