@@ -127,6 +127,8 @@ function initializePage() {
 			var projectName = $.trim($(this).parent().text());
 			var checked = $(this).prop("checked");
 			var eventID = "event" + i;
+			var counter = parseInt($(".streakCounter").html());
+			console.log(typeof(counter));
 
 			if(checked) {
 				$("#calendar").fullCalendar("renderEvent", {
@@ -135,14 +137,42 @@ function initializePage() {
 					start: moment(),
 					allDay: true,
 				}, true);
+				counter += 1;
+				$(".streakCounter").text(counter);
 			} else {
 				$("#calendar").fullCalendar("removeEvents", eventID);
+				counter -= 1;
+				$(".streakCounter").text(counter);
 			}
 		});
 		// console.log($.trim($(this).parent().text()));
 	});
+	$(".projLife").each(calcProjLife);
+	//$(".longestStreak").each(calcLongStr);
+	$(".remainingDays").each(calcDaysRemaining);
 
 }
+
+function calcLongStr(){
+
+}
+function calcProjLife(){
+	var start = moment($(this).siblings(".startdate").html());
+	var due = moment($(this).siblings(".duedate").html());
+	//var momStart = moment(start);
+	//var momDue = moment(due);
+	var diffDays = start.diff(due, "day") * -1;
+	console.log(start, due, diffDays);
+	$(".projLife").text(diffDays + " days");
+}
+function calcDaysRemaining(){
+	var current = moment().startOf('day');
+	var given = moment($(this).siblings(".duedate").html());
+	var temp = moment.duration(given.diff(current)).asDays();
+	$(".remainingDays").text(Math.round(temp) + " days");
+}
+
+
 /*
 function backButtonClick(e){
 	e.preventDefault();

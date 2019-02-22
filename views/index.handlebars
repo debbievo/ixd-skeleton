@@ -103,7 +103,7 @@
 						<tr id="listTitles">
 							<th><span id="currentDay"></span></th>
 							<th></th>
-							<th>Due</th>
+							<th>Due in</th>
 							<th><i class="fa fa-bolt" aria-hidden="true"></i></th>
 						</tr>
 						{{#each projectList}}
@@ -114,22 +114,23 @@
 							<td><!--
 								<a href="/editTask" style="float:right" class="editScreen" aria-label="Edit Tasks">
 									<i class="fas fa-edit"></i>
-								</a>-->
+								</a>
 								<a href="/editTask" style="float:right" class="editScreen" aria-label="Edit Tasks">
 									<i class="fas fa-trash"></i>
 								</a>
+								-->
 							</td>
-							<td class="duedate" style="float:right; color:#d4d7db;">{{dueDate}}</td>
+							<td class="remainingDays" style="float:right; color:#d4d7db;">temp</td>
+							<td hidden class="duedate" style="float:right; color:#d4d7db;">{{dueDate}}</td>
 							<td hidden class="startdate" style="float:right; color:#d4d7db;">{{startDate}}</td>
 
-							<td style="text-align:center;">1</td>
+							<td class="streakCounter" style="text-align:center;">{{currStreak}}</td>
 						</tr>
 						{{/each}}
 					</table>
 				</p>
 		</div>
 	</div>
-
 
 
 	<!-- hidden add form -->

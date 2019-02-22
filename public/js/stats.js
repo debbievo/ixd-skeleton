@@ -75,15 +75,5 @@ function overallStats() {
 			legend: { display: false },
 		}
 	});
-}
-
-function calculateLongestStreak(){
-
-}
-
-function calculateProjLifetime(){
-
-}
-function calculateDaysRemaining(){
 
 }
