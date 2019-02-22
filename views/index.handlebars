@@ -115,7 +115,7 @@
 						</tr>
 						{{#each projectList}}
 						<tr class="project" id={{projectID}} style=" border-bottom: 1px solid #ddd;">
-							<td class="pName"><input type="checkbox" name="taskCheckbox" class="check" id={{checkID}}/>&nbsp;
+							<td contenteditable="true" class="pName"><input type="checkbox" name="taskCheckbox" class="check" id={{checkID}}/>&nbsp;
 								{{name}}
 							</td>
 							<td><!--
@@ -128,7 +128,7 @@
 								-->
 							</td>
 							<td class="remainingDays" style="float:right; color:#d4d7db;">temp</td>
-							<td hidden class="duedate" style="float:right; color:#d4d7db;">{{dueDate}}</td>
+							<td contenteditable="true" hidden class="duedate" style="float:right; color:#d4d7db;">{{dueDate}}</td>
 							<td hidden class="startdate" style="float:right; color:#d4d7db;">{{startDate}}</td>
 
 							<td class="streakCounter" style="text-align:center;">{{currStreak}}</td>
@@ -146,6 +146,10 @@
 			<div class="form-group">
 				<h3>Project Name:</h3>
 				<input type="text" class="form-control" placeholder="Project Name" name="projectName">
+			</div>
+			<div class="form-group">
+				<h3>Start Date:</h3>
+				<input type="date" data-date-format="MM DD YYYY" class="form-control" placeholder="Start Date" name="startDate">
 			</div>
 			<div class="form-group">
 				<h3>Due Date:</h3>
