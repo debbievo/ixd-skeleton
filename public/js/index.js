@@ -95,12 +95,26 @@ function initializePage() {
 		titleFormat: "MMM YYYY",
 
 		dayClick: function(date, jsEvent, view) {
-          // console.log('Clicked on: ' + date.format());
-		  // console.log(date.isSameOrBefore());
+			// console.log('Clicked on: ' + date.format());
+			// console.log(date.isSameOrBefore());
 
-		  if(date.isSameOrBefore()) {
+			if(date.isSameOrBefore()) {
 			  $("#currentDay").text(date.format("MMM D"));
-		  }
+			}
+
+			// var startDate = moment($(".project").children(".startdate").text()).format("MMM D");
+
+			$(".project").each(function(i) {
+				var startDate = moment($(this).children(".startdate").text());
+				var selectedDate = date;
+				if(startDate.isAfter(selectedDate)) {
+					$(this).hide();
+				} else {
+					$(this).show();
+				}
+				console.log("start: " + startDate.format("MMM D"));
+				console.log("selected: " + selectedDate.format("MMM D"));
+			});
         }
     });
 
