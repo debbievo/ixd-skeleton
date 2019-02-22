@@ -6,7 +6,7 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
-	// console.log(moment().format("MMM Do YYYY"));
+	// console.log(moment().parseZone());
 })
 
 var today = new Date();
@@ -66,7 +66,9 @@ function initializePage() {
 	$(".jumbotron p").addClass("active");
 // Add any additional listeners here
 // example: $("#div-id").click(functionToCall);
-	$('#currentDay').text(today.getMonthName()+ " " + today.getDate());
+	// $('#currentDay').text(today.getMonthName()+ " " + today.getDate());
+	$("#currentDay").text(moment().format("MMM D"));
+
 //	$('#currentMonth').text(today.getMonthName() + " " + today.getFullYear());
 //	$('#backButton').on("click", backButtonClick);
 //	$('#forwardButton').on("click", forwardButtonClick);
@@ -93,17 +95,20 @@ function initializePage() {
 		titleFormat: "MMM YYYY",
 
 		dayClick: function(date, jsEvent, view) {
-          console.log('Clicked on: ' + date.format());
-		  // $(this).css('background-color', 'red');
+          // console.log('Clicked on: ' + date.format());
+		  // console.log(date.isSameOrBefore());
+
+		  if(date.isSameOrBefore()) {
+			  $("#currentDay").text(date.format("MMM D"));
+		  }
         }
     });
 
 	$(".pName").each(function(i) {
 		var projectName = $.trim($(this).text());
-		var dueDate = $(this).siblings(".duedate").html();
-		// var dueDate = "2019-02-22";
-
 		var checked = $(this).children().prop("checked");
+		// var dueDate = $(this).siblings(".duedate").html();
+		// var dueDate = "2019-02-22";
 
 		if(checked) {
 			$("#calendar").fullCalendar("renderEvent", {
@@ -113,10 +118,8 @@ function initializePage() {
 				allDay: true
 			}, true);
 		}
-
 		// console.log(checked);
 		// console.log(projectName + " " + dueDate);
-
 	});
 
 	$('.pName input').each(function(i) {
