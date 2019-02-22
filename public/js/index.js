@@ -67,7 +67,7 @@ function initializePage() {
 // Add any additional listeners here
 // example: $("#div-id").click(functionToCall);
 	// $('#currentDay').text(today.getMonthName()+ " " + today.getDate());
-	$("#currentDay").text(moment().format("MMM D"));
+	$("#currentDay").text(moment().format("MMM D YYYY"));
 
 //	$('#currentMonth').text(today.getMonthName() + " " + today.getFullYear());
 //	$('#backButton').on("click", backButtonClick);
@@ -99,7 +99,7 @@ function initializePage() {
 			// console.log(date.isSameOrBefore());
 
 			if(date.isSameOrBefore()) {
-			  $("#currentDay").text(date.format("MMM D"));
+			  $("#currentDay").text(date.format("MMM D YYYY"));
 			}
 
 			// var startDate = moment($(".project").children(".startdate").text()).format("MMM D");
@@ -112,25 +112,29 @@ function initializePage() {
 				} else {
 					$(this).show();
 				}
-				console.log("start: " + startDate.format("MMM D"));
-				console.log("selected: " + selectedDate.format("MMM D"));
+				// console.log("start: " + startDate.format("MMM D"));
+				// console.log("selected: " + selectedDate.format("MMM D"));
 			});
         }
     });
 
 	$(".pName").each(function(i) {
 		var projectName = $.trim($(this).text());
+		var eventStart = moment($("#currentDay").text());
+		var eventID = "event-" + eventStart.format("YYYY-MM-YY") + "-" + i;
 		var checked = $(this).children().prop("checked");
 		// var dueDate = $(this).siblings(".duedate").html();
 		// var dueDate = "2019-02-22";
+		// var eventStart = moment();
 
 		if(checked) {
 			$("#calendar").fullCalendar("renderEvent", {
-				id: "event" + i,
+				id: eventID,
 				title: projectName,
-				start: moment(),
+				start: eventStart,
 				allDay: true
 			}, true);
+			console.log(eventID);
 		}
 		// console.log(checked);
 		// console.log(projectName + " " + dueDate);
@@ -139,24 +143,28 @@ function initializePage() {
 	$('.pName input').each(function(i) {
 		$(this).change(function() {
 			var projectName = $.trim($(this).parent().text());
+			var eventStart = moment($("#currentDay").text());
+			var eventID = "event-" + eventStart.format("YYYY-MM-YY") + "-" + i;
 			var checked = $(this).prop("checked");
-			var eventID = "event" + i;
 			var counter = parseInt($(".streakCounter").html());
-			console.log(typeof(counter));
+			// console.log(typeof(counter));
+			// console.log(eventStart);
 
 			if(checked) {
 				$("#calendar").fullCalendar("renderEvent", {
 					id: eventID,
 					title: projectName,
-					start: moment(),
+					start: eventStart,
 					allDay: true,
 				}, true);
 				counter += 1;
 				$(".streakCounter").text(counter);
+				console.log(eventID);
 			} else {
 				$("#calendar").fullCalendar("removeEvents", eventID);
 				counter -= 1;
 				$(".streakCounter").text(counter);
+				console.log(eventID);
 			}
 		});
 		// console.log($.trim($(this).parent().text()));
