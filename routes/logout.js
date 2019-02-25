@@ -17,6 +17,6 @@ exports.logout = function(req, res) { 
 	var newUser = {"username":username, "password": password};
 	//data.users.push(newUser);
 	console.log(newUser);
-    res.redirect('/calendar');
+    res.redirect('/');
 	//res.render('index', loginData);
  };

@@ -1,3 +1,5 @@
+//$(".facebookLogin").click(changeLogin);
+
 function checkLoginState() {
   FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
@@ -22,6 +24,10 @@ function changeUser(response) {
   $(".facebookLogin").hide();
   $("#username").text(response.name);
   $("#username").css("color","blue");
+  $("#loginScreen").css("display","none");
+  $("#login-form").css("display", "none");
+  $("#logout").css("display", "block");
+
 }
 
 function loginDetails(e) {
@@ -29,8 +35,9 @@ function loginDetails(e) {
 //	$.get("/calendar", changeLogin());
 
 }
-function changeLogin(response){
-  $("#loginScreen").hide();
+//function changeLogin(response){
+//  $("#loginScreen").css("display","none");
+//  $("#login-form").css("display", "none");
   // $(".loginScreen").text(response.name);
 /*	var projectHTML = '<p>' + result['title'] + '</p>' +
 	'<p>' + result['date'] + '</p>' +
@@ -38,4 +45,4 @@ function changeLogin(response){
 	'<p>' + result['summary'] + '</p>';
   $("#project"+ result['id'] + " .details").html(projectHTML);
 */
-}
+//}

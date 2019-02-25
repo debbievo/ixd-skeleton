@@ -86,6 +86,12 @@ function initializePage() {
 	$("#cancel-edit").click(hideEditProject);
 	$("#loginScreen").click(showLogin);
 	$("#cancel-login").click(hideLogin);
+	$("#submit-login").click(afterLogin);
+	$("#logout").click(loginContentClick)
+	$("#logout").css("display", "none");
+	$("#logout").click(logout);
+	//$("#loginScreen").addEventListener("click", showLogout);
+
 
 	$('#calendar').fullCalendar({
         defaultView: 'month',
@@ -281,14 +287,30 @@ function loginContentClick(e){
 	console.log("Login content clicked");
 	e.preventDefault();
 		$("#loginScreen").css("color","white");
+		$("logout").hide();
 }
 
 function showLogin(e) {
 	e.preventDefault();
 	$("#login-form").css("display", "block");
+	$("logout").hide();
 }
 
 function hideLogin(e) {
 	e.preventDefault();
 	$("#login-form").css("display", "none");
+	$("logout").hide();
+}
+
+function afterLogin(e) {
+	e.preventDefault();
+	$("#logout").css("display", "block");
+	$("#loginScreen").css("display", "none");
+	$("#login-form").css("display", "none");
+}
+
+function logout(e) {
+	e.preventDefault();
+	$("#loginScreen").css("display", "block");
+	$("#logout").css("display", "none");
 }

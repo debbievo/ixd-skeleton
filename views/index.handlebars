@@ -28,15 +28,20 @@
 <body>
 	<!-- login -->
 	<div class="container">
-		<div class="loginButton" style="text-align: right; margin-top">
-			<h6 id="username" style= color:#ffffff;> </h6>
-					<a href="/login" id="loginScreen">Login</a>
-						<span class="facebookLogin" style="float:left; height:10px">
+		<div class="loginButton">
+			<h6 id="username" style= "color:#ffffff; float: right"> </h6>
+					<!--a href="/login" id="loginScreen">Login</a-->
+					<button type= "button" style="text-align: left; margin-top" class="login-button" id="loginScreen">Login</button>
+					<button type= "button" style="text-align: left; margin-top" class="logout-button" id="logout">Logout</button>
+						<!--span class="facebookLogin" style="float:left; height:10px">
 							<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 							</fb:login-button>
 						</span>
-					<div class="loginName"></div>
+					<div class="loginName"></div-->
 		</div>
+		<!--div class="logoutButton" style = "text-align :right; margin-top">
+			<button type= "button" class="logout-button" id="logout">Logout</button>
+		</div-->
 	</div>
 	<div class="container" id="calendar-top">
 	<div class="titleHeader">
@@ -203,14 +208,24 @@
 			<button type="submit" class="btn btn-primary" id="submit-login">Login</button>
 			<button type="submit" class="btn btn-default" id="cancel-login">Cancel</button>
 		</form>
-		<!--div class ="facebookLogin">
-			<p class="facebookLogin" style="text-align:right; height:10px">
+		<div class ="facebookLogin">
+			<span class="facebookLogin" style="float:right; height:10px">
 				<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 				</fb:login-button>
-			</p>
+			</span>
 		</div>
-		<div class="loginName"></div-->
+		<div class="loginName"></div>
 		</div>
+
+		<!--span class="facebookLogin" style="float:left; height:10px">
+			<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+			</fb:login-button>
+		</span>
+	<div class="loginName"></div-->
+
+		<!-- hidden Logout form-->
+		<div class="container" id="logout-form">
+			<form action="/logout" method="get" id="logout">
 	</div>
 
 </body>
