@@ -27,6 +27,12 @@ function changeUser(response) {
   $("#loginScreen").css("display","none");
   $("#login-form").css("display", "none");
   $("#logout").css("display", "block");
+  $("#calendar-top")[0].style.WebkitFilter = 'blur(0px)';
+  $("#calendar-top")[0].style.filter= 'blur(0px)';
+  $("#login-top")[0].style.WebkitFilter = 'blur(0px)';
+  $("#login-top")[0].style.filter= 'blur(0px)';
+  $("#project-bottom")[0].style.WebkitFilter = 'blur(0px)';
+  $("#project-bottom")[0].style.filter= 'blur(0px)';
 
 }
 
