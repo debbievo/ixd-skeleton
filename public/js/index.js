@@ -81,6 +81,7 @@ function initializePage() {
 	//$('#calendarFillDays').text(fillCalendar(currmm,year));
 
 	$("#addScreen").click(showAddProject);
+//	$("#submit-project").click(addProject);
 	$("#cancel-add").click(hideAddProject);
 	$(".editScreen").click(showEditProject);
 	$("#cancel-edit").click(hideEditProject);
@@ -91,6 +92,8 @@ function initializePage() {
 	$("#logout").css("display", "none");
 	$("#logout").click(logout);
 	//$("#loginScreen").addEventListener("click", showLogout);
+	//$("#calendar-top")[0].style.WebkitFilter = 'blur(4px)';
+	//$("#calendar-top")[0].style.filter= 'blur(4px)';
 
 
 	$('#calendar').fullCalendar({
@@ -260,11 +263,32 @@ function addContentClick(e){
 function showAddProject(e) {
 	e.preventDefault();
 	$("#add-form").css("display", "block");
+	$("#calendar-top")[0].style.WebkitFilter = 'blur(4px)';
+	$("#calendar-top")[0].style.filter= 'blur(4px)';
+	$("#login-top")[0].style.WebkitFilter = 'blur(4px)';
+	$("#login-top")[0].style.filter= 'blur(4px)';
+	$("#project-bottom")[0].style.WebkitFilter = 'blur(4px)';
+	$("#project-bottom")[0].style.filter= 'blur(4px)';
 }
+
+/*
+function addProject(e) {
+	e.preventDefault();
+	$("#add-form").css("display", "none");
+	$("#calendar-top")[0].style.WebkitFilter = 'blur(0px)';
+	$("#calendar-top")[0].style.filter= 'blur(0px)';
+}
+*/
 
 function hideAddProject(e) {
 	e.preventDefault();
 	$("#add-form").css("display", "none");
+	$("#calendar-top")[0].style.WebkitFilter = 'blur(0px)';
+	$("#calendar-top")[0].style.filter= 'blur(0px)';
+	$("#login-top")[0].style.WebkitFilter = 'blur(0px)';
+	$("#login-top")[0].style.filter= 'blur(0px)';
+	$("#project-bottom")[0].style.WebkitFilter = 'blur(0px)';
+	$("#project-bottom")[0].style.filter= 'blur(0px)';
 }
 
 function editContentClick(e){
@@ -294,12 +318,24 @@ function showLogin(e) {
 	e.preventDefault();
 	$("#login-form").css("display", "block");
 	$("logout").hide();
+	$("#calendar-top")[0].style.WebkitFilter = 'blur(4px)';
+	$("#calendar-top")[0].style.filter= 'blur(4px)';
+	$("#login-top")[0].style.WebkitFilter = 'blur(4px)';
+	$("#login-top")[0].style.filter= 'blur(4px)';
+	$("#project-bottom")[0].style.WebkitFilter = 'blur(4px)';
+	$("#project-bottom")[0].style.filter= 'blur(4px)';
 }
 
 function hideLogin(e) {
 	e.preventDefault();
 	$("#login-form").css("display", "none");
 	$("logout").hide();
+	$("#calendar-top")[0].style.WebkitFilter = 'blur(0px)';
+	$("#calendar-top")[0].style.filter= 'blur(0px)';
+	$("#login-top")[0].style.WebkitFilter = 'blur(0px)';
+	$("#login-top")[0].style.filter= 'blur(0px)';
+	$("#project-bottom")[0].style.WebkitFilter = 'blur(0px)';
+	$("#project-bottom")[0].style.filter= 'blur(0px)';
 }
 
 function afterLogin(e) {
@@ -307,6 +343,12 @@ function afterLogin(e) {
 	$("#logout").css("display", "block");
 	$("#loginScreen").css("display", "none");
 	$("#login-form").css("display", "none");
+	$("#calendar-top")[0].style.WebkitFilter = 'blur(0px)';
+	$("#calendar-top")[0].style.filter= 'blur(0px)';
+	$("#login-top")[0].style.WebkitFilter = 'blur(0px)';
+	$("#login-top")[0].style.filter= 'blur(0px)';
+	$("#project-bottom")[0].style.WebkitFilter = 'blur(0px)';
+	$("#project-bottom")[0].style.filter= 'blur(0px)';
 }
 
 function logout(e) {
