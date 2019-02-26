@@ -120,8 +120,8 @@
 						</tr>
 						{{#each projectList}}
 						<tr class="project" id={{projectID}} style=" border-bottom: 1px solid #ddd;">
-							<td contenteditable="true" class="pName"><input type="checkbox" name="taskCheckbox" class="check" id={{checkID}}/>&nbsp;
-								{{name}}
+							<td class="pName"><input type="checkbox" name="taskCheckbox" class="check" id={{checkID}}/>&nbsp;
+								<p contenteditable="true" style="display:inline;">{{name}} </p>
 							</td>
 							<td><!--
 								<a href="/editTask" style="float:right" class="editScreen" aria-label="Edit Tasks">
