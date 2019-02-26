@@ -91,8 +91,8 @@ function initializePage() {
 	$("#logout").click(loginContentClick)
 	$("#logout").css("display", "none");
 	$("#logout").click(logout);
-//	$(".startPick").datepicker('setValue', new Moment());
-//	$(".duePick").datepicker();
+	$(".startPick").datepicker('setValue', moment());
+	$(".duePick").datepicker();
 	//$("#loginScreen").addEventListener("click", showLogout);
 	//$("#calendar-top")[0].style.WebkitFilter = 'blur(4px)';
 	//$("#calendar-top")[0].style.filter= 'blur(4px)';
