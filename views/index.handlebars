@@ -87,14 +87,14 @@
 		<div class="calendarList">
 				<p class = "addTask">
 					<table id="listView">
-						<tr id="listTitles">
+						<tr id="listTitles" style="border-bottom: 1px solid #ddd;">
 							<th><span id="currentDay"></span></th>
 							<th></th>
-							<th>Due in</th>
+							 <th style="float:right">Due in</th>
 							<th><i class="fa fa-bolt" aria-hidden="true"></i></th>
 						</tr>
 						{{#each projectList}}
-						<tr class="project" id={{projectID}} style=" border-bottom: 1px solid #ddd;">
+						<tr class="project" id={{projectID}} style="border-bottom: 1px solid #ddd;">
 							<td class="pName"><input type="checkbox" name="taskCheckbox" class="check" id={{checkID}}/>&nbsp;
 								<p contenteditable="true" style="display:inline;">{{name}} </p>
 							</td>
