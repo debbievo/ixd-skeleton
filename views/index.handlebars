@@ -96,7 +96,7 @@
 						{{#each projectList}}
 						<tr class="project" id={{projectID}} style="border-bottom: 1px solid #ddd;">
 							<td class="pName"><input type="checkbox" name="taskCheckbox" class="check" id={{checkID}}/>&nbsp;
-								<p contenteditable="true" style="display:inline;">{{name}} </p>
+								<p class="projName" style="display:inline;">{{name}} </p>
 							</td>
 							<td><!--
 								<a href="/editTask" style="float:right" class="editScreen" aria-label="Edit Tasks">
@@ -106,6 +106,16 @@
 									<i class="fas fa-trash"></i>
 								</a>
 								-->
+
+								<button type="button" class="deleteBtn" stye="float:right;">
+									<i class="fas fa-trash"></i>
+								</button>
+								<button type="button" class="editBtn" stye="float:right;">
+									<i class="fas fa-edit"></i>
+								</button>
+								<button hidden type="button" class="saveBtn" stye="float:right;">
+									<i class="fas fa-save"></i>
+								</button>
 							</td>
 							<td class="remainingDays" style="float:right; color:#d4d7db;">temp</td>
 							<td contenteditable="true" hidden class="duedate" style="float:right; color:#d4d7db;">{{dueDate}}</td>
