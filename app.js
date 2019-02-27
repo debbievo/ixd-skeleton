@@ -40,7 +40,8 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', index.view);
+app.get('/page_A', index.view);
+app.get('/page_B', index.viewAlt);
 // app.get('/calendar', index.view);
 // Example route
 // app.get('/users', user.list);
@@ -51,6 +52,8 @@ app.get('/login', login.loginBox);
 //app.get('/signup', signup.view);
 app.get('/addTask', addTask.addProject);
 app.get('/editTask', editTask.editProject);
+
+
 
 //app.post('/login',login.loginBox);
 
