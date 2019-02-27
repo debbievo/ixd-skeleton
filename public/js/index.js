@@ -221,6 +221,12 @@ function initializePage() {
 
 	$(".editBtn").click(function(){
 		$('.projName').attr('contenteditable','true');
+		if ($(".deleteBtn").attr('hidden')) {
+			$(this).siblings(".deleteBtn").removeAttr('hidden');
+	    } else {
+			$(this).siblings(".deleteBtn").attr('hidden');
+			$(".editBtn").show();
+	    }
 		$(this).hide();
 		if ($(".saveBtn").attr('hidden')) {
 			$(this).siblings(".saveBtn").removeAttr('hidden');
@@ -232,7 +238,7 @@ function initializePage() {
 	var theContent = $('.projName');
 
 	$('.saveBtn').click(function(){
-	  var editedContent   = theContent.html();
+	  var editedContent = theContent.html();
 	  localStorage.newContent = editedContent;
 	  if(localStorage.getItem('newContent')) {
 		theContent.html(localStorage.getItem('newContent'));
