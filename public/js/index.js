@@ -85,6 +85,13 @@ function initializePage() {
 	$("#cancel-add").click(hideAddProject);
 	$(".editScreen").click(showEditProject);
 	$("#cancel-edit").click(hideEditProject);
+/*	$("#submit-edit").click(function(){
+	  var editedContent = $(this).siblings('.projName').html();
+	  localStorage.newContent = editedContent;
+	  if(localStorage.getItem('newContent')) {
+  	  	$('.saveBtn').siblings('.projName').html(localStorage.getItem('newContent'));
+	  }
+  });*/
 	$("#loginScreen").click(showLogin);
 	$("#cancel-login").click(hideLogin);
 	$("#submit-login").click(afterLogin);
@@ -93,6 +100,8 @@ function initializePage() {
 	$("#logout").click(logout);
 	$(".startPick").datepicker('setValue', moment());
 	$(".duePick").datepicker();
+	$(".editStartPick").datepicker('setValue', moment());
+	$(".editDuePick").datepicker();
 	//$("#loginScreen").addEventListener("click", showLogout);
 	//$("#calendar-top")[0].style.WebkitFilter = 'blur(4px)';
 	//$("#calendar-top")[0].style.filter= 'blur(4px)';
@@ -336,6 +345,7 @@ function editContentClick(e){
 function showEditProject(e) {
 	e.preventDefault();
 	$("#edit-form").css("display", "block");
+	$('.projName').attr('contenteditable','true');
 	var projectID = $(this).closest('tr').attr('id');
 }
 
