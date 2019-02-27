@@ -235,13 +235,13 @@ function initializePage() {
 			$(".editBtn").show();
 	    }
 	});
-	var theContent = $('.projName');
+//	var theContent = $('.projName');
 
 	$('.saveBtn').click(function(){
-	  var editedContent = theContent.html();
+	  var editedContent = $(this).siblings('.projName').html();
 	  localStorage.newContent = editedContent;
 	  if(localStorage.getItem('newContent')) {
-		theContent.html(localStorage.getItem('newContent'));
+  	  	$('.saveBtn').siblings('.projName').html(localStorage.getItem('newContent'));
 	  }
 	});
 
