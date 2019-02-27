@@ -213,6 +213,35 @@ function initializePage() {
 		$(this).html(Math.round(temp) + " days");
 	});
 
+	$(".projName").each(function(i){
+	})
+
+
+
+
+	$(".editBtn").click(function(){
+		$('.projName').attr('contenteditable','true');
+		$(this).hide();
+		if ($(".saveBtn").attr('hidden')) {
+			$(this).siblings(".saveBtn").removeAttr('hidden');
+	    } else {
+			$(this).siblings(".saveBtn").attr('hidden');
+			$(".editBtn").show();
+	    }
+	});
+	var theContent = $('.projName');
+
+	$('.saveBtn').click(function(){
+	  var editedContent   = theContent.html();
+	  localStorage.newContent = editedContent;
+	  if(localStorage.getItem('newContent')) {
+		theContent.html(localStorage.getItem('newContent'));
+	  }
+	});
+
+	$(".deleteBtn").click(function(){
+		$(this).closest('.project').remove()
+	});
 }
 
 // function calcLongStr(){
