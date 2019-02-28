@@ -117,9 +117,12 @@ function initializePage() {
 			// console.log(this);
 
 			var selectedDate = date.format("MMM D YYYY");
+			var todaysDate = moment().format("MMM D YYYY");
 
 			if(date.isSameOrBefore()) {
 			  $("#currentDay").html(selectedDate);
+		    } else {
+			  $("#currentDay").html(todaysDate);
 			}
 
 			// var startDate = moment($(".project").children(".startdate").text()).format("MMM D");
@@ -127,13 +130,15 @@ function initializePage() {
 			$(".project").each(function(i) {
 				var startDate = moment($(this).children(".startdate").text());
 				var selectedDate = date;
+				// var selectedDateAdj = selectedDate.subtract(1, "days");
 				if(startDate.isAfter(selectedDate)) {
 					$(this).hide();
 				} else {
 					$(this).show();
 				}
-				// console.log("start: " + startDate.format("MMM D"));
-				// console.log("selected: " + selectedDate.format("MMM D"));
+				// console.log("start: " + startDate.format());
+				// console.log("selected: " + selectedDate.format());
+				// console.log("adjusted: " + selectedDateAdj.format());
 			});
         }
     });

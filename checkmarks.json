@@ -1,0 +1,49 @@
+{
+    "checkmarkList": [
+        {
+            "date":"2019-02-08",
+            "checks": [true]
+        },
+
+        {
+            "date":"2019-02-09",
+            "checks": [true, true]
+        },
+
+        {
+            "date":"2019-02-10",
+            "checks": [true, false]
+        },
+
+        {
+            "date":"2019-02-11",
+            "checks": [true, true]
+        },
+
+        {
+            "date":"2019-02-12",
+            "checks": [false, false]
+        },
+
+        {
+            "date":"2019-02-13",
+            "checks": [false, true]
+        },
+
+        {
+            "date":"2019-02-14",
+            "checks": [true, true]
+        },
+
+        {
+            "date":"2019-02-15",
+            "checks": [true, true]
+        },
+
+        {
+            "date":"2019-02-16",
+            "checks": [true, true]
+        },
+
+    ]
+}
