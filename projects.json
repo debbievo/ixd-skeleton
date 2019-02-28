@@ -13,8 +13,8 @@
 			"name": "CodePath A3",
 			"startDate": "2019-02-08",
 			"dueDate": "2019-04-19",
-			"projectID": "project6",
-			"checkID": "check6",
+			"projectID": "project2",
+			"checkID": "check2",
 			"currStreak": 8
 		},
 
@@ -49,8 +49,8 @@
 			"name": "CodePath A6",
 			"startDate": "2019-02-18",
 			"dueDate": "2019-05-21",
-			"projectID": "project7",
-			"checkID": "check7",
+			"projectID": "project6",
+			"checkID": "check6",
 			"currStreak": 2
 		},
 
@@ -58,8 +58,8 @@
 			"name": "Cogs 120 A8",
 			"startDate": "2019-02-22",
 			"dueDate": "2019-03-27",
-			"projectID": "project2",
-			"checkID": "check2",
+			"projectID": "project7",
+			"checkID": "check7",
 			"currStreak": 4
 		}
 	]
