@@ -6,6 +6,7 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
+	test();
 	// console.log(moment().parseZone());
 })
 
@@ -407,4 +408,25 @@ function logout(e) {
 	e.preventDefault();
 	$("#loginScreen").css("display", "block");
 	$("#logout").css("display", "none");
+}
+
+function test(){
+	var ctx = $("#testChart");
+	var chart = new Chart(ctx, {
+		// The type of chart we want to create
+		type: "doughnut",
+		// The data for our dataset
+		data: {
+			labels: ["In Progress", "Complete"],
+			datasets: [{
+				data: [5, 3],
+				backgroundColor: [ 'rgba(255, 99, 132, 0.8)', 'rgba(54, 162, 235, 0.8)' ]
+			}],
+		},
+		// Configuration options go here
+		options: {
+			title: { display: true, text: "Total Projects: 8", position: "top", fontSize: 16},
+			legend: { display: false },
+		}
+	});
 }

@@ -19,6 +19,8 @@
 	<script defer src="/js/all.js"></script>
 	<script src="/js/bootstrap-datepicker.js"></script>
 	<script src="/js/index.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 	<script defer src="/js/all.js"></script>
 	{{> facebook}}
 	<script src="/js/facebook.js"></script>
@@ -59,7 +61,7 @@
 				<a href="stats" style="float:left" id="statsScreen" aria-label="Stats Screen">
 					<i class="fas fa-chart-pie"></i>
 				</a>
-				Progress
+				 Progress
   				<a href="/addTask" id="addScreen" style="float:right" aria-label="Add Task">
   				  <i class="fas fa-plus"></i>
   			  </a>
@@ -79,6 +81,117 @@
 	</div>
 	<hr>
 	<!-- calendar + project list -->
+
+{{#if page_B}}
+	<canvas id="testChart" width="400" height="400"></canvas>
+	<hr>
+	<!-- project list -->
+	<div class="container" id="project-bottom" style= "overflow-y: scroll; height: 280px; width: 370px;">
+	<div class="calendarList">
+			<p class = "addTask">
+				<table id="listView">
+					<tr id="listTitles" style="border-bottom: 1px solid #ddd;">
+						<th><span id="currentDay"></span></th>
+						<th>
+						</th>
+						 <th style="float:right">Due in</th>
+						<th><i class="fa fa-bolt" aria-hidden="true"></i></th>
+					</tr>
+					{{#each projectList}}
+					<tr class="project" id={{projectID}} style="border-bottom: 1px solid #ddd;">
+						<td class="pName"><input type="checkbox" name="taskCheckbox" class="check" id={{checkID}}/>&nbsp;
+							<p class="projName" style="display:inline;">{{name}} </p>
+						</td>
+
+							<td>
+							<button type="button" class="editScreen">
+								<i class="fas fa-edit"></i>
+							</button>
+							<button type="button" class="deleteBtn">
+								<i class="fas fa-trash"></i>
+							</button>
+							</td>
+						<td class="remainingDays" style="float:right; color:#d4d7db;">temp</td>
+						<td contenteditable="true" hidden class="duedate" style="float:right; color:#d4d7db;">{{dueDate}}</td>
+						<td hidden class="startdate" style="float:right; color:#d4d7db;">{{startDate}}</td>
+
+						<td class="streakCounter" style="text-align:center;">{{currStreak}}</td>
+					</tr>
+					{{/each}}
+				</table>
+			</p>
+	</div>
+	</div>
+
+
+	<!-- hidden add form -->
+	<div class="container" id="add-form">
+	<form action="/addTask" method="get" id="adding">
+		<div class="form-group">
+			<h3>Project Name:</h3>
+			<input type="text" class="form-control" placeholder="Project Name" name="projectName">
+		</div>
+		<div class="form-group">
+			<h3>Start Date:</h3>
+
+				<input class="startPick" class="form-control" placeholder="Start Date" name="startDate">
+		</div>
+		<div class="form-group">
+			<h3>Due Date:</h3>
+					<input class="duePick" class="form-control" placeholder="Due Date" name="dueDate">
+		</div>
+		<button type="submit" class="btn btn-primary" id="submit-project">Add Project</button>
+		<button type="submit" class="btn btn-default" id="cancel-add">Cancel</button>
+	</form>
+	</div>
+
+	<div class="container" id="edit-form">
+	<form action="/editTask" method="get" id="editing">
+		<div class="form-group">
+			<h3>Start Date:</h3>
+
+				<input class="editStartPick" class="form-control" placeholder="Start Date" name="startDate">
+		</div>
+		<div class="form-group">
+			<h3>Due Date:</h3>
+			<input class="editDuePick" class="form-control" placeholder="Due Date" name="dueDate">
+		</div>
+		<button type="submit" class="btn btn-primary" id="submit-edit">Edit Project</button>
+		<button type="submit" class="btn btn-default" id="cancel-edit">Cancel</button>
+	</form>
+	</div>
+
+	<!-- hidden login form-->
+	<div class="container" id="login-form">
+	<form action="/login" method="get" id="login">
+		<div class="form-group">
+			<h3>Username:</h3>
+			<input type="text" class="form-control" placeholder="Username" name="Name">
+		</div>
+		<div class="form-group">
+			<h3>Password</h3>
+			<input type="password" class="form-control" placeholder="Password" name="password">
+		</div>
+		<div class ="facebookLogin">
+			<span class="facebookLogin" style="float:right; height:10px">
+				<fb:login-button size="large" scope="public_profile,email" onlogin="checkLoginState();">
+				</fb:login-button>
+			</span>
+		</div>
+		<button type="submit" class="btn btn-primary" id="submit-login">Login</button>
+		<button type="submit" class="btn btn-default" id="cancel-login">Cancel</button>
+	</form>
+	<div class="loginName"></div>
+	</div>
+
+	<!-- hidden Logout form-->
+	<div class="container" id="logout-form">
+		<form action="/logout" method="get" id="logout">
+	</div>
+
+
+{{else}}
+
 
 		<!-- NEW CALENDAR, NEED TO STYLE -->
 		<div id="calendar"></div>
@@ -242,6 +355,6 @@
 		<div class="container" id="logout-form">
 			<form action="/logout" method="get" id="logout">
 	</div>
-
+{{/if}}
 </body>
 </html>

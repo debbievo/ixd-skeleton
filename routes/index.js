@@ -15,7 +15,7 @@ var data = require('../projects.json');
    res.render('index',data);
  };
 
- exports.viewAlt = function(req, res){
+ exports.page_B = function(req, res){
    data['page_B']=true;
    res.render('index',data);
  };
