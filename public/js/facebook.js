@@ -38,17 +38,4 @@ function changeUser(response) {
 
 function loginDetails(e) {
 	e.preventDefault();
-//	$.get("/calendar", changeLogin());
-
 }
-//function changeLogin(response){
-//  $("#loginScreen").css("display","none");
-//  $("#login-form").css("display", "none");
-  // $(".loginScreen").text(response.name);
-/*	var projectHTML = '<p>' + result['title'] + '</p>' +
-	'<p>' + result['date'] + '</p>' +
-	'<img src="' + result['image'] + ' " class="detailsImage">' +
-	'<p>' + result['summary'] + '</p>';
-  $("#project"+ result['id'] + " .details").html(projectHTML);
-*/
-//}

@@ -68,6 +68,18 @@
 	height: 180px;
 }
 
+#login-top{
+	padding: 10px;
+}
+
+.top-hr{
+	margin: 1px;
+}
+
+.mid-hr{
+	margin: 10px;
+}
+
 .fc-body .fc-row{
 	height: 5em;
 }

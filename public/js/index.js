@@ -6,6 +6,7 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
+	test();
 	// console.log(moment().parseZone());
 	// console.log(Object.keys(localStorage));
 	// console.log(moment("2019-02-08").isAfter(moment("2019-02-08")));
@@ -113,7 +114,6 @@ function initializePage() {
 	$(".startPick").datepicker('setValue', moment());
 	$(".duePick").datepicker();
 	$(".editStartPick").datepicker('setValue', moment());
-	$(".editDuePick").datepicker();
 	//$("#loginScreen").addEventListener("click", showLogout);
 	//$("#calendar-top")[0].style.WebkitFilter = 'blur(4px)';
 	//$("#calendar-top")[0].style.filter= 'blur(4px)';
@@ -300,15 +300,21 @@ function initializePage() {
 		// console.log(checks);
 	});
 
+		var startDateArr = [];
+		var dueDateArr = [];
 	$(".projLife").each(function(i) {
 		var start = moment($(this).siblings(".startdate").html());
 		var due = moment($(this).siblings(".duedate").html());
+		startDateArr[i] = start;
+		dueDateArr[i] = due;
 		//var momStart = moment(start);
 		//var momDue = moment(due);
 		var diffDays = start.diff(due, "day") * -1;
 		// console.log(diffDays);
 		$(this).html(diffDays + " days");
 	});
+
+	console.log(startDateArr[0]);
 	//$(".longestStreak").each(calcLongStr);
 
 	$(".remainingDays").each(function(i) {
@@ -495,4 +501,51 @@ function logout(e) {
 	e.preventDefault();
 	$("#loginScreen").css("display", "block");
 	$("#logout").css("display", "none");
+}
+
+function test(){
+	var ctx = $("#testChart");
+	var chart = new Chart(ctx, {
+		// The type of chart we want to create
+		type: "doughnut",
+		// The data for our dataset
+		data: {
+			labels: ["Worked on", "No Progress"],
+			datasets: [{
+				data: [5, 3],
+				backgroundColor: [ 'rgba(52, 171, 250, 0.8)', 'rgba(243, 27, 27, 0.8)' ]
+			}],
+		},
+		// Configuration options go here
+		options: {
+			title: { display: true, text: "Today's Progress:", position: "top", fontSize: 16},
+			legend: { display: true },
+		}
+	});
+}
+
+$(".projLife").each(function(i) {
+	var start = moment($(this).siblings(".startdate").html());
+	var due = moment($(this).siblings(".duedate").html());
+	//var momStart = moment(start);
+	//var momDue = moment(due);
+	var diffDays = start.diff(due, "day") * -1;
+	console.log(diffDays);
+	$(this).html(diffDays + " days");
+});
+/*
+$(".editStartPick").each(function(i){
+	var start = moment($(".projLife").siblings(".startdate").html());
+	$(this).datepicker('setValue', start);
+});
+	datepicker('setValue', moment());
+$(".editDuePick").datepicker();
+
+*/
+function getStartDate(){
+
+}
+
+function getDueDate(){
+
 }
