@@ -8,7 +8,14 @@ $(document).ready(function() {
 	initializePage();
 	test();
 	// console.log(moment().parseZone());
-})
+	// console.log(Object.keys(localStorage));
+	// console.log(moment("2019-02-08").isAfter(moment("2019-02-08")));
+});
+
+var initChecks = localStorage.getItem("initChecks");
+if (initChecks != "true") {
+	initChecks = true;
+}
 
 var today = new Date();
 var currmm = today.getMonth();
@@ -18,6 +25,11 @@ Date.prototype.getMonthName = function() {
 	var months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
 	return months[this.getMonth()];
 };
+
+var begin = moment("2019-02-08");
+var end = moment("2019-05-22");
+var todaysDate = moment();
+
 /*
 function checkMonth(givenMonth){
 	switch(givenMonth) {
@@ -106,6 +118,22 @@ function initializePage() {
 	//$("#calendar-top")[0].style.WebkitFilter = 'blur(4px)';
 	//$("#calendar-top")[0].style.filter= 'blur(4px)';
 
+	if (!initChecks) {
+		for (var i = begin; i.isBefore(end); i.add(1, "days")) {
+			var checks = {};
+			for (var j = 0; j < 10; j++) {
+				var key = "check" + j;
+				// checks[key] = "false";
+				if (i.isBefore(todaysDate)) {
+					checks[key] = (Math.random() >= 0.5);
+				} else {
+					checks[key] = false;
+				}
+			}
+			localStorage.setItem(i.format("YYYY-MM-DD"), JSON.stringify(checks));
+		}
+		initChecks = true;
+	}
 
 	$('#calendar').fullCalendar({
         defaultView: 'month',
@@ -115,15 +143,17 @@ function initializePage() {
 		titleFormat: "MMM YYYY",
 
 		dayClick: function(date, jsEvent, view) {
-			console.log('Clicked on: ' + date.format());
-			console.log(date.isSameOrBefore());
+			// console.log('Clicked on: ' + date.format());
+			// console.log(date.isSameOrBefore());
+			var checks = JSON.parse(localStorage.getItem(date.format("YYYY-MM-DD")));
+			// console.log(moment(date));
 
 			$(".fc-day").css("background-color", "white");
 			$(this).css("border-box", "black");
 			$(this).css('background-color', "rgba(52, 171, 250, 0.5)");
 			$(".fc-past").not(this).css("background-color", "#eeeeee");
 			$(this).siblings(".fc-day-top").css('background-color', "rgba(255, 99, 132, 0.8)");
-			console.log(this);
+			// console.log(this);
 
 			var selectedDate = date.format("MMM D YYYY");
 			var todaysDate = moment().format("MMM D YYYY");
@@ -135,41 +165,94 @@ function initializePage() {
 			}
 
 			// var startDate = moment($(".project").children(".startdate").text()).format("MMM D");
+			// var todaysDate = moment().format("YYYY-MM-DD");
+			// var todaysChecks = JSON.parse(localStorage.getItem(todaysDate));
 
 			$(".project").each(function(i) {
-				var startDate = moment($(this).children(".startdate").text());
-				var selectedDate = date;
-				// var selectedDateAdj = selectedDate.subtract(1, "days");
-				if(startDate.isAfter(selectedDate)) {
-					$(this).hide();
-				} else {
-					$(this).show();
+				var checkKey = "check" + i;
+				var checkSelect = $(this).children(".pName").children("input");
+
+				if (date.isSameOrAfter(begin)) {
+					checkSelect.prop("checked", checks[checkKey]);
 				}
-				// console.log("start: " + startDate.format());
-				// console.log("selected: " + selectedDate.format());
-				// console.log("adjusted: " + selectedDateAdj.format());
+
+				// console.log(checks[checkKey]);
+				// console.log($(this).children(".pName").children());
+
+				var startDate = moment($(this).children(".startdate").text());
+				var selectedDate = moment(date);
+				var selectedDateAdj = moment(date);
+				selectedDateAdj.add(1, "days");
+
+				// console.log(startDate.isSameOrBefore(selectedDateAdj));
+				if(startDate.isSameOrBefore(selectedDateAdj)) {
+					$(this).show();
+				} else {
+					$(this).hide();
+				}
+
+				// console.log("start: " + startDate.format("YYYY-MM-DD"));
+				// console.log("selected: " + selectedDate.format("YYYY-MM-DD"));
+				// console.log("adjusted: " + selectedDateAdj.format("YYYY-MM-DD"));
 			});
+
         }
     });
 
+	// populate calendar with events
 	$(".pName").each(function(i) {
 		var projectName = $.trim($(this).text());
 		var eventStart = moment($("#currentDay").text());
-		var eventID = "event-" + eventStart.format("YYYY-MM-YY") + "-" + i;
+		// var eventID = "event-" + eventStart.format("YYYY-MM-YY") + "-" + i;
 		var checked = $(this).children().prop("checked");
+		// var checks = JSON.parse(localStorage.getItem(date.format("YYYY-MM-DD")));
 		// var dueDate = $(this).siblings(".duedate").html();
 		// var dueDate = "2019-02-22";
 		// var eventStart = moment();
+		// var dates = Object.keys(localStorage);
+		// console.log(storage);
+		// console.log(i);
 
-		if(checked) {
-			$("#calendar").fullCalendar("renderEvent", {
-				id: eventID,
-				title: projectName,
-				start: eventStart,
-				allDay: true
-			}, true);
-			// console.log(eventID);
+		for (var date in localStorage) {
+			var eventStart = moment(date).format("YYYY-MM-DD");
+			var eventID = "event-" + eventStart + "-" + i;
+			var checkKey = "check" + i;
+			// var check = localStorage.getItem(date);
+			// var check = localStorage.getItem(date)[checkKey];
+			// console.log(check);
+			// console.log(eventStart.format("YYYY-MM-DD"));
+
+			if (eventStart != "Invalid date") {
+				var checks = JSON.parse(localStorage.getItem(eventStart));
+				var pCheck = checks[checkKey];
+				// console.log(checks);
+				// console.log(pCheck);
+				if(pCheck){
+					$("#calendar").fullCalendar("renderEvent", {
+						id: eventID,
+						title: projectName,
+						start: eventStart,
+						allDay: true
+					}, true);
+				}
+			}
+			// console.log(localStorage.getItem(date));
 		}
+
+		var todaysDate = moment().format("YYYY-MM-DD");
+		var todaysChecks = JSON.parse(localStorage.getItem(todaysDate));
+		var checkKey = "check" + i;
+		$(this).children().prop("checked", todaysChecks[checkKey]);
+
+		// if(checked) {
+		// 	$("#calendar").fullCalendar("renderEvent", {
+		// 		id: eventID,
+		// 		title: projectName,
+		// 		start: eventStart,
+		// 		allDay: true
+		// 	}, true);
+			// console.log(eventID);
+		// }
 		// console.log(checked);
 		// console.log(projectName + " " + dueDate);
 	});
@@ -189,6 +272,9 @@ function initializePage() {
 			// console.log(eventStart);
 			// console.log(counter);
 
+			var checks = JSON.parse(localStorage.getItem(eventStart.format("YYYY-MM-DD")));
+			var checkKey = "check" + i;
+
 			if(checked) {
 				$("#calendar").fullCalendar("renderEvent", {
 					id: eventID,
@@ -196,17 +282,22 @@ function initializePage() {
 					start: eventStart,
 					allDay: true,
 				}, true);
+				checks[checkKey] = true;
+				localStorage.setItem(eventStart.format("YYYY-MM-DD"), JSON.stringify(checks));
 				counter += 1;
 				counterSelect.html(counter);
 				// console.log(eventID);
 			} else {
 				$("#calendar").fullCalendar("removeEvents", eventID);
+				checks[checkKey] = false;
+				localStorage.setItem(eventStart.format("YYYY-MM-DD"), JSON.stringify(checks));
 				counter -= 1;
 				counterSelect.html(counter);
 				// console.log(eventID);
 			}
 		});
 		// console.log($.trim($(this).parent().text()));
+		// console.log(checks);
 	});
 
 		var startDateArr = [];
@@ -219,7 +310,7 @@ function initializePage() {
 		//var momStart = moment(start);
 		//var momDue = moment(due);
 		var diffDays = start.diff(due, "day") * -1;
-		console.log(diffDays);
+		// console.log(diffDays);
 		$(this).html(diffDays + " days");
 	});
 
@@ -235,9 +326,6 @@ function initializePage() {
 
 	$(".projName").each(function(i){
 	})
-
-
-
 
 	$(".editBtn").click(function(){
 		$('.projName').attr('contenteditable','true');
@@ -313,7 +401,7 @@ function forwardButtonClick(e){
 }
 */
 function addContentClick(e){
-	console.log("Add content clicked");
+	// console.log("Add content clicked");
 	e.preventDefault();
 }
 
@@ -349,7 +437,7 @@ function hideAddProject(e) {
 }
 
 function editContentClick(e){
-	console.log("Edit content clicked");
+	// console.log("Edit content clicked");
 	e.preventDefault();
 }
 
@@ -366,7 +454,7 @@ function hideEditProject(e) {
 }
 
 function loginContentClick(e){
-	console.log("Login content clicked");
+	// console.log("Login content clicked");
 	e.preventDefault();
 		$("#loginScreen").css("color","black");
 		$("logout").hide();
