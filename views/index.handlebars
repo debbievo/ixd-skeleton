@@ -102,7 +102,7 @@
 						{{#each projectList}}
 						<tr class="project" id={{projectID}} style="border-bottom: 1px solid #ddd;">
 							<td class="pName"><input type="checkbox" name="taskCheckbox" class="check" id={{checkID}}/>&nbsp;
-								<p class="projName" style="display:inline;">{{name}} </p>
+								<p contenteditable="true" class="projName" style="display:inline;">{{name}} </p>
 							</td>
 							<!--td><a href="/editTask" class="editScreen" style="float:right; display:inline;" aria-label="Edit Tasks">
 								<i class="fas fa-edit"></i>
@@ -116,9 +116,10 @@
 								</a>
 								-->
 								<td>
+									<!--
 								<button type="button" class="editScreen">
 									<i class="fas fa-edit"></i>
-								</button>
+								</button> -->
 								<button type="button" class="deleteBtn">
 									<i class="fas fa-trash"></i>
 								</button>
@@ -180,6 +181,7 @@
 		</form>
 	</div>
 -->
+
 	<div class="container" id="edit-form">
 		<form action="/editTask" method="get" id="editing">
 			<div class="form-group">
@@ -226,7 +228,7 @@
 			</div>
 			<div class ="facebookLogin">
 				<span class="facebookLogin" style="float:right; height:10px">
-					<fb:login-button size="large" scope="public_profile,email" onlogin="checkLoginState();">
+					<fb:login-button size="xlarge" scope="public_profile,email" onlogin="checkLoginState();">
 					</fb:login-button>
 				</span>
 			</div>

@@ -102,7 +102,6 @@ function initializePage() {
 	$(".startPick").datepicker('setValue', moment());
 	$(".duePick").datepicker();
 	$(".editStartPick").datepicker('setValue', moment());
-	$(".editDuePick").datepicker();
 	//$("#loginScreen").addEventListener("click", showLogout);
 	//$("#calendar-top")[0].style.WebkitFilter = 'blur(4px)';
 	//$("#calendar-top")[0].style.filter= 'blur(4px)';
@@ -210,15 +209,21 @@ function initializePage() {
 		// console.log($.trim($(this).parent().text()));
 	});
 
+		var startDateArr = [];
+		var dueDateArr = [];
 	$(".projLife").each(function(i) {
 		var start = moment($(this).siblings(".startdate").html());
 		var due = moment($(this).siblings(".duedate").html());
+		startDateArr[i] = start;
+		dueDateArr[i] = due;
 		//var momStart = moment(start);
 		//var momDue = moment(due);
 		var diffDays = start.diff(due, "day") * -1;
 		console.log(diffDays);
 		$(this).html(diffDays + " days");
 	});
+
+	console.log(startDateArr[0]);
 	//$(".longestStreak").each(calcLongStr);
 
 	$(".remainingDays").each(function(i) {
@@ -429,4 +434,30 @@ function test(){
 			legend: { display: true },
 		}
 	});
+}
+
+$(".projLife").each(function(i) {
+	var start = moment($(this).siblings(".startdate").html());
+	var due = moment($(this).siblings(".duedate").html());
+	//var momStart = moment(start);
+	//var momDue = moment(due);
+	var diffDays = start.diff(due, "day") * -1;
+	console.log(diffDays);
+	$(this).html(diffDays + " days");
+});
+/*
+$(".editStartPick").each(function(i){
+	var start = moment($(".projLife").siblings(".startdate").html());
+	$(this).datepicker('setValue', start);
+});
+	datepicker('setValue', moment());
+$(".editDuePick").datepicker();
+
+*/
+function getStartDate(){
+
+}
+
+function getDueDate(){
+
 }
