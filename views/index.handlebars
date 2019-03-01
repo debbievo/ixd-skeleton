@@ -46,16 +46,10 @@
 			<button type= "button" class="logout-button" id="logout">Logout</button>
 		</div-->
 	</div>
-	<hr>
+	<hr class="top-hr">
 	<div class="container" id="calendar-top">
 	<div class="titleHeader">
-	<!--div class ="facebookLogin">
-		<p class="facebookLogin" style="margin-left:83%; margin-top: 3%;">
-			<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-			</fb:login-button>
-		</p>
-	</div>
-	<div class="loginName"></div -->
+
 		<div>
 			<h1 style="text-align:center;">
 				<a href="stats" style="float:left" id="statsScreen" aria-label="Stats Screen">
@@ -79,14 +73,13 @@
 		</h1>
 		</div>
 	</div>
-	<hr>
+	<hr class="mid-hr">
 	<!-- calendar + project list -->
 
 {{#if page_B}}
 	<canvas id="testChart" width="400" height="400"></canvas>
-	<hr>
+	<!--hr-->
 {{else}}
-
 
 		<!-- NEW CALENDAR, NEED TO STYLE -->
 		<div id="calendar"></div>
