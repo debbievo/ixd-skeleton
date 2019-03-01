@@ -417,16 +417,16 @@ function test(){
 		type: "doughnut",
 		// The data for our dataset
 		data: {
-			labels: ["In Progress", "Complete"],
+			labels: ["Worked on", "No Progress"],
 			datasets: [{
 				data: [5, 3],
-				backgroundColor: [ 'rgba(255, 99, 132, 0.8)', 'rgba(54, 162, 235, 0.8)' ]
+				backgroundColor: [ 'rgba(52, 171, 250, 0.8)', 'rgba(243, 27, 27, 0.8)' ]
 			}],
 		},
 		// Configuration options go here
 		options: {
-			title: { display: true, text: "Total Projects: 8", position: "top", fontSize: 16},
-			legend: { display: false },
+			title: { display: true, text: "Today's Progress:", position: "top", fontSize: 16},
+			legend: { display: true },
 		}
 	});
 }
