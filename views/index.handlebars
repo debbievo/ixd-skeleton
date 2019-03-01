@@ -12,7 +12,7 @@
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<link href="/css/fullcalendar.css" rel="stylesheet">
-	<!-- <script src="/js/persistent-checkboxes.js"></script> -->
+	<script src="/js/persistent-checkboxes.js"></script>
 	<script src="js/moment.js"></script>
 	<script src="/js/fullcalendar.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
@@ -101,8 +101,13 @@
 						</tr>
 						{{#each projectList}}
 						<tr class="project" id={{projectID}} style="border-bottom: 1px solid #ddd;">
+<<<<<<< HEAD
 							<td class="pName"><input type="checkbox" name="taskCheckbox" class="check" id={{checkID}} />&nbsp;
 								<p contenteditable="true" class="projName" style="display:inline;">{{name}} </p>
+=======
+							<td class="pName"><input type="checkbox" name="taskCheckbox" class="check" id={{checkID}}/>&nbsp;
+								<p class="projName" style="display:inline;">{{name}} </p>
+>>>>>>> parent of 99e9f74... implemented changing checkmarks per day
 							</td>
 							<!--td><a href="/editTask" class="editScreen" style="float:right; display:inline;" aria-label="Edit Tasks">
 								<i class="fas fa-edit"></i>
