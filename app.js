@@ -17,6 +17,7 @@ var login = require('./routes/login');
 
 var addTask = require('./routes/addTask');
 var editTask = require('./routes/editTask');
+var deleteTask = require('./routes/deleteTask');
 
 var app = express();
 
@@ -52,6 +53,7 @@ app.get('/login', login.loginBox);
 //app.get('/signup', signup.view);
 app.get('/addTask', addTask.addProject);
 app.get('/editTask', editTask.editProject);
+app.get('/deleteTask', deleteTask.deleteProject);
 
 
 

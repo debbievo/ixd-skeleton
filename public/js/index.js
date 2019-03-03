@@ -77,6 +77,7 @@ function initializePage() {
 	$('#addContent').click(addContentClick);
 	$('#editContent').click(editContentClick);
 	$('#loginContent').click(loginContentClick);
+	$('#deleteContent').click(editContentClick);
 //	$('#calendarFillDays').innerHTML = "";
 
 	//$('#calendarFillDays').text(fillCalendar(currmm,year));
@@ -86,6 +87,8 @@ function initializePage() {
 	$("#cancel-add").click(hideAddProject);
 	$(".editScreen").click(showEditProject);
 	$("#cancel-edit").click(hideEditProject);
+	$(".deleteScreen").click(showDeleteProject);
+	$("#cancel-delete").click(hideDeleteProject);
 /*	$("#submit-edit").click(function(){
 	  var editedContent = $(this).siblings('.projName').html();
 	  localStorage.newContent = editedContent;
@@ -214,8 +217,8 @@ function initializePage() {
 	$(".projLife").each(function(i) {
 		var start = moment($(this).siblings(".startdate").html());
 		var due = moment($(this).siblings(".duedate").html());
-		startDateArr[i] = start;
-		dueDateArr[i] = due;
+	//	startDateArr[i] = start;
+	//	dueDateArr[i] = due;
 		//var momStart = moment(start);
 		//var momDue = moment(due);
 		var diffDays = start.diff(due, "day") * -1;
@@ -223,7 +226,7 @@ function initializePage() {
 		$(this).html(diffDays + " days");
 	});
 
-	console.log(startDateArr[0]);
+	//console.log(startDateArr[0]);
 	//$(".longestStreak").each(calcLongStr);
 
 	$(".remainingDays").each(function(i) {
@@ -264,10 +267,11 @@ function initializePage() {
   	  	$('.saveBtn').siblings('.projName').html(localStorage.getItem('newContent'));
 	  }
 	});
-
+/*
 	$(".deleteBtn").click(function(){
 		$(this).closest('.project').remove()
 	});
+	*/
 }
 
 // function calcLongStr(){
@@ -415,6 +419,22 @@ function logout(e) {
 	$("#logout").css("display", "none");
 }
 
+function deleteContentClick(e){
+	console.log("Delete content clicked");
+	e.preventDefault();
+}
+
+function showDeleteProject(e) {
+	e.preventDefault();
+	$("#delete-form").css("display", "block");
+	var projectID = $(this).closest('tr').attr('id');
+}
+
+function hideDeleteProject(e) {
+	e.preventDefault();
+	$("#delete-form").css("display", "none");
+}
+
 function test(){
 	var ctx = $("#testChart");
 	var chart = new Chart(ctx, {
@@ -435,16 +455,6 @@ function test(){
 		}
 	});
 }
-
-$(".projLife").each(function(i) {
-	var start = moment($(this).siblings(".startdate").html());
-	var due = moment($(this).siblings(".duedate").html());
-	//var momStart = moment(start);
-	//var momDue = moment(due);
-	var diffDays = start.diff(due, "day") * -1;
-	console.log(diffDays);
-	$(this).html(diffDays + " days");
-});
 /*
 $(".editStartPick").each(function(i){
 	var start = moment($(".projLife").siblings(".startdate").html());
