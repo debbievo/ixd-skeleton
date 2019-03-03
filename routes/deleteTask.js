@@ -21,18 +21,24 @@ if (mm < 10) {
   mm = '0' + mm;
 }
 
+function findAndRemove(array, property, value) {
+  array.forEach(function(result, index) {
+    if(result[property] === value) {
+      //Remove from array
+      array.splice(index, 1);
+    }
+  });
+}
+
+//Checks countries.result for an object with a property of 'id' whose value is 'AF'
+//Then removes it ;p
+
 exports.deleteProject = function(req, res) {
 	console.log(req);
 	var name = req.query.deleteProject;
-	var dueDate = req.query.deleteDueDate;
-	var today = new Date();
-	var startDate = mm +'/'+ dd +'/'+ yyyy;
-    //var name2 = name.replace(req);
-    //var dueDate2 = dueDate.replace(req);
-	var project = {"name":name, "startDate":startDate, "dueDate": dueDate};
-	//if we want to do a trash button
-    data.projectList.splice(project,1);
-	console.log(data);
+	console.log(name);
+    //data.projectList.splice(,1);
+	findAndRemove(data.projectList, 'name', name);
 	//delete data.
 	// console.log(name, startDate, dueDate);
     // console.log(data["projectList"].length);

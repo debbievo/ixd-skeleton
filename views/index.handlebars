@@ -172,12 +172,8 @@
 	<div class="container" id="delete-form">
 		<form action="/deleteTask" method="get" id="deleting">
 			<div class="form-group">
-				<h3>Are you sure you want to delete?</h3>
-				<input hidden type="text" class="form-control" placeholder="New Project Name" name="deleteProjName">
-			</div>
-			<div class="form-group">
-				<h3 hidden>Due Date:</h3>
-				<input hidden type="date" data-date-format="MM DD YYYY" class="form-control" placeholder="New Due Date" name="deleteDueDate">
+				<h3>Type in Project Name to Delete</h3>
+				<input type="text" class="form-control" placeholder="Project Name" name="deleteProjName">
 			</div>
 			<button type="submit" class="btn btn-primary" id="submit-delete">Delete</button>
 			<button type="submit" class="btn btn-default" id="cancel-delete">Cancel</button>

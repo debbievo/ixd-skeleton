@@ -217,13 +217,20 @@ function initializePage() {
 	$(".projLife").each(function(i) {
 		var start = moment($(this).siblings(".startdate").html());
 		var due = moment($(this).siblings(".duedate").html());
+		var curr = moment();
 	//	startDateArr[i] = start;
 	//	dueDateArr[i] = due;
 		//var momStart = moment(start);
 		//var momDue = moment(due);
-		var diffDays = start.diff(due, "day") * -1;
-		console.log(diffDays);
-		$(this).html(diffDays + " days");
+		var diffDays = start.diff(curr, "day") * -1;
+		if(diffDays <= 0){
+			console.log(diffDays);
+			$(this).css("color", "#dc3545").html(diffDays + " days");
+		}
+		else{
+			//console.log(diffDays);
+			$(this).html(diffDays + " days");
+		}
 	});
 
 	//console.log(startDateArr[0]);
@@ -233,7 +240,12 @@ function initializePage() {
 		var current = moment().startOf('day');
 		var given = moment($(this).siblings(".duedate").html());
 		var temp = moment.duration(given.diff(current)).asDays();
-		$(this).html(Math.round(temp) + " days");
+		if(temp < 0){
+			$(this).css("color", "#dc3545").html(Math.round(temp) + " days");
+		}else{
+
+			$(this).html(Math.round(temp) + " days");
+		}
 	});
 
 	$(".projName").each(function(i){
