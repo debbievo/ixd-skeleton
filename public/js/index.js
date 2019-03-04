@@ -171,7 +171,9 @@ function initializePage() {
 				start: eventStart,
 				allDay: true
 			}, true);
+			//ga("send", "event", 'checked', 'click');
 			// console.log(eventID);
+
 		}
 		// console.log(checked);
 		// console.log(projectName + " " + dueDate);
@@ -202,11 +204,13 @@ function initializePage() {
 				counter += 1;
 				counterSelect.html(counter);
 				// console.log(eventID);
+				ga("send", "event", 'checked', 'click');
 			} else {
 				$("#calendar").fullCalendar("removeEvents", eventID);
 				counter -= 1;
 				counterSelect.html(counter);
 				// console.log(eventID);
+				ga("send", "event", 'checked', 'click');
 			}
 		});
 		// console.log($.trim($(this).parent().text()));
