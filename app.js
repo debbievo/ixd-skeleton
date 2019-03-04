@@ -12,6 +12,7 @@ var index = require('./routes/index');
 // Example route
 // var user = require('./routes/user');
 var stats = require('./routes/stats');
+var statsB = require('./routes/statsB');
 var login = require('./routes/login');
 //var login = require('./routes/signup');
 
@@ -49,6 +50,8 @@ app.get('/page_B', index.page_B);
 // app.get('/users', user.list);
 app.get('/stats', stats.viewIndividual);
 app.get('/stats/:name', stats.viewIndividual);
+app.get('/statsB', statsB.viewIndividual);
+app.get('/statsB/:name', statsB.viewIndividual);
 //app.get('/login', login.loginBox);
 app.get('/login', login.loginBox);
 //app.get('/signup', signup.view);

@@ -52,9 +52,15 @@
 
 		<div>
 			<h1 style="text-align:center;">
+	{{#if page_B}}
+				<a href="statsB" style="float:left" id="statsScreen" aria-label="Stats Screen">
+					<i class="fas fa-chart-pie"></i>
+				</a>
+	{{else}}
 				<a href="stats" style="float:left" id="statsScreen" aria-label="Stats Screen">
 					<i class="fas fa-chart-pie"></i>
 				</a>
+	{{/if}}
 				 Progress
   				<a href="/addTask" id="addScreen" style="float:right" aria-label="Add Task">
   				  <i class="fas fa-plus"></i>

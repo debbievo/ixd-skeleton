@@ -1,0 +1,128 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Progress Stats Screen</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="/css/stats.css" rel="stylesheet">
+	<link href="/css/main.css" rel="stylesheet">
+	<link href="/css/fullcalendar.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<!-- <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<!--	<script src="http://momentjs.com/downloads/moment.js"></script> -->
+	<script src="js/moment.js"></script>
+	<script src="/js/fullcalendar.js"></script>
+	<script src="/js/bootstrap-datepicker.js"></script>
+	<script defer src="/js/all.js"></script>
+	<script src="/js/stats.js"></script>
+	<script src="/js/index.js"></script>
+	{{> facebook}}
+	<script src="/js/facebook.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<!--div class ="loginLinks">
+			<a href="#" style="float:right">Login</a>
+			<a href="#" style="float:right">Sign Up &nbsp;</a>
+		</div>
+-->
+	<!--div class ="facebookLogin">
+		<p class="facebookLogin" style="margin-left:80%; margin-top: 3%;">
+			<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+		</fb:login-button>
+		</p>
+	</div>
+	<div class="loginName"></div-->
+		<div class="titleHeader" style="text-align:center; margin-top:5%">
+			<h1>
+				<a href="/page_B" style="float:left">
+		          <i class="fas fa-calendar-alt"></i>
+		        </a>
+				Stats
+			</h1>
+</div>
+			<div class="accordion" id="accordionExample">
+			  <div class="card">
+				<div class="card-header" id="headingOne">
+				  <h2 class="mb-0">
+					<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+					  Overall Stats
+					</button>
+				  </h2>
+				</div>
+				<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+				  <div class="card-body">
+
+					  <canvas id="myChart" width="400" height="400"></canvas>
+
+				  </div>
+				  <div class="statsLayout" style="overflow-x:auto;">
+					  <!-- <table id="statsOverall">
+						  <tr id="overallSection">
+							  <th><span class = "overallDisplay">Overall</span></th>
+							  <th><span class = "overallDonutChart"></span></th>
+						  </tr>
+					  </table> -->
+					  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					  <circle style="float:center;">18 days</circle> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					  <circle style="float:center;">30 days</circle>
+					  <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					  <span style = "font-size: 16px;"> Longest Streak </span>
+						<th><i class="fa fa-bolt" aria-hidden="true"></i></th>
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					  <span style = "font-size: 16px;"> Longest Project </span>
+					  <!-- <hr> -->
+					  <!-- <table id="statsIndividual" style="text-align:left">
+						  <tr id="individualSection">
+							  <td><span id="individualDisplay">History Essay</span></td>
+						  </tr>
+						  <tr id ="individualSection">
+							  <td><span id="individualDisplay"> Cogs120 A5</span></td>
+						  </tr>
+						  <tr id ="individualSection">
+							  <td><span id="individualDisplay"> Cogs108 A2</span></td>
+						  </tr>
+					  </table> -->
+				  </div>
+				</div>
+			  </div>
+{{#each projectList}}
+<div class="card">
+  <div class="card-header" id="headingTwo">
+	<h2 class="mb-0">
+	  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#{{projectID}}" aria-expanded="false" aria-controls="collapseTwo">
+		{{name}}
+	  </button>
+	</h2>
+  </div>
+  <div id="{{projectID}}" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+
+  	<div class="statsLayout" style="overflow-x:auto;">
+  		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+  		<circle style="float:center;" class="longestStreak"> 0 days</circle> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+  		<circle style="float:center;" class="projLife">Works</circle>
+  		<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+  		<span style = "font-size: 16px;"> Longest Streak </span>
+			<th><i class="fa fa-bolt" aria-hidden="true"></i></th>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+  		<span style = "font-size: 16px;"> Project Lifetime </span>
+
+		<span hidden class="duedate">{{dueDate}}</span>
+		<span hidden class="startdate">{{startDate}}</span>
+
+  	</div>
+  </div>
+</div>
+
+{{/each}}
+
+		</div>
+	</div>
+</body>
+</html>
