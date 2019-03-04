@@ -24,28 +24,42 @@
 	<script defer src="/js/all.js"></script>
 	{{> facebook}}
 	<script src="/js/facebook.js"></script>
+	{{> login}}
 
+	<!-- Google Analytics -->
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-135645389-1', 'auto');
+	ga('send', 'pageview');
+	</script>
+	<!-- End Google Analytics -->
 
 </head>
 
 <body>
-	<!-- login -->
+	<!-- login
 	<div class="container" id="login-top">
+
 		<div class="loginButton">
-			<h6 id="username" style= "color:#ffffff; float: right"> </h6>
-					<!--a href="/login" id="loginScreen">Login</a-->
+			<h6 id="username" style= "color:#ffffff; float: right"> </h6> -->
+					<!--a href="/login" id="loginScreen">Login</a
 					<button type= "button" style="text-align: left; margin-top;" class="login-button" id="loginScreen">Login</button>
 					<button type= "button" style="text-align: left; margin-top" class="logout-button" id="logout">Logout</button>
-						<!--span class="facebookLogin" style="float:left; height:10px">
+					-->	<!--span class="facebookLogin" style="float:left; height:10px">
 							<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 							</fb:login-button>
 						</span>
 					<div class="loginName"></div-->
-		</div>
+	<!--	</div> -->
 		<!--div class="logoutButton" style = "text-align :right; margin-top">
 			<button type= "button" class="logout-button" id="logout">Logout</button>
-		</div-->
-	</div>
+		</div
+
+	</div> -->
 	<hr class="top-hr">
 	<div class="container" id="calendar-top">
 	<div class="titleHeader">
@@ -213,7 +227,8 @@
 		</form>
 	</div>
 	-->
-	<!-- hidden login form-->
+
+	<!-- hidden login form
 	<div class="container" id="login-form">
 		<form action="/login" method="get" id="login">
 			<div class="form-group">
@@ -235,16 +250,16 @@
 		</form>
 		<div class="loginName"></div>
 		</div>
-
+-->
 		<!--span class="facebookLogin" style="float:left; height:10px">
 			<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 			</fb:login-button>
 		</span>
 	<div class="loginName"></div-->
 
-		<!-- hidden Logout form-->
+		<!-- hidden Logout form
 		<div class="container" id="logout-form">
 			<form action="/logout" method="get" id="logout">
-	</div>
+	</div>-->
 </body>
 </html>

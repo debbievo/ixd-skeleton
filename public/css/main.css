@@ -62,10 +62,10 @@
 	padding: 20px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	background-color: #ffffff;
-	position: relative;
+	position: absolute; /* changed from relative because it would shift the page down */
 	box-sizing: border-box;
 	margin: auto;
-	top: -475px;
+	top: 275px; /* changed from -475 so that it would appear within the screen */
 	z-index:2;
 }
 
