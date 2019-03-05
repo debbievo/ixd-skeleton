@@ -65,13 +65,13 @@ function overallStats() {
 	    data: {
 	        labels: ["In Progress", "Complete"],
 	        datasets: [{
-	            data: [5, 3],
+	            data: [$('.statsLayout').length - 1, $('.statsLayout').length],
 				backgroundColor: [ 'rgba(255, 99, 132, 0.8)', 'rgba(54, 162, 235, 0.8)' ]
 	        }],
 	    },
 	    // Configuration options go here
 	    options: {
-			title: { display: true, text: "Total Projects: 8", position: "top", fontSize: 16},
+			title: { display: true, text: "Total Projects: " + ($('.statsLayout').length - 1), position: "top", fontSize: 16},
 			legend: { display: false },
 		}
 	});
