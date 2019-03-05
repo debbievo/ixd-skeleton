@@ -83,8 +83,8 @@ $('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("ac
 	$('#addContentB').click(addContentClick);
 //$('#editContent').click(editContentClick);
 	$('#loginContent').click(loginContentClick);
-	$('#deleteContent').click(editContentClick);
-	$('#deleteContentB').click(editContentClick);
+	$('.deleteContent').click(deleteContentClick);
+	$('.deleteContentB').click(deleteContentClick);
 //$('#calendarFillDays').innerHTML = "";
 //$('#calendarFillDays').text(fillCalendar(currmm,year));
 	$("#addScreen").click(showAddProject);
@@ -385,13 +385,12 @@ function hideAddProjectB(e) {
 	$("#project-bottom-B")[0].style.filter= 'blur(0px)';
 }
 
-// need this for delete
+/*
 function editContentClick(e){
 	console.log("Edit content clicked");
 	e.preventDefault();
 }
 
-/*
 	function showEditProject(e) {
 		e.preventDefault();
 		$("#edit-form").css("display", "block");
