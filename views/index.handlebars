@@ -157,9 +157,13 @@
 								<button type="button" class="editScreen">
 									<i class="fas fa-edit"></i>
 								</button> -->
+								{{#if page_B}}
+									SUFFER
+								{{else}}
 								<a href="/deleteTask" style="float:right" class="deleteScreen" aria-label="Delete Tasks">
 									<i class="fas fa-trash"></i>
-								</a> <!--
+								</a>
+								{{/if}} <!--
 								<button type="button" class="deleteBtn">
 									<i class="fas fa-trash"></i>
 								</button> -->
@@ -203,6 +207,8 @@
 			</div>
 			<button type="submit" class="btn btn-primary" id="submit-projectB">Add Project</button>
 			<button type="submit" class="btn btn-default" id="cancel-addB">Cancel</button>
+		</form>
+	</div>
 	{{else}}
 	<!-- hidden add form -->
 	<div class="container" id="add-form">
@@ -221,12 +227,15 @@
 				<h3>Due Date:</h3>
 		<!--		<input class="duePick" type="date" data-date-format="MM DD YYYY" class="form-control" placeholder="Due Date" name="dueDate">
 -->					<input required class="duePick" class="form-control" placeholder="Due Date" name="dueDate">
+			</div>
 			<button type="submit" class="btn btn-primary" id="submit-project">Add Project</button>
 			<button type="submit" class="btn btn-default" id="cancel-add">Cancel</button>
 		</form>
 	</div>
+
 	{{/if}}
 
+<!-- hidden Delete Form-->
 	<div class="container" id="delete-form">
 		<form action="/deleteTask" method="get" id="deleting">
 			<div class="form-group">
@@ -238,23 +247,24 @@
 		</form>
 	</div>
 
-	<div class="container" id="edit-form">
+<!--hidden edit form-->
+	<!--div class="container" id="edit-form">
 		<form action="/editTask" method="get" id="editing">
 			<div class="form-group">
-				<h3>Start Date:</h3>
+				<h3>Start Date:</h3-->
 			<!--	<input class="startPick" type="date" data-date-format="MM DD YYYY" class="form-control" placeholder="Start Date" name="startDate">
 -->
-					<input class="editStartPick" class="form-control" placeholder="Start Date" name="startDate">
+					<!--input class="editStartPick" class="form-control" placeholder="Start Date" name="startDate">
 			</div>
 			<div class="form-group">
-				<h3>Due Date:</h3>
+				<h3>Due Date:</h3-->
 <!--				<input type="date" data-date-format="MM DD YYYY" class="form-control" placeholder="New Due Date" name="editDueDate"> -->
-				<input class="editDuePick" class="form-control" placeholder="Due Date" name="dueDate">
+				<!--input class="editDuePick" class="form-control" placeholder="Due Date" name="dueDate">
 			</div>
 			<button type="submit" class="btn btn-primary" id="submit-edit">Edit Project</button>
 			<button type="submit" class="btn btn-default" id="cancel-edit">Cancel</button>
 		</form>
-	</div>
+	</div-->
 	<!-- hidden edit form
 	<div class="container" id="edit-form">
 		<form action="/editTask" method="get" id="editing">

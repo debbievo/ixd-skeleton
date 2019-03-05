@@ -17,7 +17,7 @@ var login = require('./routes/login');
 //var login = require('./routes/signup');
 
 var addTask = require('./routes/addTask');
-var addTaskB = require('./routes/addTaskB')
+var addTaskB = require('./routes/addTaskB');
 var editTask = require('./routes/editTask');
 var deleteTask = require('./routes/deleteTask');
 

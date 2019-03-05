@@ -75,8 +75,8 @@ function initializePage() {
 //	$('#forwardButton').on("click", forwardButtonClick);
 //	$('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("active");
 	$('#addContent').click(addContentClick);
-	$('#addContentB').click(addContentClickB);
-	$('#editContent').click(editContentClick);
+	$('#addContentB').click(addContentClick);
+//	$('#editContent').click(editContentClick);
 	$('#loginContent').click(loginContentClick);
 	$('#deleteContent').click(editContentClick);
 //	$('#calendarFillDays').innerHTML = "";
@@ -88,8 +88,8 @@ function initializePage() {
 	$("#cancel-add").click(hideAddProject);
 	$("#cancel-addB").click(hideAddProjectB);
 	//$("#submit-projectB").click(addProjectB);
-	$(".editScreen").click(showEditProject);
-	$("#cancel-edit").click(hideEditProject);
+//	$(".editScreen").click(showEditProject);
+//	$("#cancel-edit").click(hideEditProject);
 	$(".deleteScreen").click(showDeleteProject);
 	$("#cancel-delete").click(hideDeleteProject);
 /*	$("#submit-edit").click(function(){
@@ -261,7 +261,7 @@ function initializePage() {
 
 
 
-	$(".editBtn").click(function(){
+	/*$(".editBtn").click(function(){
 		$('.projName').attr('contenteditable','true');
 		if ($(".deleteBtn").attr('hidden')) {
 			$(this).siblings(".deleteBtn").removeAttr('hidden');
@@ -286,7 +286,7 @@ function initializePage() {
   	  	$('.saveBtn').siblings('.projName').html(localStorage.getItem('newContent'));
 	  }
 	});
-/*
+
 	$(".deleteBtn").click(function(){
 		$(this).closest('.project').remove()
 	});
@@ -340,10 +340,10 @@ function addContentClick(e){
 	e.preventDefault();
 }
 
-function addContentClickB(e){
+/*function addContentClickB(e){
 	console.log("Add contentB clicked");
 	e.preventDefault();
-}
+}*/
 
 function showAddProject(e) {
 	e.preventDefault();
@@ -365,15 +365,8 @@ function showAddProjectB(e) {
 	$("#login-top")[0].style.filter= 'blur(4px)';
 	$("#project-bottom")[0].style.WebkitFilter = 'blur(4px)';
 	$("#project-bottom")[0].style.filter= 'blur(4px)';
-	
-}
 
-/*function addProjectB(e) {
-	e.preventDefault();
-	$("#add-form").css("display", "none");
-	$("#calendar-top")[0].style.WebkitFilter = 'blur(0px)';
-	$("#calendar-top")[0].style.filter= 'blur(0px)';
-}*/
+}
 
 function hideAddProject(e) {
 	e.preventDefault();
@@ -397,22 +390,23 @@ function hideAddProjectB(e) {
 	$("#project-bottom")[0].style.filter= 'blur(0px)';
 }
 
+// need this for delete
 function editContentClick(e){
 	console.log("Edit content clicked");
 	e.preventDefault();
 }
 
-function showEditProject(e) {
+/*function showEditProject(e) {
 	e.preventDefault();
 	$("#edit-form").css("display", "block");
 	$('.projName').attr('contenteditable','true');
 	var projectID = $(this).closest('tr').attr('id');
-}
+}*/
 
-function hideEditProject(e) {
+/*function hideEditProject(e) {
 	e.preventDefault();
 	$("#edit-form").css("display", "none");
-}
+}*/
 
 function loginContentClick(e){
 	console.log("Login content clicked");
@@ -479,6 +473,7 @@ function hideDeleteProject(e) {
 	e.preventDefault();
 	$("#delete-form").css("display", "none");
 }
+
 var n = $("input:checkbox:checked").length;
 
 //chart.update()??
