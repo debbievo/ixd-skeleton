@@ -453,6 +453,7 @@ function logout(e) {
 	e.preventDefault();
 	$("#loginScreen").css("display", "block");
 	$("#logout").css("display", "none");
+	$("#username").hide();
 }
 
 function deleteContentClick(e){
