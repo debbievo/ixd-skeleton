@@ -31,8 +31,17 @@ function changeUser(response) {
   $("#calendar-top")[0].style.filter= 'blur(0px)';
   $("#login-top")[0].style.WebkitFilter = 'blur(0px)';
   $("#login-top")[0].style.filter= 'blur(0px)';
-  $("#project-bottom")[0].style.WebkitFilter = 'blur(0px)';
-  $("#project-bottom")[0].style.filter= 'blur(0px)';
+  var currentLoc = window.location.pathname;
+  //console.log(currentLoc);
+  //console.log(typeof(currentLoc));
+  if(currentLoc == "/page_B"){
+      $("#project-bottom-B")[0].style.WebkitFilter = 'blur(0px)';
+      $("#project-bottom-B")[0].style.filter= 'blur(0px)';
+  }
+  else{
+      $("#project-bottom-A")[0].style.WebkitFilter = 'blur(0px)';
+      $("#project-bottom-A")[0].style.filter= 'blur(0px)';
+  }
 
 }
 

@@ -347,8 +347,8 @@ function showAddProject(e) {
 	$("#calendar-top")[0].style.filter= 'blur(4px)';
 	$("#login-top")[0].style.WebkitFilter = 'blur(4px)';
 	$("#login-top")[0].style.filter= 'blur(4px)';
-	$("#project-bottom")[0].style.WebkitFilter = 'blur(4px)';
-	$("#project-bottom")[0].style.filter= 'blur(4px)';
+	$("#project-bottom-A")[0].style.WebkitFilter = 'blur(4px)';
+	$("#project-bottom-A")[0].style.filter= 'blur(4px)';
 }
 
 function showAddProjectB(e) {
@@ -358,8 +358,8 @@ function showAddProjectB(e) {
 	$("#calendar-top")[0].style.filter= 'blur(4px)';
 	$("#login-top")[0].style.WebkitFilter = 'blur(4px)';
 	$("#login-top")[0].style.filter= 'blur(4px)';
-	$("#project-bottom")[0].style.WebkitFilter = 'blur(4px)';
-	$("#project-bottom")[0].style.filter= 'blur(4px)';
+	$("#project-bottom-B")[0].style.WebkitFilter = 'blur(4px)';
+	$("#project-bottom-B")[0].style.filter= 'blur(4px)';
 
 }
 
@@ -370,8 +370,8 @@ function hideAddProject(e) {
 	$("#calendar-top")[0].style.filter= 'blur(0px)';
 	$("#login-top")[0].style.WebkitFilter = 'blur(0px)';
 	$("#login-top")[0].style.filter= 'blur(0px)';
-	$("#project-bottom")[0].style.WebkitFilter = 'blur(0px)';
-	$("#project-bottom")[0].style.filter= 'blur(0px)';
+	$("#project-bottom-A")[0].style.WebkitFilter = 'blur(0px)';
+	$("#project-bottom-A")[0].style.filter= 'blur(0px)';
 }
 
 function hideAddProjectB(e) {
@@ -381,8 +381,8 @@ function hideAddProjectB(e) {
 	$("#calendar-top")[0].style.filter= 'blur(0px)';
 	$("#login-top")[0].style.WebkitFilter = 'blur(0px)';
 	$("#login-top")[0].style.filter= 'blur(0px)';
-	$("#project-bottom")[0].style.WebkitFilter = 'blur(0px)';
-	$("#project-bottom")[0].style.filter= 'blur(0px)';
+	$("#project-bottom-B")[0].style.WebkitFilter = 'blur(0px)';
+	$("#project-bottom-B")[0].style.filter= 'blur(0px)';
 }
 
 // need this for delete
@@ -420,8 +420,17 @@ function showLogin(e) {
 	$("#calendar-top")[0].style.filter= 'blur(4px)';
 	$("#login-top")[0].style.WebkitFilter = 'blur(4px)';
 	$("#login-top")[0].style.filter= 'blur(4px)';
-	$("#project-bottom")[0].style.WebkitFilter = 'blur(4px)';
-	$("#project-bottom")[0].style.filter= 'blur(4px)';
+	var currentLoc = window.location.pathname;
+	//console.log(currentLoc);
+	//console.log(typeof(currentLoc));
+	if(currentLoc == "/page_B"){
+		$("#project-bottom-B")[0].style.WebkitFilter = 'blur(4px)';
+		$("#project-bottom-B")[0].style.filter= 'blur(4px)';
+	}
+	else{
+		$("#project-bottom-A")[0].style.WebkitFilter = 'blur(4px)';
+		$("#project-bottom-A")[0].style.filter= 'blur(4px)';
+	}
 }
 
 function hideLogin(e) {
@@ -432,8 +441,17 @@ function hideLogin(e) {
 	$("#calendar-top")[0].style.filter= 'blur(0px)';
 	$("#login-top")[0].style.WebkitFilter = 'blur(0px)';
 	$("#login-top")[0].style.filter= 'blur(0px)';
-	$("#project-bottom")[0].style.WebkitFilter = 'blur(0px)';
-	$("#project-bottom")[0].style.filter= 'blur(0px)';
+	var currentLoc = window.location.pathname;
+	//console.log(currentLoc);
+	//console.log(typeof(currentLoc));
+	if(currentLoc == "/page_B"){
+		$("#project-bottom-B")[0].style.WebkitFilter = 'blur(0px)';
+		$("#project-bottom-B")[0].style.filter= 'blur(0px)';
+	}
+	else{
+		$("#project-bottom-A")[0].style.WebkitFilter = 'blur(0px)';
+		$("#project-bottom-A")[0].style.filter= 'blur(0px)';
+	}
 }
 
 function afterLogin(e) {
@@ -445,8 +463,17 @@ function afterLogin(e) {
 	$("#calendar-top")[0].style.filter= 'blur(0px)';
 	$("#login-top")[0].style.WebkitFilter = 'blur(0px)';
 	$("#login-top")[0].style.filter= 'blur(0px)';
-	$("#project-bottom")[0].style.WebkitFilter = 'blur(0px)';
-	$("#project-bottom")[0].style.filter= 'blur(0px)';
+	var currentLoc = window.location.pathname;
+	//console.log(currentLoc);
+	//console.log(typeof(currentLoc));
+	if(currentLoc == "/page_B"){
+		$("#project-bottom-B")[0].style.WebkitFilter = 'blur(0px)';
+		$("#project-bottom-B")[0].style.filter= 'blur(0px)';
+	}
+	else{
+		$("#project-bottom-A")[0].style.WebkitFilter = 'blur(0px)';
+		$("#project-bottom-A")[0].style.filter= 'blur(0px)';
+	}
 }
 
 function logout(e) {
