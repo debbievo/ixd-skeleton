@@ -6,7 +6,7 @@
 */
 $(document).ready(function() {
 	initializePage();
-	test();
+	// test();
 	// console.log(moment().parseZone());
 })
 
@@ -66,6 +66,25 @@ function checkMonth(givenMonth){
 */
 
 function initializePage() {
+	var ctx = $("#testChart");
+	var chart = new Chart(ctx, {
+		// The type of chart we want to create
+		type: "doughnut",
+		// The data for our dataset
+		data: {
+			labels: ["Worked on", "No Progress"],
+			datasets: [{
+				data: [$("input:checkbox:checked").length, $("input:checkbox:not(:checked)").length],
+				backgroundColor: [ 'rgba(52, 171, 250, 0.8)', 'rgba(243, 27, 27, 0.8)' ]
+			}],
+		},
+		// Configuration options go here
+		options: {
+			title: { display: true, text: "Today's Progress:", position: "top", fontSize: 16},
+			legend: { display: true },
+		}
+	});
+
 	$(".jumbotron p").addClass("active");
 // Add any additional listeners here
 // example: $("#div-id").click(functionToCall);
@@ -178,7 +197,7 @@ $('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("ac
 				start: eventStart,
 				allDay: true
 			}, true);
-			//ga("send", "event", 'checked', 'click');
+			ga("send", "event", 'checked', 'click');
 			// console.log(eventID);
 
 		}
@@ -219,6 +238,10 @@ $('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("ac
 				// console.log(eventID);
 				ga("send", "event", 'checked', 'click');
 			}
+			var chartData = [$("input:checkbox:checked").length, $("input:checkbox:not(:checked)").length];
+			console.log(chartData);
+			chart.data.datasets[0].data = chartData;
+			chart.update();
 		});
 		// console.log($.trim($(this).parent().text()));
 	});
@@ -517,26 +540,26 @@ function hideDeleteProjectB(e) {
 var n = $("input:checkbox:checked").length;
 
 //chart.update()??
-function test(){
-	var ctx = $("#testChart");
-	var chart = new Chart(ctx, {
-		// The type of chart we want to create
-		type: "doughnut",
-		// The data for our dataset
-		data: {
-			labels: ["Worked on", "No Progress"],
-			datasets: [{
-				data: [$("input:checkbox:checked").length, $("input:checkbox:not(:checked)").length],
-				backgroundColor: [ 'rgba(52, 171, 250, 0.8)', 'rgba(243, 27, 27, 0.8)' ]
-			}],
-		},
-		// Configuration options go here
-		options: {
-			title: { display: true, text: "Today's Progress:", position: "top", fontSize: 16},
-			legend: { display: true },
-		}
-	});
-}
+// function test(){
+// 	var ctx = $("#testChart");
+// 	var chart = new Chart(ctx, {
+// 		// The type of chart we want to create
+// 		type: "doughnut",
+// 		// The data for our dataset
+// 		data: {
+// 			labels: ["Worked on", "No Progress"],
+// 			datasets: [{
+// 				data: [$("input:checkbox:checked").length, $("input:checkbox:not(:checked)").length],
+// 				backgroundColor: [ 'rgba(52, 171, 250, 0.8)', 'rgba(243, 27, 27, 0.8)' ]
+// 			}],
+// 		},
+// 		// Configuration options go here
+// 		options: {
+// 			title: { display: true, text: "Today's Progress:", position: "top", fontSize: 16},
+// 			legend: { display: true },
+// 		}
+// 	});
+// }
 
 /*
 $(".editStartPick").each(function(i){
