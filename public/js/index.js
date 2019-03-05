@@ -503,7 +503,7 @@ function showDeleteProjectB(e) {
 	$("#delete-formB").css("display", "block");
 	var projectID = $(this).closest('tr').attr('id');
 }
-*/
+
 function hideDeleteProject(e) {
 	e.preventDefault();
 	$("#delete-form").css("display", "none");
