@@ -450,7 +450,9 @@ function hideDeleteProject(e) {
 	e.preventDefault();
 	$("#delete-form").css("display", "none");
 }
+var n = $("input:checkbox:checked").length;
 
+//chart.update()??
 function test(){
 	var ctx = $("#testChart");
 	var chart = new Chart(ctx, {
@@ -460,7 +462,7 @@ function test(){
 		data: {
 			labels: ["Worked on", "No Progress"],
 			datasets: [{
-				data: [5, 3],
+				data: [$("input:checkbox:checked").length, $("input:checkbox:not(:checked)").length],
 				backgroundColor: [ 'rgba(52, 171, 250, 0.8)', 'rgba(243, 27, 27, 0.8)' ]
 			}],
 		},
@@ -480,10 +482,3 @@ $(".editStartPick").each(function(i){
 $(".editDuePick").datepicker();
 
 */
-function getStartDate(){
-
-}
-
-function getDueDate(){
-
-}
