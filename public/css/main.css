@@ -103,9 +103,13 @@
 	padding: 5px;
 } */
 
-#project-bottom{
+#project-bottom-A{
 	overflow-y: scroll;
 	height: 180px;
+}
+#project-bottom-B{
+	overflow-y: scroll;
+	height: 300px;
 }
 
 #login-top{

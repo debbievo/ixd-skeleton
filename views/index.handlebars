@@ -120,7 +120,11 @@
 {{/if}}
 	</div>
 		<!-- project list -->
-	<div class="container" id="project-bottom" style= "overflow-y: scroll">
+		{{#if page_B}}
+	<div class="container" id="project-bottom-B" style= "overflow-y: scroll">
+		{{else}}
+	<div class="container" id="project-bottom-A" style= "overflow-y: scroll">
+		{{/if}}
 		<div class="calendarList">
 				<p class = "addTask">
 					<table id="listView">
@@ -267,22 +271,6 @@
 			<button type="submit" class="btn btn-default" id="cancel-edit">Cancel</button>
 		</form>
 	</div-->
-	<!-- hidden edit form
-	<div class="container" id="edit-form">
-		<form action="/editTask" method="get" id="editing">
-			<div class="form-group">
-				<h3>Project Name:</h3>
-				<input type="text" class="form-control" placeholder="New Project Name" name="editProject">
-			</div>
-			<div class="form-group">
-				<h3>Due Date:</h3>
-				<input type="date" data-date-format="MM DD YYYY" class="form-control" placeholder="New Due Date" name="editDueDate">
-			</div>
-			<button type="submit" class="btn btn-primary" id="submit-edit">Edit Project</button>
-			<button type="submit" class="btn btn-default" id="cancel-edit">Cancel</button>
-		</form>
-	</div>
-	-->
 	<!-- hidden login form-->
 	<div class="container" id="login-form">
 		<form action="/login" method="get" id="login">
@@ -305,16 +293,5 @@
 		</form>
 		<div class="loginName"></div>
 		</div>
-
-		<!--span class="facebookLogin" style="float:left; height:10px">
-			<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-			</fb:login-button>
-		</span>
-	<div class="loginName"></div-->
-
-		<!-- hidden Logout form-->
-		<!--div class="container" id="logout-form">
-			<form action="/logout" method="get" id="logout">
-	</div-->
 </body>
 </html>
