@@ -20,6 +20,7 @@ var addTask = require('./routes/addTask');
 var addTaskB = require('./routes/addTaskB');
 var editTask = require('./routes/editTask');
 var deleteTask = require('./routes/deleteTask');
+var deleteTaskB = require('./routes/deleteTaskB');
 
 var app = express();
 
@@ -60,7 +61,7 @@ app.get('/addTask', addTask.addProject);
 app.get('/addTaskB', addTaskB.addProjectB)
 app.get('/editTask', editTask.editProject);
 app.get('/deleteTask', deleteTask.deleteProject);
-
+app.get('/deleteTaskB', deleteTaskB.deleteProjectB);
 
 
 //app.post('/login',login.loginBox);

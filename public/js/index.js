@@ -1,9 +1,9 @@
 'use strict';
 
 /*
- * Function that is called when the document is ready.
- */
-// Call this function when the page loads (the "ready" event)
+	Function that is called when the document is ready.
+	Call this function when the page loads (the "ready" event)
+*/
 $(document).ready(function() {
 	initializePage();
 	test();
@@ -18,6 +18,7 @@ Date.prototype.getMonthName = function() {
 	var months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
 	return months[this.getMonth()];
 };
+
 /*
 function checkMonth(givenMonth){
 	switch(givenMonth) {
@@ -63,58 +64,61 @@ function checkMonth(givenMonth){
 	}
 }
 */
+
 function initializePage() {
 	$(".jumbotron p").addClass("active");
 // Add any additional listeners here
 // example: $("#div-id").click(functionToCall);
-	// $('#currentDay').text(today.getMonthName()+ " " + today.getDate());
+// $('#currentDay').text(today.getMonthName()+ " " + today.getDate());
 	$("#currentDay").html(moment().format("MMM D YYYY"));
 
-//	$('#currentMonth').text(today.getMonthName() + " " + today.getFullYear());
-//	$('#backButton').on("click", backButtonClick);
-//	$('#forwardButton').on("click", forwardButtonClick);
-//	$('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("active");
+/*
+$('#currentMonth').text(today.getMonthName() + " " + today.getFullYear());
+$('#backButton').on("click", backButtonClick);
+$('#forwardButton').on("click", forwardButtonClick);
+$('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("active");
+*/
+
 	$('#addContent').click(addContentClick);
 	$('#addContentB').click(addContentClick);
-//	$('#editContent').click(editContentClick);
+//$('#editContent').click(editContentClick);
 	$('#loginContent').click(loginContentClick);
 	$('#deleteContent').click(editContentClick);
-//	$('#calendarFillDays').innerHTML = "";
-
-	//$('#calendarFillDays').text(fillCalendar(currmm,year));
-
+	$('#deleteContentB').click(editContentClick);
+//$('#calendarFillDays').innerHTML = "";
+//$('#calendarFillDays').text(fillCalendar(currmm,year));
 	$("#addScreen").click(showAddProject);
 	$("#addScreenB").click(showAddProjectB);
 	$("#cancel-add").click(hideAddProject);
 	$("#cancel-addB").click(hideAddProjectB);
-	//$("#submit-projectB").click(addProjectB);
-//	$(".editScreen").click(showEditProject);
-//	$("#cancel-edit").click(hideEditProject);
+//$(".editScreen").click(showEditProject);
+//$("#cancel-edit").click(hideEditProject);
 	$(".deleteScreen").click(showDeleteProject);
+	$(".deleteScreenB").click(showDeleteProjectB);
 	$("#cancel-delete").click(hideDeleteProject);
-/*	$("#submit-edit").click(function(){
-	  var editedContent = $(this).siblings('.projName').html();
-	  localStorage.newContent = editedContent;
-	  if(localStorage.getItem('newContent')) {
-  	  	$('.saveBtn').siblings('.projName').html(localStorage.getItem('newContent'));
-	  }
-  });*/
+	$("#cancel-deleteB").click(hideDeleteProjectB);
 	$("#loginScreen").click(showLogin);
 	$("#cancel-login").click(hideLogin);
 	$("#submit-login").click(afterLogin);
 	$("#logout").click(loginContentClick)
 	$("#logout").css("display", "none");
 	$("#logout").click(logout);
+/*
+	$("#submit-edit").click(function(){
+		  var editedContent = $(this).siblings('.projName').html();
+		  localStorage.newContent = editedContent;
+		  if(localStorage.getItem('newContent')) {
+	  	  	$('.saveBtn').siblings('.projName').html(localStorage.getItem('newContent'));
+		  }
+	  });
+*/
+
 	$(".startPick").datepicker('setValue', moment());
 	$(".duePick").datepicker();
 	$(".editStartPick").datepicker('setValue', moment());
-	//$("#loginScreen").addEventListener("click", showLogout);
-	//$("#calendar-top")[0].style.WebkitFilter = 'blur(4px)';
-	//$("#calendar-top")[0].style.filter= 'blur(4px)';
-
 
 	$('#calendar').fullCalendar({
-        defaultView: 'month',
+    defaultView: 'month',
 		themeSystem: "bootstrap4",
 		eventLimit: true,
 		contentHeight: "auto",
@@ -257,12 +261,11 @@ function initializePage() {
 
 	$(".projName").each(function(i){
 	})
+}
 
-
-
-
-	/*$(".editBtn").click(function(){
-		$('.projName').attr('contenteditable','true');
+/*
+	$(".editBtn").click(function(){
+	$('.projName').attr('contenteditable','true');
 		if ($(".deleteBtn").attr('hidden')) {
 			$(this).siblings(".deleteBtn").removeAttr('hidden');
 	    } else {
@@ -290,32 +293,28 @@ function initializePage() {
 	$(".deleteBtn").click(function(){
 		$(this).closest('.project').remove()
 	});
-	*/
-}
 
-// function calcLongStr(){
-//
-// }
+function calcLongStr(){
 
-// function calcProjLife(){
-// 	var start = moment($(this).siblings(".startdate").html());
-// 	var due = moment($(this).siblings(".duedate").html());
-// 	//var momStart = moment(start);
-// 	//var momDue = moment(due);
-// 	var diffDays = start.diff(due, "day") * -1;
-// 	console.log(start, due, diffDays);
-// 	$(".projLife").text(diffDays + " days");
-// }
+ }
 
-// function calcDaysRemaining(){
-// 	var current = moment().startOf('day');
-// 	var given = moment($(this).siblings(".duedate").html());
-// 	var temp = moment.duration(given.diff(current)).asDays();
-// 	$(".remainingDays").text(Math.round(temp) + " days");
-// }
+function calcProjLife(){
+	var start = moment($(this).siblings(".startdate").html());
+	var due = moment($(this).siblings(".duedate").html());
+		var momStart = moment(start);
+		var momDue = moment(due);
+	var diffDays = start.diff(due, "day") * -1;
+	console.log(start, due, diffDays);
+	$(".projLife").text(diffDays + " days");
+ }
 
+function calcDaysRemaining(){
+	var current = moment().startOf('day');
+	var given = moment($(this).siblings(".duedate").html());
+	var temp = moment.duration(given.diff(current)).asDays();
+	$(".remainingDays").text(Math.round(temp) + " days");
+ }
 
-/*
 function backButtonClick(e){
 	e.preventDefault();
 	if (currmm-1 < 0) {
@@ -335,15 +334,11 @@ function forwardButtonClick(e){
 	checkMonth(currmm);
 }
 */
+
 function addContentClick(e){
 	console.log("Add content clicked");
 	e.preventDefault();
 }
-
-/*function addContentClickB(e){
-	console.log("Add contentB clicked");
-	e.preventDefault();
-}*/
 
 function showAddProject(e) {
 	e.preventDefault();
@@ -396,17 +391,19 @@ function editContentClick(e){
 	e.preventDefault();
 }
 
-/*function showEditProject(e) {
-	e.preventDefault();
-	$("#edit-form").css("display", "block");
-	$('.projName').attr('contenteditable','true');
-	var projectID = $(this).closest('tr').attr('id');
-}*/
+/*
+	function showEditProject(e) {
+		e.preventDefault();
+		$("#edit-form").css("display", "block");
+		$('.projName').attr('contenteditable','true');
+		var projectID = $(this).closest('tr').attr('id');
+	}
 
-/*function hideEditProject(e) {
-	e.preventDefault();
-	$("#edit-form").css("display", "none");
-}*/
+	function hideEditProject(e) {
+		e.preventDefault();
+		$("#edit-form").css("display", "none");
+	}
+*/
 
 function loginContentClick(e){
 	console.log("Login content clicked");
@@ -469,9 +466,20 @@ function showDeleteProject(e) {
 	var projectID = $(this).closest('tr').attr('id');
 }
 
+function showDeleteProjectB(e) {
+	e.preventDefault();
+	$("#delete-formB").css("display", "block");
+	var projectID = $(this).closest('tr').attr('id');
+}
+
 function hideDeleteProject(e) {
 	e.preventDefault();
 	$("#delete-form").css("display", "none");
+}
+
+function hideDeleteProjectB(e) {
+	e.preventDefault();
+	$("#delete-formB").css("display", "none");
 }
 
 var n = $("input:checkbox:checked").length;
@@ -497,6 +505,7 @@ function test(){
 		}
 	});
 }
+
 /*
 $(".editStartPick").each(function(i){
 	var start = moment($(".projLife").siblings(".startdate").html());
@@ -504,5 +513,4 @@ $(".editStartPick").each(function(i){
 });
 	datepicker('setValue', moment());
 $(".editDuePick").datepicker();
-
 */
