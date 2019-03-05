@@ -232,13 +232,13 @@ $('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("ac
 				counter += 1;
 				counterSelect.html(counter);
 				// console.log(eventID);
-				// ga("send", "event", 'checked', 'click');
+				ga("send", "event", 'checked', 'click');
 			} else {
 				$("#calendar").fullCalendar("removeEvents", eventID);
 				counter -= 1;
 				counterSelect.html(counter);
 				// console.log(eventID);
-				// ga("send", "event", 'checked', 'click');
+				ga("send", "event", 'checked', 'click');
 			}
 
 			var chartData = [$("input:checkbox:checked").length, $("input:checkbox:not(:checked)").length];
