@@ -6,7 +6,7 @@
 */
 $(document).ready(function() {
 	initializePage();
-	// test();
+	test();
 	// console.log(moment().parseZone());
 })
 
@@ -66,27 +66,6 @@ function checkMonth(givenMonth){
 */
 
 function initializePage() {
-	var ctx = $("#testChart");
-	var chart = new Chart(ctx, {
-		// The type of chart we want to create
-		type: "doughnut",
-		// The data for our dataset
-		data: {
-			labels: ["Worked on", "No Progress"],
-			datasets: [{
-				data: [$("input:checkbox:checked").length, $("input:checkbox:not(:checked)").length],
-				backgroundColor: [ 'rgba(52, 171, 250, 0.8)', 'rgba(243, 27, 27, 0.8)' ]
-			}],
-		},
-		// Configuration options go here
-		options: {
-			title: { display: true, text: "Today's Progress:", position: "top", fontSize: 16},
-			legend: { display: true },
-		}
-	});
-
-	console.log(chart.data.datasets[0].data);
-
 	$(".jumbotron p").addClass("active");
 // Add any additional listeners here
 // example: $("#div-id").click(functionToCall);
@@ -104,8 +83,8 @@ $('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("ac
 	$('#addContentB').click(addContentClick);
 //$('#editContent').click(editContentClick);
 	$('#loginContent').click(loginContentClick);
-	$('.deleteContent').click(deleteContentClick);
-	$('.deleteContentB').click(deleteContentClick);
+	$('#deleteContent').click(deleteContentClick);
+	$('#deleteContentB').click(deleteContentClickB);
 //$('#calendarFillDays').innerHTML = "";
 //$('#calendarFillDays').text(fillCalendar(currmm,year));
 	$("#addScreen").click(showAddProject);
@@ -232,20 +211,14 @@ $('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("ac
 				counter += 1;
 				counterSelect.html(counter);
 				// console.log(eventID);
-				// ga("send", "event", 'checked', 'click');
+				ga("send", "event", 'checked', 'click');
 			} else {
 				$("#calendar").fullCalendar("removeEvents", eventID);
 				counter -= 1;
 				counterSelect.html(counter);
 				// console.log(eventID);
-				// ga("send", "event", 'checked', 'click');
+				ga("send", "event", 'checked', 'click');
 			}
-
-			var chartData = [$("input:checkbox:checked").length, $("input:checkbox:not(:checked)").length];
-			console.log(chartData);
-			chart.data.datasets[0].data = chartData;
-			chart.update();
-
 		});
 		// console.log($.trim($(this).parent().text()));
 	});
@@ -374,8 +347,8 @@ function showAddProject(e) {
 	$("#calendar-top")[0].style.filter= 'blur(4px)';
 	$("#login-top")[0].style.WebkitFilter = 'blur(4px)';
 	$("#login-top")[0].style.filter= 'blur(4px)';
-	$("#project-bottom")[0].style.WebkitFilter = 'blur(4px)';
-	$("#project-bottom")[0].style.filter= 'blur(4px)';
+	$("#project-bottom-A")[0].style.WebkitFilter = 'blur(4px)';
+	$("#project-bottom-A")[0].style.filter= 'blur(4px)';
 }
 
 function showAddProjectB(e) {
@@ -385,8 +358,8 @@ function showAddProjectB(e) {
 	$("#calendar-top")[0].style.filter= 'blur(4px)';
 	$("#login-top")[0].style.WebkitFilter = 'blur(4px)';
 	$("#login-top")[0].style.filter= 'blur(4px)';
-	$("#project-bottom")[0].style.WebkitFilter = 'blur(4px)';
-	$("#project-bottom")[0].style.filter= 'blur(4px)';
+	$("#project-bottom-B")[0].style.WebkitFilter = 'blur(4px)';
+	$("#project-bottom-B")[0].style.filter= 'blur(4px)';
 
 }
 
@@ -397,8 +370,8 @@ function hideAddProject(e) {
 	$("#calendar-top")[0].style.filter= 'blur(0px)';
 	$("#login-top")[0].style.WebkitFilter = 'blur(0px)';
 	$("#login-top")[0].style.filter= 'blur(0px)';
-	$("#project-bottom")[0].style.WebkitFilter = 'blur(0px)';
-	$("#project-bottom")[0].style.filter= 'blur(0px)';
+	$("#project-bottom-A")[0].style.WebkitFilter = 'blur(0px)';
+	$("#project-bottom-A")[0].style.filter= 'blur(0px)';
 }
 
 function hideAddProjectB(e) {
@@ -408,8 +381,8 @@ function hideAddProjectB(e) {
 	$("#calendar-top")[0].style.filter= 'blur(0px)';
 	$("#login-top")[0].style.WebkitFilter = 'blur(0px)';
 	$("#login-top")[0].style.filter= 'blur(0px)';
-	$("#project-bottom")[0].style.WebkitFilter = 'blur(0px)';
-	$("#project-bottom")[0].style.filter= 'blur(0px)';
+	$("#project-bottom-B")[0].style.WebkitFilter = 'blur(0px)';
+	$("#project-bottom-B")[0].style.filter= 'blur(0px)';
 }
 
 /*
@@ -446,8 +419,17 @@ function showLogin(e) {
 	$("#calendar-top")[0].style.filter= 'blur(4px)';
 	$("#login-top")[0].style.WebkitFilter = 'blur(4px)';
 	$("#login-top")[0].style.filter= 'blur(4px)';
-	$("#project-bottom")[0].style.WebkitFilter = 'blur(4px)';
-	$("#project-bottom")[0].style.filter= 'blur(4px)';
+	var currentLoc = window.location.pathname;
+	//console.log(currentLoc);
+	//console.log(typeof(currentLoc));
+	if(currentLoc == "/page_B"){
+		$("#project-bottom-B")[0].style.WebkitFilter = 'blur(4px)';
+		$("#project-bottom-B")[0].style.filter= 'blur(4px)';
+	}
+	else{
+		$("#project-bottom-A")[0].style.WebkitFilter = 'blur(4px)';
+		$("#project-bottom-A")[0].style.filter= 'blur(4px)';
+	}
 }
 
 function hideLogin(e) {
@@ -458,8 +440,17 @@ function hideLogin(e) {
 	$("#calendar-top")[0].style.filter= 'blur(0px)';
 	$("#login-top")[0].style.WebkitFilter = 'blur(0px)';
 	$("#login-top")[0].style.filter= 'blur(0px)';
-	$("#project-bottom")[0].style.WebkitFilter = 'blur(0px)';
-	$("#project-bottom")[0].style.filter= 'blur(0px)';
+	var currentLoc = window.location.pathname;
+	//console.log(currentLoc);
+	//console.log(typeof(currentLoc));
+	if(currentLoc == "/page_B"){
+		$("#project-bottom-B")[0].style.WebkitFilter = 'blur(0px)';
+		$("#project-bottom-B")[0].style.filter= 'blur(0px)';
+	}
+	else{
+		$("#project-bottom-A")[0].style.WebkitFilter = 'blur(0px)';
+		$("#project-bottom-A")[0].style.filter= 'blur(0px)';
+	}
 }
 
 function afterLogin(e) {
@@ -471,8 +462,17 @@ function afterLogin(e) {
 	$("#calendar-top")[0].style.filter= 'blur(0px)';
 	$("#login-top")[0].style.WebkitFilter = 'blur(0px)';
 	$("#login-top")[0].style.filter= 'blur(0px)';
-	$("#project-bottom")[0].style.WebkitFilter = 'blur(0px)';
-	$("#project-bottom")[0].style.filter= 'blur(0px)';
+	var currentLoc = window.location.pathname;
+	//console.log(currentLoc);
+	//console.log(typeof(currentLoc));
+	if(currentLoc == "/page_B"){
+		$("#project-bottom-B")[0].style.WebkitFilter = 'blur(0px)';
+		$("#project-bottom-B")[0].style.filter= 'blur(0px)';
+	}
+	else{
+		$("#project-bottom-A")[0].style.WebkitFilter = 'blur(0px)';
+		$("#project-bottom-A")[0].style.filter= 'blur(0px)';
+	}
 }
 
 function logout(e) {
@@ -487,6 +487,11 @@ function deleteContentClick(e){
 	e.preventDefault();
 }
 
+function deleteContentClickB(e){
+	console.log("Delete contentB clicked");
+	e.preventDefault();
+}
+
 function showDeleteProject(e) {
 	e.preventDefault();
 	$("#delete-form").css("display", "block");
@@ -498,7 +503,7 @@ function showDeleteProjectB(e) {
 	$("#delete-formB").css("display", "block");
 	var projectID = $(this).closest('tr').attr('id');
 }
-
+*/
 function hideDeleteProject(e) {
 	e.preventDefault();
 	$("#delete-form").css("display", "none");
@@ -512,26 +517,26 @@ function hideDeleteProjectB(e) {
 var n = $("input:checkbox:checked").length;
 
 //chart.update()??
-// function test(){
-// 	var ctx = $("#testChart");
-// 	var chart = new Chart(ctx, {
-// 		// The type of chart we want to create
-// 		type: "doughnut",
-// 		// The data for our dataset
-// 		data: {
-// 			labels: ["Worked on", "No Progress"],
-// 			datasets: [{
-// 				data: [$("input:checkbox:checked").length, $("input:checkbox:not(:checked)").length],
-// 				backgroundColor: [ 'rgba(52, 171, 250, 0.8)', 'rgba(243, 27, 27, 0.8)' ]
-// 			}],
-// 		},
-// 		// Configuration options go here
-// 		options: {
-// 			title: { display: true, text: "Today's Progress:", position: "top", fontSize: 16},
-// 			legend: { display: true },
-// 		}
-// 	});
-// }
+function test(){
+	var ctx = $("#testChart");
+	var chart = new Chart(ctx, {
+		// The type of chart we want to create
+		type: "doughnut",
+		// The data for our dataset
+		data: {
+			labels: ["Worked on", "No Progress"],
+			datasets: [{
+				data: [$("input:checkbox:checked").length, $("input:checkbox:not(:checked)").length],
+				backgroundColor: [ 'rgba(52, 171, 250, 0.8)', 'rgba(243, 27, 27, 0.8)' ]
+			}],
+		},
+		// Configuration options go here
+		options: {
+			title: { display: true, text: "Today's Progress:", position: "top", fontSize: 16},
+			legend: { display: true },
+		}
+	});
+}
 
 /*
 $(".editStartPick").each(function(i){
