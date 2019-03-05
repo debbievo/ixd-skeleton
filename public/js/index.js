@@ -359,13 +359,13 @@ function showAddProject(e) {
 function showAddProjectB(e) {
 	e.preventDefault();
 	$("#add-formB").css("display", "block");
-/*	$("#calendar-top")[0].style.WebkitFilter = 'blur(4px)';
+	$("#calendar-top")[0].style.WebkitFilter = 'blur(4px)';
 	$("#calendar-top")[0].style.filter= 'blur(4px)';
 	$("#login-top")[0].style.WebkitFilter = 'blur(4px)';
 	$("#login-top")[0].style.filter= 'blur(4px)';
 	$("#project-bottom")[0].style.WebkitFilter = 'blur(4px)';
 	$("#project-bottom")[0].style.filter= 'blur(4px)';
-	*/
+	
 }
 
 /*function addProjectB(e) {
