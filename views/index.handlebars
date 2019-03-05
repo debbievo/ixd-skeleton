@@ -62,9 +62,15 @@
 				</a>
 	{{/if}}
 				 Progress
-  				<a href="/addTask" id="addScreen" style="float:right" aria-label="Add Task">
+	{{#if page_B}}
+  				<a href="/addTaskB" id="addScreenB" style="float:right" aria-label="Add Task">
   				  <i class="fas fa-plus"></i>
   			  </a>
+	{{else}}
+					<a href="/addTask" id="addScreen" style="float:right" aria-label="Add Task">
+  				  <i class="fas fa-plus"></i>
+  			  </a>
+	{{/if}}
 			  <!--
 			  <div style="text-align:center;">
 				<span id="backButton" style="margin-left:10px;" onclick="backButtonClick()" aria-label="Previous Month">
@@ -151,7 +157,28 @@
 		</div>
 	</div>
 
-
+	{{#if page_B}}
+	<!-- hidden add form -->
+	<div class="container" id="add-formB">
+		<form action="/addTaskB" method="get" id="addingB">
+			<div class="form-group">
+				<h3>Project Name:</h3>
+				<input type="text" required class="form-control" placeholder="Project Name" name="projectName">
+			</div>
+			<div class="form-group">
+				<h3>Start Date:</h3>
+			<!--	<input class="startPick" type="date" data-date-format="MM DD YYYY" class="form-control" placeholder="Start Date" name="startDate">
+-->
+					<input required class="startPick" class="form-control" placeholder="Start Date" name="startDate">
+			</div>
+			<div class="form-group">
+				<h3>Due Date:</h3>
+		<!--		<input class="duePick" type="date" data-date-format="MM DD YYYY" class="form-control" placeholder="Due Date" name="dueDate">
+-->					<input required class="duePick" class="form-control" placeholder="Due Date" name="dueDate">
+			</div>
+			<button type="submit" class="btn btn-primary" id="submit-projectB">Add Project</button>
+			<button type="submit" class="btn btn-default" id="cancel-addB">Cancel</button>
+	{{else}}
 	<!-- hidden add form -->
 	<div class="container" id="add-form">
 		<form action="/addTask" method="get" id="adding">
@@ -169,11 +196,11 @@
 				<h3>Due Date:</h3>
 		<!--		<input class="duePick" type="date" data-date-format="MM DD YYYY" class="form-control" placeholder="Due Date" name="dueDate">
 -->					<input required class="duePick" class="form-control" placeholder="Due Date" name="dueDate">
-			</div>
 			<button type="submit" class="btn btn-primary" id="submit-project">Add Project</button>
 			<button type="submit" class="btn btn-default" id="cancel-add">Cancel</button>
 		</form>
 	</div>
+	{{/if}}
 
 	<div class="container" id="delete-form">
 		<form action="/deleteTask" method="get" id="deleting">

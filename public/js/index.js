@@ -75,6 +75,7 @@ function initializePage() {
 //	$('#forwardButton').on("click", forwardButtonClick);
 //	$('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("active");
 	$('#addContent').click(addContentClick);
+	$('#addContentB').click(addContentClickB);
 	$('#editContent').click(editContentClick);
 	$('#loginContent').click(loginContentClick);
 	$('#deleteContent').click(editContentClick);
@@ -83,8 +84,10 @@ function initializePage() {
 	//$('#calendarFillDays').text(fillCalendar(currmm,year));
 
 	$("#addScreen").click(showAddProject);
-//	$("#submit-project").click(addProject);
+	$("#addScreenB").click(showAddProjectB);
 	$("#cancel-add").click(hideAddProject);
+	$("#cancel-addB").click(hideAddProjectB);
+	//$("#submit-projectB").click(addProjectB);
 	$(".editScreen").click(showEditProject);
 	$("#cancel-edit").click(hideEditProject);
 	$(".deleteScreen").click(showDeleteProject);
@@ -333,6 +336,11 @@ function addContentClick(e){
 	e.preventDefault();
 }
 
+function addContentClickB(e){
+	console.log("Add contentB clicked");
+	e.preventDefault();
+}
+
 function showAddProject(e) {
 	e.preventDefault();
 	$("#add-form").css("display", "block");
@@ -344,18 +352,39 @@ function showAddProject(e) {
 	$("#project-bottom")[0].style.filter= 'blur(4px)';
 }
 
-/*
-function addProject(e) {
+function showAddProjectB(e) {
+	e.preventDefault();
+	$("#add-formB").css("display", "block");
+/*	$("#calendar-top")[0].style.WebkitFilter = 'blur(4px)';
+	$("#calendar-top")[0].style.filter= 'blur(4px)';
+	$("#login-top")[0].style.WebkitFilter = 'blur(4px)';
+	$("#login-top")[0].style.filter= 'blur(4px)';
+	$("#project-bottom")[0].style.WebkitFilter = 'blur(4px)';
+	$("#project-bottom")[0].style.filter= 'blur(4px)';
+	*/
+}
+
+/*function addProjectB(e) {
 	e.preventDefault();
 	$("#add-form").css("display", "none");
 	$("#calendar-top")[0].style.WebkitFilter = 'blur(0px)';
 	$("#calendar-top")[0].style.filter= 'blur(0px)';
-}
-*/
+}*/
 
 function hideAddProject(e) {
 	e.preventDefault();
 	$("#add-form").css("display", "none");
+	$("#calendar-top")[0].style.WebkitFilter = 'blur(0px)';
+	$("#calendar-top")[0].style.filter= 'blur(0px)';
+	$("#login-top")[0].style.WebkitFilter = 'blur(0px)';
+	$("#login-top")[0].style.filter= 'blur(0px)';
+	$("#project-bottom")[0].style.WebkitFilter = 'blur(0px)';
+	$("#project-bottom")[0].style.filter= 'blur(0px)';
+}
+
+function hideAddProjectB(e) {
+	e.preventDefault();
+	$("#add-formB").css("display", "none");
 	$("#calendar-top")[0].style.WebkitFilter = 'blur(0px)';
 	$("#calendar-top")[0].style.filter= 'blur(0px)';
 	$("#login-top")[0].style.WebkitFilter = 'blur(0px)';

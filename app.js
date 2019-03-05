@@ -17,6 +17,7 @@ var login = require('./routes/login');
 //var login = require('./routes/signup');
 
 var addTask = require('./routes/addTask');
+var addTaskB = require('./routes/addTaskB')
 var editTask = require('./routes/editTask');
 var deleteTask = require('./routes/deleteTask');
 
@@ -56,6 +57,7 @@ app.get('/statsB/:name', statsB.viewIndividual);
 app.get('/login', login.loginBox);
 //app.get('/signup', signup.view);
 app.get('/addTask', addTask.addProject);
+app.get('/addTaskB', addTaskB.addProjectB)
 app.get('/editTask', editTask.editProject);
 app.get('/deleteTask', deleteTask.deleteProject);
 
