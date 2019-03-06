@@ -29,3 +29,17 @@ circle {
     /* line-height: 100px; */
     margin-right:5px;
 }
+
+.statsLayout {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.statsLayout .status {
+    text-align: center;
+    margin: auto;
+}
+
+.complete-button {
+    text-align: center;
+}

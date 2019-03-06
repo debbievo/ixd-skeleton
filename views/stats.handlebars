@@ -14,9 +14,9 @@
 	<script src="/js/bootstrap.min.js"></script>
 	<!-- <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-<!--	<script src="http://momentjs.com/downloads/moment.js"></script> -->
 	<script src="js/moment.js"></script>
 	<script src="/js/fullcalendar.js"></script>
+	<script src="/js/persistent-checkboxes.js"></script>
 	<script src="/js/bootstrap-datepicker.js"></script>
 	<script defer src="/js/all.js"></script>
 	<script src="/js/stats.js"></script>
@@ -115,6 +115,13 @@
 
 		<span hidden class="duedate">{{dueDate}}</span>
 		<span hidden class="startdate">{{startDate}}</span>
+
+		<br><br>
+		<h4 class="status">Status: In progress</h4>
+		<br>
+		<div class="complete-button">
+			Complete?  <input type="checkbox" name="compCheckbox" class="check" id={{completeID}} />
+		</div>
 
   	</div>
   </div>

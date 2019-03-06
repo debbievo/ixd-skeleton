@@ -6,7 +6,8 @@
 			"dueDate": "2019-03-09",
 			"projectID": "project1",
 			"checkID": "check1",
-			"currStreak": 2
+			"currStreak": 2,
+			"completeID": "comp1"
 		},
 
 		{
@@ -15,7 +16,8 @@
 			"dueDate": "2019-04-19",
 			"projectID": "project2",
 			"checkID": "check2",
-			"currStreak": 8
+			"currStreak": 8,
+			"completeID": "comp2"
 		},
 
 		{
@@ -24,7 +26,8 @@
 			"dueDate": "2019-04-17",
 			"projectID": "project3",
 			"checkID": "check3",
-			"currStreak": 20
+			"currStreak": 20,
+			"completeID": "comp3"
 		},
 
 		{
@@ -33,7 +36,8 @@
 			"dueDate": "2019-04-19",
 			"projectID": "project4",
 			"checkID": "check4",
-			"currStreak": 3
+			"currStreak": 3,
+			"completeID": "comp4"
 		},
 
 		{
@@ -42,7 +46,8 @@
 			"dueDate": "2019-05-01",
 			"projectID": "project5",
 			"checkID": "check5",
-			"currStreak": 5
+			"currStreak": 5,
+			"completeID": "comp5"
 		},
 
 		{
@@ -51,7 +56,8 @@
 			"dueDate": "2019-05-21",
 			"projectID": "project6",
 			"checkID": "check6",
-			"currStreak": 2
+			"currStreak": 2,
+			"completeID": "comp6"
 		},
 
 		{
@@ -60,7 +66,8 @@
 			"dueDate": "2019-03-27",
 			"projectID": "project7",
 			"checkID": "check7",
-			"currStreak": 4
+			"currStreak": 4,
+			"completeID": "comp7"
 		}
 	]
 }

@@ -14,7 +14,7 @@ $(document).ready(function() {
 		//console.log(currStreak);
 		var currStrNum = parseInt(currStreak);
 		streakArr.push(currStrNum);
-		console.log(currStrNum);
+		// console.log(currStrNum);
 	});
 	var maxStreak = Math.max(...streakArr);
 	//console.log(maxStreak);
@@ -56,18 +56,51 @@ $(document).ready(function() {
 // 	chart.render();
 // }
 
+var initComplete = localStorage.getItem("initComplete");
+if (initComplete != "true") {
+	initComplete = true;
+	localStorage.setItem("initComplete", initComplete);
+}
+
 /*
  * Function that is called when the document is ready.
  */
 function initializePage() {
-	// Add any additional listeners here
-	// example: $("#div-id").click(functionToCall);
-		//$("tr.individualSection").click(projectClick);
-        //$("#chartContainer").onload(drawOverallDonut());
+	if (initComplete != "true") {
+		var numInProgress = $(".btn-outline-secondary.active").length;
+		var numComplete = $(".btn-outline-primary.active").length;
+
+		console.log(numInProgress);
+		console.log(numComplete);
+
+		localStorage.setItem("numInProgress", numInProgress);
+		localStorage.setItem("numComplete", numComplete);
+	}
+
+
+	$(".complete").each(function(i) {
+		$(this).change(function() {
+			// console.log($(this));
+			var completeCheck = $(this).children("label").hasClass("active");
+
+			if (completeCheck) {
+				$(this).children("label").html('<input type="checkbox" checked="" autocomplete="off"> Complete');
+				$(this).children("label").removeClass("btn-secondary");
+				$(this).children("label").addClass("btn-primary");
+			} else {
+				$(this).children("label").html('<input type="checkbox" checked="" autocomplete="off"> In progress');
+				$(this).children("label").removeClass("btn-primary");
+				$(this).children("label").addClass("btn-secondary");
+			}
+
+			var numComplete = $(".complete .btn-lg").hasClass("active");
+			console.log(numComplete);
+		});
+	});
 }
 
 function projectClick(e) { 
-	console.log("Project Clicked")
+	console.log("Project Clicked");
     // prevent the page from reloading 
     e.preventDefault();
 }
@@ -88,7 +121,7 @@ function overallStats() {
 	    // Configuration options go here
 	    options: {
 			title: { display: true, text: "Total Projects: " + ($('.statsLayout').length - 1), position: "top", fontSize: 16},
-			legend: { display: false },
+			legend: { display: true },
 		}
 	});
 
