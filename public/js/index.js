@@ -523,8 +523,6 @@ function showDeleteProject(e) {
 	$("#calendar-top")[0].style.filter= 'blur(4px)';
 	$("#login-top")[0].style.WebkitFilter = 'blur(4px)';
 	$("#login-top")[0].style.filter= 'blur(4px)';
-	$("#project-bottom-A")[0].style.WebkitFilter = 'blur(4px)';
-	$("#project-bottom-A")[0].style.filter= 'blur(4px)';
 }
 
 function showDeleteProjectB(e) {
@@ -535,8 +533,6 @@ function showDeleteProjectB(e) {
 	$("#calendar-top")[0].style.filter= 'blur(4px)';
 	$("#login-top")[0].style.WebkitFilter = 'blur(4px)';
 	$("#login-top")[0].style.filter= 'blur(4px)';
-	$("#project-bottom-B")[0].style.WebkitFilter = 'blur(4px)';
-	$("#project-bottom-B")[0].style.filter= 'blur(4px)';
 }
 
 function hideDeleteProject(e) {

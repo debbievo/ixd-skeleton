@@ -112,7 +112,7 @@
 	</div>
 		<!-- project list -->
 		{{#if page_B}}
-	<div class="container" id="project-bottom-B" style= "overflow-y: scroll">
+	<div class="container" id="project-bottom-B" style="overflow-y: scroll">
 		{{else}}
 	<div class="container" id="project-bottom-A" style= "overflow-y: scroll">
 		{{/if}}
@@ -120,7 +120,8 @@
 		<div class="calendarList">
 				<p class = "addTask">
 					<table id="listView">
-						<tr id="listTitles" style="border-bottom: 1px solid #ddd;">
+						<thead>
+						<tr id="listTitles" style="border-bottom: 1px solid #ddd; background:#FFF;">
 							<th><span id="currentDay"></span></th>
 							<th>
 									{{#if page_B}}
@@ -140,6 +141,8 @@
 							 <th style="float:right">Due in</th>
 							<th><i class="fa fa-bolt" aria-hidden="true"></i></th>
 						</tr>
+					</thead>
+					<tbody">
 						{{#each projectList}}
 						<tr class="project" id={{projectID}} style="border-bottom: 1px solid #ddd;">
 							<td class="pName"><input type="checkbox" name="taskCheckbox" class="check" id={{checkID}} />&nbsp;
@@ -162,6 +165,7 @@
 					<td hidden class="startdate" style="float:right; color:#d4d7db;">{{startDate}}</td>
 					<td class="streakCounter" style="text-align:center;">{{currStreak}}</td>
 						</tr>
+					</tbody>
 						{{/each}}
 					</table>
 				</p>
