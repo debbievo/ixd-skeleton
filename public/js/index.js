@@ -75,7 +75,7 @@ function initializePage() {
 			labels: ["Worked on", "No Progress"],
 			datasets: [{
 				data: [$("input:checkbox:checked").length, $("input:checkbox:not(:checked)").length],
-				backgroundColor: [ 'rgba(52, 171, 250, 0.8)', 'rgb(238, 238, 238, 0.8)' ]
+				backgroundColor: [ 'rgba(52, 171, 250, 0.8)', 'rgba(238, 238, 238, 0.8)' ]
 			}],
 		},
 		// Configuration options go here
@@ -184,6 +184,9 @@ $('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("ac
 	$(".pName").each(function(i) {
 		var projectName = $.trim($(this).text());
 		var eventStart = moment($("#currentDay").text());
+		console.log(eventStart);
+		var eventDue = moment($(this).siblings(".duedate").text());
+		console.log(eventDue);
 		var eventID = "event-" + eventStart.format("YYYY-MM-YY") + "-" + i;
 		var checked = $(this).children().prop("checked");
 		// var dueDate = $(this).siblings(".duedate").html();
@@ -195,6 +198,7 @@ $('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("ac
 				id: eventID,
 				title: projectName,
 				start: eventStart,
+				//end: endDue,
 				allDay: true
 			}, true);
 			ga("send", "event", 'checked', 'click');
@@ -210,6 +214,8 @@ $('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("ac
 			var projectName = $.trim($(this).parent().text());
 			var eventStart = moment($("#currentDay").text());
 			var eventID = "event-" + eventStart.format("YYYY-MM-YY") + "-" + i;
+			var eventDue = moment($(this).siblings(".duedate").text());
+			console.log(eventDue);
 			var checked = $(this).prop("checked");
 			// var counter = parseInt($(".streakCounter").html());
 
@@ -225,6 +231,7 @@ $('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("ac
 					id: eventID,
 					title: projectName,
 					start: eventStart,
+					//end: eventDue,
 					allDay: true,
 				}, true);
 				counter += 1;
@@ -257,7 +264,7 @@ $('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("ac
 		//var momStart = moment(start);
 		//var momDue = moment(due);
 		var diffDays = start.diff(curr, "day") * -1;
-		if(diffDays <= 0){
+		if(diffDays < 0){
 			console.log(diffDays);
 			$(this).css("color", "#dc3545").html(diffDays + " days");
 		}
