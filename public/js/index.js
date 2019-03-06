@@ -75,7 +75,7 @@ function initializePage() {
 			labels: ["Worked on", "No Progress"],
 			datasets: [{
 				data: [$("input:checkbox:checked").length, $("input:checkbox:not(:checked)").length],
-				backgroundColor: [ 'rgba(52, 171, 250, 0.8)', 'rgb(238, 238, 238, 0.8)' ]
+				backgroundColor: [ 'rgba(52, 171, 250, 0.8)', 'rgba(238, 238, 238, 0.8)' ]
 			}],
 		},
 		// Configuration options go here
@@ -198,7 +198,7 @@ $('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("ac
 				id: eventID,
 				title: projectName,
 				start: eventStart,
-				end: endDue,
+				//end: endDue,
 				allDay: true
 			}, true);
 			ga("send", "event", 'checked', 'click');
@@ -231,7 +231,7 @@ $('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("ac
 					id: eventID,
 					title: projectName,
 					start: eventStart,
-					end: eventDue,
+					//end: eventDue,
 					allDay: true,
 				}, true);
 				counter += 1;
