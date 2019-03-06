@@ -38,6 +38,8 @@
 	<script defer src="/js/all.js"></script>
 	{{> facebook}}
 	<script src="/js/facebook.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
 
 	<!-- Google Analytics -->
 	<script>
@@ -68,7 +70,7 @@
 	<div class="titleHeader">
 
 		<div>
-			<h1 style="text-align:center;">
+			<h1 id=progress style="text-align:center;">
 
 	{{#if page_B}}
 				<a href="statsB" style="float:left" id="statsScreenB" aria-label="Stats Screen">
@@ -142,7 +144,7 @@
 							<th><i class="fa fa-bolt" aria-hidden="true"></i></th>
 						</tr>
 					</thead>
-					<tbody">
+					<tbody>
 						{{#each projectList}}
 						<tr class="project" id={{projectID}} style="border-bottom: 1px solid #ddd;">
 							<td class="pName"><input type="checkbox" name="taskCheckbox" class="check" id={{checkID}} />&nbsp;
