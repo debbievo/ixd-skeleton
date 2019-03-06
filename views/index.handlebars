@@ -104,10 +104,11 @@
 	<hr class="top-hr">
 
 {{else}}
-
 		<!-- NEW CALENDAR -->
 		<div id="calendar"></div>
 {{/if}}
+
+
 	</div>
 		<!-- project list -->
 		{{#if page_B}}
@@ -115,12 +116,26 @@
 		{{else}}
 	<div class="container" id="project-bottom-A" style= "overflow-y: scroll">
 		{{/if}}
+
 		<div class="calendarList">
 				<p class = "addTask">
 					<table id="listView">
 						<tr id="listTitles" style="border-bottom: 1px solid #ddd;">
 							<th><span id="currentDay"></span></th>
 							<th>
+									{{#if page_B}}
+										<td>
+											<a href="/deleteTaskB" style="float:right" class="deleteScreenB" aria-label="Delete Tasks">
+												<i class="fas fa-trash"></i>
+											</a>
+										</td>
+									{{else}}
+										<td>
+											<a href="/deleteTask" style="float:right" class="deleteScreen" aria-label="Delete Tasks">
+												<i class="fas fa-trash"></i>
+											</a>
+										</td>
+									{{/if}}
 							</th>
 							 <th style="float:right">Due in</th>
 							<th><i class="fa fa-bolt" aria-hidden="true"></i></th>
@@ -137,19 +152,6 @@
 								<button type="button" class="editScreen">
 									<i class="fas fa-edit"></i>
 								</button> -->
-	{{#if page_B}}
-		<td>
-			<a href="/deleteTaskB" style="float:right" class="deleteScreenB" aria-label="Delete Tasks">
-				<i class="fas fa-trash"></i>
-			</a>
-		</td>
-	{{else}}
-		<td>
-			<a href="/deleteTask" style="float:right" class="deleteScreen" aria-label="Delete Tasks">
-				<i class="fas fa-trash"></i>
-			</a>
-		</td>
-	{{/if}}
 
 					<td class="remainingDays" style="float:right; color:#d4d7db;">temp</td>
 					<td contenteditable="true" hidden class="duedate" style="float:right; color:#d4d7db;">{{dueDate}}</td>

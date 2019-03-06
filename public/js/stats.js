@@ -77,3 +77,37 @@ function overallStats() {
 	});
 
 }
+
+$(".longestStreak").each(function(i) {
+	var currentStreak = $(this).siblings(".longestIndStreak").html();
+	console.log(typeof(currentStreak));
+//	startDateArr[i] = start;
+//	dueDateArr[i] = due;
+	//var momStart = moment(start);
+	//var momDue = moment(due);
+	/*var diffDays = start.diff(curr, "day") * -1;
+	if(diffDays <= 0){
+		console.log(diffDays);
+		$(this).css("color", "#dc3545").html(diffDays + " days");
+	}
+	else{
+		//console.log(diffDays);
+		$(this).html(diffDays + " days");
+	}*/
+});
+
+//console.log(startDateArr[0]);
+//$(".longestStreak").each(calcLongStr);
+/*
+$(".remainingDays").each(function(i) {
+	var current = moment().startOf('day');
+	var given = moment($(this).siblings(".duedate").html());
+	var temp = moment.duration(given.diff(current)).asDays();
+	if(temp < 0){
+		$(this).css("color", "#dc3545").html(Math.round(temp) + " days");
+	}else{
+
+		$(this).html(Math.round(temp) + " days");
+	}
+});
+*/
