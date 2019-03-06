@@ -4,6 +4,22 @@
 $(document).ready(function() {
 	initializePage();
 	overallStats();
+	//$(".longestStreak").html(getMax());
+//	$(".longestStreak").
+
+	var streakArr = [];
+	$(".longestIndStreak").each(function(i){
+		var currStreak = $(this).html();
+		//console.log(typeof(currStreak));
+		//console.log(currStreak);
+		var currStrNum = parseInt(currStreak);
+		streakArr.push(currStrNum);
+		console.log(currStrNum);
+	});
+	var maxStreak = Math.max(...streakArr);
+	//console.log(maxStreak);
+	//console.log(streakArr.toString());
+	$(".longestStreak").html(maxStreak + " days");
 })
 
 // window.onload = function drawOverallTotal(){
@@ -78,6 +94,15 @@ function overallStats() {
 
 }
 
+
+//function getMax(){
+//	var currentStreak = parseInt($(this).siblings(".longestIndStreak").html());
+//	var currentStreak = $(this).siblings(".longestIndStreak").html();
+//	console.log(typeof(currentStreak));
+//	console.log(currentStreak);
+//};
+
+/*
 $(".longestStreak").each(function(i) {
 	var currentStreak = $(this).siblings(".longestIndStreak").html();
 	console.log(typeof(currentStreak));
@@ -94,7 +119,7 @@ $(".longestStreak").each(function(i) {
 		//console.log(diffDays);
 		$(this).html(diffDays + " days");
 	}*/
-});
+//});
 
 //console.log(startDateArr[0]);
 //$(".longestStreak").each(calcLongStr);
