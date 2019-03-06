@@ -145,6 +145,10 @@
 							<td class="pName"><input type="checkbox" name="taskCheckbox" class="check" id={{checkID}} />&nbsp;
 								<p contenteditable="true" class="projName" style="display:inline;">{{name}} </p>
 							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<!--td><a href="/editTask" class="editScreen" style="float:right; display:inline;" aria-label="Edit Tasks">
 								<i class="fas fa-edit"></i>
 							</a-->
@@ -191,7 +195,7 @@
 		<div class="container" id="delete-formB">
 			<form action="/deleteTaskB" method="get" id="deletingB">
 				<div class="form-group">
-					<h3>Type in Project Name to Delete</h3>
+					<h3>Type in Project Name</h3>
 					<input required type="text" class="form-control" placeholder="Project Name" name="deleteProjName">
 				</div>
 				<button type="submit" class="btn btn-primary" id="submit-deleteB">Delete</button>
@@ -227,7 +231,7 @@
 		<div class="container" id="delete-form">
 			<form action="/deleteTask" method="get" id="deleting">
 				<div class="form-group">
-					<h3>Type in Project Name to Delete</h3>
+					<h3>Type in Project Name</h3>
 					<input required type="text" class="form-control" placeholder="Project Name" name="deleteProjName">
 				</div>
 				<button type="submit" class="btn btn-primary" id="submit-delete">Delete</button>

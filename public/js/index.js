@@ -519,22 +519,46 @@ function showDeleteProject(e) {
 	e.preventDefault();
 	$("#delete-form").css("display", "block");
 	var projectID = $(this).closest('tr').attr('id');
+	$("#calendar-top")[0].style.WebkitFilter = 'blur(4px)';
+	$("#calendar-top")[0].style.filter= 'blur(4px)';
+	$("#login-top")[0].style.WebkitFilter = 'blur(4px)';
+	$("#login-top")[0].style.filter= 'blur(4px)';
+	$("#project-bottom-A")[0].style.WebkitFilter = 'blur(4px)';
+	$("#project-bottom-A")[0].style.filter= 'blur(4px)';
 }
 
 function showDeleteProjectB(e) {
 	e.preventDefault();
 	$("#delete-formB").css("display", "block");
 	var projectID = $(this).closest('tr').attr('id');
+	$("#calendar-top")[0].style.WebkitFilter = 'blur(4px)';
+	$("#calendar-top")[0].style.filter= 'blur(4px)';
+	$("#login-top")[0].style.WebkitFilter = 'blur(4px)';
+	$("#login-top")[0].style.filter= 'blur(4px)';
+	$("#project-bottom-B")[0].style.WebkitFilter = 'blur(4px)';
+	$("#project-bottom-B")[0].style.filter= 'blur(4px)';
 }
 
 function hideDeleteProject(e) {
 	e.preventDefault();
 	$("#delete-form").css("display", "none");
+	$("#calendar-top")[0].style.WebkitFilter = 'blur(0px)';
+	$("#calendar-top")[0].style.filter= 'blur(0px)';
+	$("#login-top")[0].style.WebkitFilter = 'blur(0px)';
+	$("#login-top")[0].style.filter= 'blur(0px)';
+	$("#project-bottom-B")[0].style.WebkitFilter = 'blur(0px)';
+	$("#project-bottom-B")[0].style.filter= 'blur(0px)';
 }
 
 function hideDeleteProjectB(e) {
 	e.preventDefault();
 	$("#delete-formB").css("display", "none");
+	$("#calendar-top")[0].style.WebkitFilter = 'blur(0px)';
+	$("#calendar-top")[0].style.filter= 'blur(0px)';
+	$("#login-top")[0].style.WebkitFilter = 'blur(0px)';
+	$("#login-top")[0].style.filter= 'blur(0px)';
+	$("#project-bottom-B")[0].style.WebkitFilter = 'blur(0px)';
+	$("#project-bottom-B")[0].style.filter= 'blur(0px)';
 }
 
 var n = $("input:checkbox:checked").length;
