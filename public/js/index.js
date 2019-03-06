@@ -75,7 +75,7 @@ function initializePage() {
 			labels: ["Worked on", "No Progress"],
 			datasets: [{
 				data: [$("input:checkbox:checked").length, $("input:checkbox:not(:checked)").length],
-				backgroundColor: [ 'rgba(52, 171, 250, 0.8)', 'rgba(243, 27, 27, 0.8)' ]
+				backgroundColor: [ 'rgba(52, 171, 250, 0.8)', 'rgb(238, 238, 238, 0.8)' ]
 			}],
 		},
 		// Configuration options go here

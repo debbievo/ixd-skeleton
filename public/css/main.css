@@ -19,6 +19,15 @@
      color: #6e6e6e;
 }
 
+#progress {
+	font-family: 'Rock Salt', cursive;
+	/* color: #4286f4; */
+}
+
+/* #listView {
+	font-family: 'Rock Salt', cursive;
+} */
+
 #add-form {
 	display: none;
 	/* width: 50%; */
