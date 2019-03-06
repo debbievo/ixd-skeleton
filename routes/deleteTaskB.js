@@ -26,6 +26,7 @@ function findAndRemove(array, property, value) {
     if(result[property] === value) {
       //Remove from array
       array.splice(index, 1);
+      console.log("deleted " + value);
     }
   });
 }
@@ -34,8 +35,8 @@ function findAndRemove(array, property, value) {
 //Then removes it ;p
 
 exports.deleteProjectB = function(req, res) {
-	console.log(req);
-	var name = req.query.deleteProjectB;
+	// console.log(req);
+	var name = req.query.deleteProjName;
 	console.log(name);
     //data.projectList.splice(,1);
 	findAndRemove(data.projectList, 'name', name);
