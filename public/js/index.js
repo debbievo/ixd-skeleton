@@ -253,27 +253,8 @@ $('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("ac
 		// console.log($.trim($(this).parent().text()));
 	});
 
-		var startDateArr = [];
-		var dueDateArr = [];
-	$(".projLife").each(function(i) {
-		var start = moment($(this).siblings(".startdate").html());
-		var due = moment($(this).siblings(".duedate").html());
-		var curr = moment();
-	//	startDateArr[i] = start;
-	//	dueDateArr[i] = due;
-		//var momStart = moment(start);
-		//var momDue = moment(due);
-		var diffDays = start.diff(curr, "day") * -1;
-		if(diffDays < 0){
-			console.log(diffDays);
-			$(this).css("color", "#dc3545").html(diffDays + " days");
-		}
-		else{
-			//console.log(diffDays);
-			$(this).html(diffDays + " days");
-		}
-	});
-
+		//var startDateArr = [];
+	//	var dueDateArr = [];
 	//console.log(startDateArr[0]);
 	//$(".longestStreak").each(calcLongStr);
 
@@ -289,8 +270,6 @@ $('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("ac
 		}
 	});
 
-	$(".projName").each(function(i){
-	})
 }
 
 /*
@@ -321,23 +300,7 @@ $('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("ac
 	$(".deleteBtn").click(function(){
 		$(this).closest('.project').remove()
 	});
-function calcLongStr(){
- }
-function calcProjLife(){
-	var start = moment($(this).siblings(".startdate").html());
-	var due = moment($(this).siblings(".duedate").html());
-		var momStart = moment(start);
-		var momDue = moment(due);
-	var diffDays = start.diff(due, "day") * -1;
-	console.log(start, due, diffDays);
-	$(".projLife").text(diffDays + " days");
- }
-function calcDaysRemaining(){
-	var current = moment().startOf('day');
-	var given = moment($(this).siblings(".duedate").html());
-	var temp = moment.duration(given.diff(current)).asDays();
-	$(".remainingDays").text(Math.round(temp) + " days");
- }
+
 function backButtonClick(e){
 	e.preventDefault();
 	if (currmm-1 < 0) {

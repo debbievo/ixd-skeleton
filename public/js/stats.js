@@ -20,7 +20,26 @@ $(document).ready(function() {
 	//console.log(maxStreak);
 	//console.log(streakArr.toString());
 	$(".longestStreak").html(maxStreak + " days");
+	$(".projLife").each(function(i) {
+		var start = moment($(this).siblings(".startdate").html());
+		var due = moment($(this).siblings(".duedate").html());
+		var curr = moment();
+	//	startDateArr[i] = start;
+	//	dueDateArr[i] = due;
+		//var momStart = moment(start);
+		//var momDue = moment(due);
+		var diffDays = start.diff(curr, "day") * -1;
+		if(diffDays < 0){
+			console.log(diffDays);
+			$(this).css("color", "#dc3545").html(diffDays + " days");
+		}
+		else{
+			//console.log(diffDays);
+			$(this).html(diffDays + " days");
+		}
+	});
 })
+
 
 // window.onload = function drawOverallTotal(){
 // 	CanvasJS.addColorSet("greyShades",
