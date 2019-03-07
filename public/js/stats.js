@@ -3,7 +3,7 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
-	overallStats();
+	// overallStats();
 	//$(".longestStreak").html(getMax());
 //	$(".longestStreak").
 
@@ -66,12 +66,31 @@ if (initComplete != "true") {
  * Function that is called when the document is ready.
  */
 function initializePage() {
+	var ctxStats = $("#myChart");
+	var chartStats = new Chart(ctxStats, {
+	    // The type of chart we want to create
+	    type: "doughnut",
+	    // The data for our dataset
+	    data: {
+	        labels: ["In Progress", "Complete"],
+	        datasets: [{
+	            data: [$("input:checkbox:checked").length, $("input:checkbox:not(:checked)").length],
+				backgroundColor: [ 'rgba(255, 99, 132, 0.8)', 'rgba(54, 162, 235, 0.8)' ]
+	        }],
+	    },
+	    // Configuration options go here
+	    options: {
+			title: { display: true, text: "Total Projects: " + ($('.statsLayout').length - 1), position: "top", fontSize: 16},
+			legend: { display: true },
+		}
+	});
+
 	if (initComplete != "true") {
 		var numInProgress = $(".btn-outline-secondary.active").length;
 		var numComplete = $(".btn-outline-primary.active").length;
 
-		console.log(numInProgress);
-		console.log(numComplete);
+		// console.log(numInProgress);
+		// console.log(numComplete);
 
 		localStorage.setItem("numInProgress", numInProgress);
 		localStorage.setItem("numComplete", numComplete);
@@ -94,9 +113,36 @@ function initializePage() {
 			}
 
 			var numComplete = $(".complete .btn-lg").hasClass("active");
-			console.log(numComplete);
+			// console.log(numComplete);
 		});
 	});
+
+	$("input").each(function(i) {
+		var checked = $(this).prop("checked");
+		// console.log($(this).parents(".complete-button").siblings(".status").text());
+
+		if (checked) {
+			$(this).parents(".complete-button").siblings(".status").text("Status: Complete");
+		} else {
+			$(this).parents(".complete-button").siblings(".status").text("Status: In progress");
+		}
+
+		$(this).change(function() {
+			var checked = $(this).prop("checked");
+			// console.log($(this).parents(".complete-button").siblings(".status"));
+			if (checked) {
+				$(this).parents(".complete-button").siblings(".status").text("Status: Complete");
+			} else {
+				$(this).parents(".complete-button").siblings(".status").text("Status: In progress");
+			}
+
+			var chartData = [$("input:checkbox:checked").length, $("input:checkbox:not(:checked)").length];
+			console.log(chartData);
+			chartStats.data.datasets[0].data = chartData;
+			chartStats.update();
+		});
+	});
+
 }
 
 function projectClick(e) { 
@@ -105,27 +151,27 @@ function projectClick(e) { 
     e.preventDefault();
 }
 
-function overallStats() {
-	var ctx = $("#myChart");
-	var chart = new Chart(ctx, {
-	    // The type of chart we want to create
-	    type: "doughnut",
-	    // The data for our dataset
-	    data: {
-	        labels: ["In Progress", "Complete"],
-	        datasets: [{
-	            data: [$('.statsLayout').length - 1, $('.statsLayout').length],
-				backgroundColor: [ 'rgba(255, 99, 132, 0.8)', 'rgba(54, 162, 235, 0.8)' ]
-	        }],
-	    },
-	    // Configuration options go here
-	    options: {
-			title: { display: true, text: "Total Projects: " + ($('.statsLayout').length - 1), position: "top", fontSize: 16},
-			legend: { display: true },
-		}
-	});
-
-}
+// function overallStats() {
+// 	var ctx = $("#myChart");
+// 	var chart = new Chart(ctx, {
+// 	    // The type of chart we want to create
+// 	    type: "doughnut",
+// 	    // The data for our dataset
+// 	    data: {
+// 	        labels: ["In Progress", "Complete"],
+// 	        datasets: [{
+// 	            data: [$("input:checkbox:checked").length, $("input:checkbox:not(:checked)").length],
+// 				backgroundColor: [ 'rgba(255, 99, 132, 0.8)', 'rgba(54, 162, 235, 0.8)' ]
+// 	        }],
+// 	    },
+// 	    // Configuration options go here
+// 	    options: {
+// 			title: { display: true, text: "Total Projects: " + ($('.statsLayout').length - 1), position: "top", fontSize: 16},
+// 			legend: { display: true },
+// 		}
+// 	});
+//
+// }
 
 
 //function getMax(){
