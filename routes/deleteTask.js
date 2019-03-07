@@ -26,7 +26,8 @@ exports.deleteProject = function(req, res) {
     //data.projectList.splice(,1);
 	findAndRemove(data.projectList, 'name', name);
 	//delete data.
-	console.log(name);
-  console.log(data["projectList"].length);
+	// console.log(name, startDate, dueDate);
+    // console.log(data["projectList"].length);
+	res.redirect('/page_A');
 	res.render('index', data);
 };
