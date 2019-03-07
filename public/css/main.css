@@ -20,8 +20,12 @@
 }
 
 #progress {
-	font-family: 'Rock Salt', cursive;
+	font-family: 'Permanent Marker', cursive;
 	/* color: #4286f4; */
+}
+
+.statsLabel {
+	font-family: 'Permanent Marker', cursive;
 }
 
 /* #listView {

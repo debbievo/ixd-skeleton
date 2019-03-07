@@ -91,10 +91,10 @@ function initializePage() {
 	    type: "doughnut",
 	    // The data for our dataset
 	    data: {
-	        labels: ["In Progress", "Complete"],
+	        labels: ["Complete", "In Progress"],
 	        datasets: [{
-	            data: [$("input:checkbox:checked").length, $("input:checkbox:not(:checked)").length],
-				backgroundColor: [ 'rgba(255, 99, 132, 0.8)', 'rgba(54, 162, 235, 0.8)' ]
+							data: [$("input:checkbox:checked").length, $("input:checkbox:not(:checked)").length],
+				backgroundColor: [ 'rgba(66, 244, 140, 0.8)', 'rgba(238, 238, 238, 0.8)' ]
 	        }],
 	    },
 	    // Configuration options go here
