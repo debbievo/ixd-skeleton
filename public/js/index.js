@@ -144,15 +144,15 @@ $('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("ac
 		titleFormat: "MMM YYYY",
 
 		dayClick: function(date, jsEvent, view) {
-			console.log('Clicked on: ' + date.format());
-			console.log(date.isSameOrBefore());
+			//console.log('Clicked on: ' + date.format());
+			//console.log(date.isSameOrBefore());
 
 			$(".fc-day").css("background-color", "white");
 			$(this).css("border-box", "black");
 			$(this).css('background-color', "rgba(52, 171, 250, 0.5)");
 			$(".fc-past").not(this).css("background-color", "#eeeeee");
 			$(this).siblings(".fc-day-top").css('background-color', "rgba(255, 99, 132, 0.8)");
-			console.log(this);
+			//console.log(this);
 
 			var selectedDate = date.format("MMM D YYYY");
 			var todaysDate = moment().format("MMM D YYYY");
@@ -184,9 +184,9 @@ $('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("ac
 	$(".pName").each(function(i) {
 		var projectName = $.trim($(this).text());
 		var eventStart = moment($("#currentDay").text());
-		console.log(eventStart);
+		//console.log(eventStart);
 		var eventDue = moment($(this).siblings(".duedate").text());
-		console.log(eventDue);
+		//console.log(eventDue);
 		var eventID = "event-" + eventStart.format("YYYY-MM-YY") + "-" + i;
 		var checked = $(this).children().prop("checked");
 		// var dueDate = $(this).siblings(".duedate").html();
@@ -215,7 +215,7 @@ $('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("ac
 			var eventStart = moment($("#currentDay").text());
 			var eventID = "event-" + eventStart.format("YYYY-MM-YY") + "-" + i;
 			var eventDue = moment($(this).siblings(".duedate").text());
-			console.log(eventDue);
+			//console.log(eventDue);
 			var checked = $(this).prop("checked");
 			// var counter = parseInt($(".streakCounter").html());
 
@@ -273,33 +273,6 @@ $('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("ac
 }
 
 /*
-	$(".editBtn").click(function(){
-	$('.projName').attr('contenteditable','true');
-		if ($(".deleteBtn").attr('hidden')) {
-			$(this).siblings(".deleteBtn").removeAttr('hidden');
-	    } else {
-			$(this).siblings(".deleteBtn").attr('hidden');
-			$(".editBtn").show();
-	    }
-		$(this).hide();
-		if ($(".saveBtn").attr('hidden')) {
-			$(this).siblings(".saveBtn").removeAttr('hidden');
-	    } else {
-			$(this).siblings(".saveBtn").attr('hidden');
-			$(".editBtn").show();
-	    }
-	});
-//	var theContent = $('.projName');
-	$('.saveBtn').click(function(){
-	  var editedContent = $(this).siblings('.projName').html();
-	  localStorage.newContent = editedContent;
-	  if(localStorage.getItem('newContent')) {
-  	  	$('.saveBtn').siblings('.projName').html(localStorage.getItem('newContent'));
-	  }
-	});
-	$(".deleteBtn").click(function(){
-		$(this).closest('.project').remove()
-	});
 
 function backButtonClick(e){
 	e.preventDefault();
@@ -516,36 +489,3 @@ function hideDeleteProjectB(e) {
 	$("#project-bottom-B")[0].style.WebkitFilter = 'blur(0px)';
 	$("#project-bottom-B")[0].style.filter= 'blur(0px)';
 }
-
-var n = $("input:checkbox:checked").length;
-
-//chart.update()??
-// function test(){
-// 	var ctx = $("#testChart");
-// 	var chart = new Chart(ctx, {
-// 		// The type of chart we want to create
-// 		type: "doughnut",
-// 		// The data for our dataset
-// 		data: {
-// 			labels: ["Worked on", "No Progress"],
-// 			datasets: [{
-// 				data: [$("input:checkbox:checked").length, $("input:checkbox:not(:checked)").length],
-// 				backgroundColor: [ 'rgba(52, 171, 250, 0.8)', 'rgba(243, 27, 27, 0.8)' ]
-// 			}],
-// 		},
-// 		// Configuration options go here
-// 		options: {
-// 			title: { display: true, text: "Today's Progress:", position: "top", fontSize: 16},
-// 			legend: { display: true },
-// 		}
-// 	});
-// }
-
-/*
-$(".editStartPick").each(function(i){
-	var start = moment($(".projLife").siblings(".startdate").html());
-	$(this).datepicker('setValue', start);
-});
-	datepicker('setValue', moment());
-$(".editDuePick").datepicker();
-*/
