@@ -80,8 +80,8 @@ function initializePage() {
 		},
 		// Configuration options go here
 		options: {
-			title: { display: true, text: "Today's Progress:", position: "top", fontSize: 16},
-			legend: { display: true },
+			title: { display: true, text: "Today's Progress:", position: "top", fontSize: 16, fontFamily: "Sniglet"},
+			legend: { labels: {display: true, fontFamily: "Sniglet"}}
 		}
 	});
 

@@ -99,8 +99,8 @@ function initializePage() {
 	    },
 	    // Configuration options go here
 	    options: {
-			title: { display: true, text: "Total Projects: " + ($('.statsLayout').length - 1), position: "top", fontSize: 16},
-			legend: { display: true },
+			title: { display: true, text: "Total Projects: " + ($('.statsLayout').length - 1), position: "top", fontSize: 16, fontFamily: "Sniglet"},
+			legend: { labels: {display: true, fontFamily: "Sniglet"}},
 		}
 	});
 

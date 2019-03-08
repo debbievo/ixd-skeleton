@@ -24,7 +24,11 @@
 	/* color: #4286f4; */
 }
 
-.statsLabel {
+.container {
+	font-family: 'Sniglet', cursive;
+}
+
+.fontChange {
 	font-family: 'Sniglet', cursive;
 }
 
