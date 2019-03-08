@@ -127,11 +127,11 @@
 
 #project-bottom-A{
 	overflow-y: scroll;
-	height: 180px;
+	height: 200px;
 }
 #project-bottom-B{
 	overflow-y: scroll;
-	height: 300px;
+	height: 350px;
 }
 
 #login-top{
@@ -176,32 +176,65 @@ filter: 'blur(4px)';
 
 /* Place the navbar at the bottom of the page, and make it stick */
 .navbar {
-  background-color: #333;
+  background-color: rgba(52, 171, 250, 0.8);
   overflow: hidden;
   position: fixed;
-  bottom: 0;
+	height: 50px;
+	padding: 0px;;
+  bottom: 0px;
   width: 100%;
+	z-index:3;
+	/* float:none; */
 }
 
+#faq {
+	width:30px;
+	padding:0px;
+	margin:0px;
+}
+
+/* .navName {
+	float: right;
+}
+
+.navFaq {
+	float: center;
+} */
+
+
+/* .navbar {
+  position: absolute;
+  box-shadow: 0 -1px 5px 0 rgba(0, 0, 0, 0.13);
+  background-color: rgb(52, 171, 250);
+  height: 56px;
+  width: 100vw;
+	bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+	opacity:1;
+	z-index:3;
+} */
+
 /* Style the links inside the navigation bar */
-.navbar a {
+/* .navbar a {
   float: left;
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
+  padding: 10px;
   text-decoration: none;
   font-size: 17px;
 }
 
 /* Change the color of links on hover */
-.navbar a:hover {
+/* .navbar a:hover {
   background-color: #ddd;
   color: black;
-}
+} */
 
 /* Add a color to the active/current link */
-.navbar a.active {
+/* .navbar a.active {
   background-color: #4CAF50;
   color: white;
-}
+} */
