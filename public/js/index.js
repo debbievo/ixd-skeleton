@@ -246,7 +246,7 @@ $('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("ac
 				ga("send", "event", 'checked', 'click');
 			}
 			var chartData = [$("input:checkbox:checked").length, $("input:checkbox:not(:checked)").length];
-			console.log(chartData);
+			//console.log(chartData);
 			chart.data.datasets[0].data = chartData;
 			chart.update();
 		});

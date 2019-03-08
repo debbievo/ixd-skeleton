@@ -5,7 +5,7 @@ $(document).ready(function() {
 	initializePage();
 	// overallStats();
 	//$(".longestStreak").html(getMax());
-	
+
 	var streakArr = [];
 	$(".longestIndStreak").each(function(i){
 		var currStreak = $(this).html();
@@ -121,7 +121,7 @@ function initializePage() {
 			}
 
 			var chartData = [$("input:checkbox:checked").length, $("input:checkbox:not(:checked)").length];
-			console.log(chartData);
+			//console.log(chartData);
 			chartStats.data.datasets[0].data = chartData;
 			chartStats.update();
 		});
