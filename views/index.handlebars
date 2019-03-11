@@ -3,7 +3,7 @@
 <html>
 <head>
 	<!-- Google Analytics Content Experiment code -->
-	<script>function utmx_section(){}function utmx(){}(function(){var
+	<!-- <script>function utmx_section(){}function utmx(){}(function(){var
 	k='190975980-1',d=document,l=d.location,c=d.cookie;
 	if(l.search.indexOf('utm_expid='+k)>0)return;
 	function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
@@ -14,7 +14,7 @@
 	'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
 	valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 	'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
-	</script><script>utmx('url','A/B');</script>
+	</script><script>utmx('url','A/B');</script> -->
 	<!-- End of Google Analytics Content Experiment code -->
 	<title>Progress Calendar Screen</title>
 	<meta charset="utf-8">
@@ -44,15 +44,15 @@
 	<link href="https://fonts.googleapis.com/css?family=Sniglet" rel="stylesheet">
 
 	<!-- Google Analytics -->
-	<script>
+	<!-- <script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 	ga('create', 'UA-135645389-1', 'auto');
 	ga('send', 'pageview');
-	</script>
-	<!-- End Google Analytics
+	</script> -->
+	<!-- End Google Analytics-->
 
 </head>
 
@@ -66,29 +66,29 @@
 	  				  <button type= "button" style="text-align: left; margin-top" class="logout-button" id="logout">Logout</button>
 	  		  </td>
 				<td width="33%">
-					<center><a href=# title="FAQ" style="color:#eee;">
-						<i class="fa fa-question-circle"></i>
+					<center><a href=# title="FAQ" style="color:#dee2e6;">
+						<i class="fa fa-question-circle fa-2x"></i>
 					</a></center>
 					</td>
 				<td width="33%">
-						<h6 id="username" style= "color:#ffffff;"> </h6>
+						<h6 id="username" style= "color:#dee2e6;"> </h6>
 					</td>
 				</tr>
 				</table>
 </div>
 
 	<!-- <hr class="top-hr"> -->
-	<div class="container" id="calendar-top">
-	<div class="titleHeader">
+	<div class="container2" id="calendar-top">
+	<div class="titleHeader" style="color:#dee2e6;">
 		<div>
 			<h1 id=progress style="text-align:center;">
 	{{#if page_B}}
 				<a href="statsB" title="Stats Page" style="float:left" id="statsScreenB" aria-label="Stats Screen">
-					<i class="fas fa-chart-pie"></i>
+					<i class="fas fa-chart-pie" style="color:#dee2e6;"></i>
 				</a>
 	{{else}}
 				<a href="stats" title="Stats Page" style="float:left" id="statsScreen" aria-label="Stats Screen">
-					<i class="fas fa-chart-pie"></i>
+					<i class="fas fa-chart-pie" style="color:#dee2e6;"></i>
 				</a>
 	{{/if}}
 
@@ -96,11 +96,11 @@
 
 	{{#if page_B}}
   				<a href="/addTaskB" title="Add Project" id="addScreenB" style="float:right" aria-label="Add Task">
-  				  <i class="fas fa-plus"></i>
+  				  <i class="fas fa-plus" style="color:#dee2e6;"></i>
   			  </a>
 	{{else}}
 					<a href="/addTask" title="Add Project" id="addScreen" style="float:right" aria-label="Add Task">
-  				  <i class="fas fa-plus"></i>
+  				  <i class="fas fa-plus" style="color:#dee2e6;"></i>
   			  </a>
 	{{/if}}
 
@@ -111,13 +111,13 @@
 	<!-- calendar + project list -->
 
 {{#if page_B}}
-	<canvas id="testChart" width="400" height="400"></canvas>
+	<canvas class= "container" id="testChart" width="400" height="400"></canvas>
 <br>
 	<hr class="top-hr">
 
 {{else}}
 		<!-- NEW CALENDAR -->
-		<div id="calendar"></div>
+		<div class="container" id="calendar"></div>
 {{/if}}
 
 
