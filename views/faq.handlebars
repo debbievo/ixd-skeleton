@@ -1,0 +1,162 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Progress FAQ Page</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="/css/stats.css" rel="stylesheet">
+	<link href="/css/main.css" rel="stylesheet">
+	<link href="/css/fullcalendar.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<!-- <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+	<script src="js/moment.js"></script>
+	<script src="/js/fullcalendar.js"></script>
+	<script src="/js/persistent-checkboxes.js"></script>
+	<script src="/js/bootstrap-datepicker.js"></script>
+	<script defer src="/js/all.js"></script>
+	<script src="/js/stats.js"></script>
+	<!-- <script src="/js/index.js"></script> -->
+	{{> facebook}}
+	<script src="/js/facebook.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Sniglet" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container2">
+		<div class="titleHeader">
+			<h1 class="fontChange" sstyle="color:#dee2e6;">
+				<a href="/page_A" style="float:left">
+		          <i class="fas fa-calendar-alt" style="color:#dee2e6;"></i>
+		        </a>
+				FAQ
+				<a href="#" style="float:right">
+		          <i class="fas fa-calendar-alt" style="color:#5bbcfa;"></i>
+		        </a>
+			</h1>
+        </div>
+    </div>
+
+
+	<div class="accordion" id="accordionExample">
+	  <div class="card">
+		<div class="card-header" id="headingOne">
+		  <h2 class="mb-0">
+			<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+			  What is this?
+			</button>
+		  </h2>
+		</div>
+		<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+		  <div class="statsLayout" style="overflow-x:auto;">
+			 This is a Frequently Asked Questions page!
+		  </div>
+		</div>
+	  </div>
+
+
+	  <div class="card">
+	    <div class="card-header" id="headingTwo">
+	  	<h2 class="mb-0">
+	  	  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+	  		How do I get back??
+	  	  </button>
+	  	</h2>
+	    </div>
+	    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+
+	    	<div class="statsLayout" style="overflow-x:auto;">
+	    		Just click on the calendar icon!
+	    	</div>
+	    </div>
+	  </div>
+
+	  <div class="card">
+		<div class="card-header" id="headingThree">
+		<h2 class="mb-0" >
+		  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="text-align: left !important;">
+			What's that pie chart icon on the main page?
+		  </button>
+		</h2>
+		</div>
+		<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+
+			<div class="statsLayout" style="overflow-x:auto;">
+				It's the stats page! You'll be able to see your long-term progress such as streaks, project lifetime, and overall project completion.
+			</div>
+		</div>
+	  </div>
+
+	  <div class="card">
+	    <div class="card-header" id="headingFour">
+	  	<h2 class="mb-0">
+	  	  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" style="text-align: left !important;">
+	  		Why are there things already on the page when I login??
+	  	  </button>
+	  	</h2>
+	    </div>
+	    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+
+	    	<div class="statsLayout" style="overflow-x:auto;">
+	    		Those are just examples of what your tasks could look like.
+	    	</div>
+	    </div>
+	  </div>
+
+	  <div class="card">
+	    <div class="card-header" id="headingFive">
+	    <h2 class="mb-0">
+	  	<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" style="text-align: left !important;">
+	  	  How do I get rid of the stuff on the list?
+	  	</button>
+	    </h2>
+	    </div>
+	    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+
+	  	  <div class="statsLayout" style="overflow-x:auto;">
+	  		  There's a trash button right next to "Due In", which is part of the tasks section. It'll verify if you really want to delete, so be ready to type in the name!
+	  	  </div>
+	    </div>
+	  </div>
+
+	  <div class="card">
+	    <div class="card-header" id="headingSix">
+	    <h2 class="mb-0">
+	  	<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix" style="text-align: left !important;">
+	  	  I typed in the project to delete and it didn't delete it?!!
+	  	</button>
+	    </h2>
+	    </div>
+	    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+
+	  	  <div class="statsLayout" style="overflow-x:auto;">
+	  		  To make sure that you aren't deleting the wrong project, we made sure that it is case-sensitive. This means that uppercases are significant.
+	  	  </div>
+	    </div>
+	  </div>
+
+	  <div class="card">
+	    <div class="card-header" id="headingSeven">
+	    <h2 class="mb-0">
+	  	<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven" style="text-align: left !important;">
+	  	  I messed up the date on my task, how do I fix it?????
+	  	</button>
+	    </h2>
+	    </div>
+	    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+
+	  	  <div class="statsLayout" style="overflow-x:auto;">
+	  		  Unfortunately, you'll have to delete it and make a new one.
+	  	  </div>
+	    </div>
+	  </div>
+
+</body>
+</html>

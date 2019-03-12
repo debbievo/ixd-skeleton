@@ -14,6 +14,8 @@ var index = require('./routes/index');
 var stats = require('./routes/stats');
 var statsB = require('./routes/statsB');
 var login = require('./routes/login');
+var faq = require('./routes/faq');
+//var login = require('./routes/faqStats');
 //var login = require('./routes/signup');
 
 var addTask = require('./routes/addTask');
@@ -47,6 +49,7 @@ if ('development' == app.get('env')) {
 app.get('/page_A', index.view);
 app.get('/', index.view);
 app.get('/page_B', index.page_B);
+app.get('/faq', faq.view);
 // app.get('/calendar', index.view);
 // Example route
 // app.get('/users', user.list);
