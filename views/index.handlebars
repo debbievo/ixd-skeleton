@@ -136,6 +136,7 @@
 						<thead>
 						<tr id="listTitles" style="border-bottom: 1px solid #ddd; background:#FFF;">
 							<th><span id="currentDay"></span></th>
+							
 							<th>
 									{{#if page_B}}
 										<td>
@@ -152,7 +153,7 @@
 									{{/if}}
 							</th>
 							 <th style="float:right">Due in</th>
-							<th><i title="Project Streak" class="fa fa-bolt" aria-hidden="true"></i></th>
+							<!-- <th><i title="Project Streak" class="fa fa-bolt" aria-hidden="true"></i></th> -->
 						</tr>
 					</thead>
 					<tbody>
@@ -169,7 +170,7 @@
 					<td class="remainingDays" style="float:right; color:#d4d7db;">temp</td>
 					<td hidden class="duedate" style="float:right; color:#d4d7db;">{{dueDate}}</td>
 					<td hidden class="startdate" style="float:right; color:#d4d7db;">{{startDate}}</td>
-					<td class="streakCounter" style="text-align:center;">{{currStreak}}</td>
+					<td hidden class="streakCounter" style="text-align:center;">{{currStreak}}</td>
 						</tr>
 					</tbody>
 						{{/each}}

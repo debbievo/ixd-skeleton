@@ -1,24 +1,3 @@
-.jumbotron {
-	position: relative;
-	background: none;
-	text-align: center;
-}
-
-.jumbotron:after {
-     content:"";
-     opacity: 0.2;
-     top: 0;
-     left: 0;
-     bottom: 0;
-     right: 0;
-     position: absolute;
-     z-index: -1;
-}
-
-.jumbotron p {
-     color: #6e6e6e;
-}
-
 #progress {
 	font-family: 'Sniglet', cursive;
 	/* color: #4286f4; */
@@ -31,10 +10,6 @@
 .fontChange {
 	font-family: 'Sniglet', cursive;
 }
-
-/* #listView {
-	font-family: 'Rock Salt', cursive;
-} */
 
 #add-form {
 	display: none;
@@ -142,7 +117,7 @@
 }
 #project-bottom-B{
 	overflow-y: scroll;
-	height: 350px;
+	height: 300px;
 }
 
 #login-top{
