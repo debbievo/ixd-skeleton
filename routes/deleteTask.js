@@ -28,6 +28,6 @@ exports.deleteProject = function(req, res) {
 	//delete data.
 	// console.log(name, startDate, dueDate);
     // console.log(data["projectList"].length);
-	res.redirect('/page_A');
+	res.redirect('/page_B');
 	res.render('index', data);
 };

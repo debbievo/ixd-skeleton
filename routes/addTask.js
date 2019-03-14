@@ -34,6 +34,6 @@ exports.addProject = function(req, res) { 
 	var newProject = {"name":name, "startDate":startDate, "dueDate": dueDate, "projectID": projectID, "checkID": checkID, "currStreak": 0, "completeID": completeID};
 	data.projectList.push(newProject);
 	console.log(name, startDate, dueDate, projectID);
-    res.redirect('/page_A');
+    res.redirect('/page_B');
 	res.render('index', data);
  };

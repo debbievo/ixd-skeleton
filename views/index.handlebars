@@ -82,7 +82,7 @@
 	<div class="titleHeader" style="color:#dee2e6;">
 		<div>
 			<h1 id=progress style="text-align:center;">
-	{{#if page_B}}
+	{{#if page_A}}
 				<a href="statsB" title="Stats Page" style="float:left" id="statsScreenB" aria-label="Stats Screen">
 					<i class="fas fa-chart-pie" style="color:#dee2e6;"></i>
 				</a>
@@ -107,7 +107,8 @@
 		</h1>
 		</div>
 	</div>
-	<hr class="mid-hr">
+	<!-- <hr class="mid-hr"> -->
+
 	<!-- calendar + project list -->
 
 {{#if page_B}}
@@ -164,13 +165,6 @@
 							</td>
 							<td>
 							</td>
-							<!--td><a href="/editTask" class="editScreen" style="float:right; display:inline;" aria-label="Edit Tasks">
-								<i class="fas fa-edit"></i>
-							</a-->
-									<!--
-								<button type="button" class="editScreen">
-									<i class="fas fa-edit"></i>
-								</button> -->
 
 					<td class="remainingDays" style="float:right; color:#d4d7db;">temp</td>
 					<td hidden class="duedate" style="float:right; color:#d4d7db;">{{dueDate}}</td>
@@ -257,24 +251,6 @@
 
 	{{/if}}
 
-<!--hidden edit form-->
-	<!--div class="container" id="edit-form">
-		<form action="/editTask" method="get" id="editing">
-			<div class="form-group">
-				<h3>Start Date:</h3-->
-			<!--	<input class="startPick" type="date" data-date-format="MM DD YYYY" class="form-control" placeholder="Start Date" name="startDate">
--->
-					<!--input class="editStartPick" class="form-control" placeholder="Start Date" name="startDate">
-			</div>
-			<div class="form-group">
-				<h3>Due Date:</h3-->
-<!--				<input type="date" data-date-format="MM DD YYYY" class="form-control" placeholder="New Due Date" name="editDueDate"> -->
-				<!--input class="editDuePick" class="form-control" placeholder="Due Date" name="dueDate">
-			</div>
-			<button type="submit" class="btn btn-primary" id="submit-edit">Edit Project</button>
-			<button type="submit" class="btn btn-default" id="cancel-edit">Cancel</button>
-		</form>
-	</div-->
 	<!-- hidden login form-->
 	<div class="container" id="login-form">
 		<form action="/login" method="get" id="login">
