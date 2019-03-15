@@ -116,6 +116,7 @@ function initializePage() {
 			// console.log($(this).parents(".complete-button").siblings(".status"));
 			if (checked) {
 				$(this).parents(".complete-button").siblings(".status").text("Status: Complete");
+				//console.log($(this).parent().siblings(".longestIndStreak"));
 			} else {
 				$(this).parents(".complete-button").siblings(".status").text("Status: In progress");
 			}
@@ -134,25 +135,3 @@ function projectClick(e) { 
     // prevent the page from reloading 
     e.preventDefault();
 }
-
-// function overallStats() {
-// 	var ctx = $("#myChart");
-// 	var chart = new Chart(ctx, {
-// 	    // The type of chart we want to create
-// 	    type: "doughnut",
-// 	    // The data for our dataset
-// 	    data: {
-// 	        labels: ["In Progress", "Complete"],
-// 	        datasets: [{
-// 	            data: [$("input:checkbox:checked").length, $("input:checkbox:not(:checked)").length],
-// 				backgroundColor: [ 'rgba(255, 99, 132, 0.8)', 'rgba(54, 162, 235, 0.8)' ]
-// 	        }],
-// 	    },
-// 	    // Configuration options go here
-// 	    options: {
-// 			title: { display: true, text: "Total Projects: " + ($('.statsLayout').length - 1), position: "top", fontSize: 16},
-// 			legend: { display: true },
-// 		}
-// 	});
-//
-// }
