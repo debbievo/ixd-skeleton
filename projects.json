@@ -1,9 +1,9 @@
 {
 	"projectList": [
 		{
-			"name": "History Essay",
-			"startDate": "2019-02-07",
-			"dueDate": "2019-03-09",
+			"name": "Cogs 120 A10",
+			"startDate": "2019-02-22",
+			"dueDate": "2019-03-27",
 			"projectID": "project1",
 			"checkID": "check1",
 			"currStreak": 2,
@@ -11,9 +11,9 @@
 		},
 
 		{
-			"name": "CodePath A3",
-			"startDate": "2019-02-08",
-			"dueDate": "2019-04-19",
+			"name": "cogs 100 Essay",
+			"startDate": "2019-2-07",
+			"dueDate": "2019-04-01",
 			"projectID": "project2",
 			"checkID": "check2",
 			"currStreak": 8,
@@ -21,9 +21,9 @@
 		},
 
 		{
-			"name": "Cogs 108 Final",
-			"startDate": "2019-02-14",
-			"dueDate": "2019-04-17",
+			"name": "CodePath A5",
+			"startDate": "2019-02-08",
+			"dueDate": "2019-04-09",
 			"projectID": "project3",
 			"checkID": "check3",
 			"currStreak": 20,
@@ -31,9 +31,9 @@
 		},
 
 		{
-			"name": "CodePath A4",
-			"startDate": "2019-02-18",
-			"dueDate": "2019-04-19",
+			"name": "Cogs 108 Final",
+			"startDate": "2019-02-14",
+			"dueDate": "2019-04-14",
 			"projectID": "project4",
 			"checkID": "check4",
 			"currStreak": 3,
@@ -41,9 +41,9 @@
 		},
 
 		{
-			"name": "CodePath A5",
+			"name": "Cogs 187B Final Prototype",
 			"startDate": "2019-02-18",
-			"dueDate": "2019-05-01",
+			"dueDate": "2019-04-19",
 			"projectID": "project5",
 			"checkID": "check5",
 			"currStreak": 5,
@@ -51,9 +51,9 @@
 		},
 
 		{
-			"name": "CodePath A6",
+			"name": "CodePath A7",
 			"startDate": "2019-02-18",
-			"dueDate": "2019-05-21",
+			"dueDate": "2019-05-01",
 			"projectID": "project6",
 			"checkID": "check6",
 			"currStreak": 2,
@@ -61,9 +61,9 @@
 		},
 
 		{
-			"name": "Cogs 120 A8",
-			"startDate": "2019-02-22",
-			"dueDate": "2019-03-27",
+			"name": "EDS Week10",
+			"startDate": "2019-02-18",
+			"dueDate": "2019-05-21",
 			"projectID": "project7",
 			"checkID": "check7",
 			"currStreak": 4,

@@ -19,52 +19,6 @@ Date.prototype.getMonthName = function() {
 	return months[this.getMonth()];
 };
 
-/*
-function checkMonth(givenMonth){
-	switch(givenMonth) {
-	  case 0:
-		$('#currentMonth').text("Jan " + year);
-		//current.setMonth(0);
-		break;
-	  case 1:
-		$('#currentMonth').text("Feb " + year);
-		break;
-	  case 2:
-		$('#currentMonth').text("Mar " + year);
-		break;
-	  case 3:
-		$('#currentMonth').text("Apr " + year);
-		break;
-	  case 4:
-		$('#currentMonth').text("May " + year);
-		break;
-	  case 5:
-		$('#currentMonth').text("June " + year);
-		break;
-	  case 6:
-		$('#currentMonth').text("July " + year);
-		break;
-	  case 7:
-		$('#currentMonth').text("Aug " + year);
-		break;
-	  case 8:
-		$('#currentMonth').text("Sept " + year);
-		break;
-	  case 9:
-		$('#currentMonth').text("Oct " + year);
-		break;
-	  case 10:
-		$('#currentMonth').text("Nov " + year);
-		break;
-	  case 11:
-		$('#currentMonth').text("Dec " + year);
-		break;
-	  default:
-		$("#backButton").text("...").addClass("active").toggleClass("active");
-	}
-}
-*/
-
 function initializePage() {
 	var ctx = $("#testChart");
 	var chart = new Chart(ctx, {
@@ -100,18 +54,13 @@ $('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("ac
 
 	$('#addContent').click(addContentClick);
 	$('#addContentB').click(addContentClick);
-//$('#editContent').click(editContentClick);
 	$('#loginContent').click(loginContentClick);
 	$('#deleteContent').click(deleteContentClick);
 	$('#deleteContentB').click(deleteContentClickB);
-//$('#calendarFillDays').innerHTML = "";
-//$('#calendarFillDays').text(fillCalendar(currmm,year));
 	$("#addScreen").click(showAddProject);
 	$("#addScreenB").click(showAddProjectB);
 	$("#cancel-add").click(hideAddProject);
 	$("#cancel-addB").click(hideAddProjectB);
-//$(".editScreen").click(showEditProject);
-//$("#cancel-edit").click(hideEditProject);
 	$(".deleteScreen").click(showDeleteProject);
 	$(".deleteScreenB").click(showDeleteProjectB);
 	$("#cancel-delete").click(hideDeleteProject);
@@ -122,19 +71,10 @@ $('#forwardButton').click(forwardButtonClick).addClass("active").toggleClass("ac
 	$("#logout").click(loginContentClick)
 	$("#logout").css("display", "none");
 	$("#logout").click(logout);
-/*
-	$("#submit-edit").click(function(){
-		  var editedContent = $(this).siblings('.projName').html();
-		  localStorage.newContent = editedContent;
-		  if(localStorage.getItem('newContent')) {
-	  	  	$('.saveBtn').siblings('.projName').html(localStorage.getItem('newContent'));
-		  }
-	  });
-*/
 
 	$(".startPick").datepicker('setValue', moment());
 	$(".duePick").datepicker();
-	$(".editStartPick").datepicker('setValue', moment());
+	//$(".editStartPick").datepicker('setValue', moment());
 
 	$('#calendar').fullCalendar({
     defaultView: 'month',
@@ -343,23 +283,6 @@ function hideAddProjectB(e) {
 	$("#project-bottom-B")[0].style.filter= 'blur(0px)';
 }
 
-/*
-function editContentClick(e){
-	console.log("Edit content clicked");
-	e.preventDefault();
-}
-	function showEditProject(e) {
-		e.preventDefault();
-		$("#edit-form").css("display", "block");
-		$('.projName').attr('contenteditable','true');
-		var projectID = $(this).closest('tr').attr('id');
-	}
-	function hideEditProject(e) {
-		e.preventDefault();
-		$("#edit-form").css("display", "none");
-	}
-*/
-
 function loginContentClick(e){
 	console.log("Login content clicked");
 	e.preventDefault();
@@ -376,7 +299,7 @@ function showLogin(e) {
 	// $("#login-top")[0].style.WebkitFilter = 'blur(4px)';
 	// $("#login-top")[0].style.filter= 'blur(4px)';
 	var currentLoc = window.location.pathname;
-	console.log(currentLoc);
+	//console.log(currentLoc);
 	//console.log(typeof(currentLoc));
 	if(currentLoc == "/"){
 		$("#project-bottom-B")[0].style.WebkitFilter = 'blur(4px)';
