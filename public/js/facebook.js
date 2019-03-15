@@ -29,12 +29,12 @@ function changeUser(response) {
   $("#logout").css("display", "block");
   $("#calendar-top")[0].style.WebkitFilter = 'blur(0px)';
   $("#calendar-top")[0].style.filter= 'blur(0px)';
-  $("#login-top")[0].style.WebkitFilter = 'blur(0px)';
-  $("#login-top")[0].style.filter= 'blur(0px)';
+  // $("#login-top")[0].style.WebkitFilter = 'blur(0px)';
+  // $("#login-top")[0].style.filter= 'blur(0px)';
   var currentLoc = window.location.pathname;
   //console.log(currentLoc);
   //console.log(typeof(currentLoc));
-  if(currentLoc == "/page_B"){
+  if(currentLoc == "/page_A"){
       $("#project-bottom-B")[0].style.WebkitFilter = 'blur(0px)';
       $("#project-bottom-B")[0].style.filter= 'blur(0px)';
   }
