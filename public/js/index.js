@@ -376,9 +376,9 @@ function showLogin(e) {
 	// $("#login-top")[0].style.WebkitFilter = 'blur(4px)';
 	// $("#login-top")[0].style.filter= 'blur(4px)';
 	var currentLoc = window.location.pathname;
-	//console.log(currentLoc);
+	console.log(currentLoc);
 	//console.log(typeof(currentLoc));
-	if(currentLoc == "/page_A"){
+	if(currentLoc == "/"){
 		$("#project-bottom-B")[0].style.WebkitFilter = 'blur(4px)';
 		$("#project-bottom-B")[0].style.filter= 'blur(4px)';
 	}
@@ -399,7 +399,7 @@ function hideLogin(e) {
 	var currentLoc = window.location.pathname;
 	//console.log(currentLoc);
 	//console.log(typeof(currentLoc));
-	if(currentLoc == "/page_A"){
+	if(currentLoc == "/"){
 		$("#project-bottom-B")[0].style.WebkitFilter = 'blur(0px)';
 		$("#project-bottom-B")[0].style.filter= 'blur(0px)';
 	}
@@ -421,7 +421,7 @@ function afterLogin(e) {
 	var currentLoc = window.location.pathname;
 	//console.log(currentLoc);
 	//console.log(typeof(currentLoc));
-	if(currentLoc == "/page_A"){
+	if(currentLoc == "/"){
 		$("#project-bottom-B")[0].style.WebkitFilter = 'blur(0px)';
 		$("#project-bottom-B")[0].style.filter= 'blur(0px)';
 	}
