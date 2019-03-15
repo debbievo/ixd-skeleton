@@ -303,8 +303,8 @@ function showAddProject(e) {
 	$("#add-form").css("display", "block");
 	$("#calendar-top")[0].style.WebkitFilter = 'blur(4px)';
 	$("#calendar-top")[0].style.filter= 'blur(4px)';
-	$("#login-top")[0].style.WebkitFilter = 'blur(4px)';
-	$("#login-top")[0].style.filter= 'blur(4px)';
+	// $("#login-top")[0].style.WebkitFilter = 'blur(4px)';
+	// $("#login-top")[0].style.filter= 'blur(4px)';
 	$("#project-bottom-A")[0].style.WebkitFilter = 'blur(4px)';
 	$("#project-bottom-A")[0].style.filter= 'blur(4px)';
 }
@@ -314,8 +314,8 @@ function showAddProjectB(e) {
 	$("#add-formB").css("display", "block");
 	$("#calendar-top")[0].style.WebkitFilter = 'blur(4px)';
 	$("#calendar-top")[0].style.filter= 'blur(4px)';
-	$("#login-top")[0].style.WebkitFilter = 'blur(4px)';
-	$("#login-top")[0].style.filter= 'blur(4px)';
+	// $("#login-top")[0].style.WebkitFilter = 'blur(4px)';
+	// $("#login-top")[0].style.filter= 'blur(4px)';
 	$("#project-bottom-B")[0].style.WebkitFilter = 'blur(4px)';
 	$("#project-bottom-B")[0].style.filter= 'blur(4px)';
 
@@ -326,8 +326,8 @@ function hideAddProject(e) {
 	$("#add-form").css("display", "none");
 	$("#calendar-top")[0].style.WebkitFilter = 'blur(0px)';
 	$("#calendar-top")[0].style.filter= 'blur(0px)';
-	$("#login-top")[0].style.WebkitFilter = 'blur(0px)';
-	$("#login-top")[0].style.filter= 'blur(0px)';
+	// $("#login-top")[0].style.WebkitFilter = 'blur(0px)';
+	// $("#login-top")[0].style.filter= 'blur(0px)';
 	$("#project-bottom-A")[0].style.WebkitFilter = 'blur(0px)';
 	$("#project-bottom-A")[0].style.filter= 'blur(0px)';
 }
@@ -337,8 +337,8 @@ function hideAddProjectB(e) {
 	$("#add-formB").css("display", "none");
 	$("#calendar-top")[0].style.WebkitFilter = 'blur(0px)';
 	$("#calendar-top")[0].style.filter= 'blur(0px)';
-	$("#login-top")[0].style.WebkitFilter = 'blur(0px)';
-	$("#login-top")[0].style.filter= 'blur(0px)';
+	// $("#login-top")[0].style.WebkitFilter = 'blur(0px)';
+	// $("#login-top")[0].style.filter= 'blur(0px)';
 	$("#project-bottom-B")[0].style.WebkitFilter = 'blur(0px)';
 	$("#project-bottom-B")[0].style.filter= 'blur(0px)';
 }
@@ -373,12 +373,12 @@ function showLogin(e) {
 	$("logout").hide();
 	$("#calendar-top")[0].style.WebkitFilter = 'blur(4px)';
 	$("#calendar-top")[0].style.filter= 'blur(4px)';
-	$("#login-top")[0].style.WebkitFilter = 'blur(4px)';
-	$("#login-top")[0].style.filter= 'blur(4px)';
+	// $("#login-top")[0].style.WebkitFilter = 'blur(4px)';
+	// $("#login-top")[0].style.filter= 'blur(4px)';
 	var currentLoc = window.location.pathname;
 	//console.log(currentLoc);
 	//console.log(typeof(currentLoc));
-	if(currentLoc == "/page_B"){
+	if(currentLoc == "/page_A"){
 		$("#project-bottom-B")[0].style.WebkitFilter = 'blur(4px)';
 		$("#project-bottom-B")[0].style.filter= 'blur(4px)';
 	}
@@ -394,12 +394,12 @@ function hideLogin(e) {
 	$("logout").hide();
 	$("#calendar-top")[0].style.WebkitFilter = 'blur(0px)';
 	$("#calendar-top")[0].style.filter= 'blur(0px)';
-	$("#login-top")[0].style.WebkitFilter = 'blur(0px)';
-	$("#login-top")[0].style.filter= 'blur(0px)';
+	// $("#login-top")[0].style.WebkitFilter = 'blur(0px)';
+	// $("#login-top")[0].style.filter= 'blur(0px)';
 	var currentLoc = window.location.pathname;
 	//console.log(currentLoc);
 	//console.log(typeof(currentLoc));
-	if(currentLoc == "/page_B"){
+	if(currentLoc == "/page_A"){
 		$("#project-bottom-B")[0].style.WebkitFilter = 'blur(0px)';
 		$("#project-bottom-B")[0].style.filter= 'blur(0px)';
 	}
@@ -416,12 +416,12 @@ function afterLogin(e) {
 	$("#login-form").css("display", "none");
 	$("#calendar-top")[0].style.WebkitFilter = 'blur(0px)';
 	$("#calendar-top")[0].style.filter= 'blur(0px)';
-	$("#login-top")[0].style.WebkitFilter = 'blur(0px)';
-	$("#login-top")[0].style.filter= 'blur(0px)';
+	// $("#login-top")[0].style.WebkitFilter = 'blur(0px)';
+	// $("#login-top")[0].style.filter= 'blur(0px)';
 	var currentLoc = window.location.pathname;
 	//console.log(currentLoc);
 	//console.log(typeof(currentLoc));
-	if(currentLoc == "/page_B"){
+	if(currentLoc == "/page_A"){
 		$("#project-bottom-B")[0].style.WebkitFilter = 'blur(0px)';
 		$("#project-bottom-B")[0].style.filter= 'blur(0px)';
 	}
@@ -454,8 +454,8 @@ function showDeleteProject(e) {
 	var projectID = $(this).closest('tr').attr('id');
 	$("#calendar-top")[0].style.WebkitFilter = 'blur(4px)';
 	$("#calendar-top")[0].style.filter= 'blur(4px)';
-	$("#login-top")[0].style.WebkitFilter = 'blur(4px)';
-	$("#login-top")[0].style.filter= 'blur(4px)';
+	// $("#login-top")[0].style.WebkitFilter = 'blur(4px)';
+	// $("#login-top")[0].style.filter= 'blur(4px)';
 }
 
 function showDeleteProjectB(e) {
@@ -464,8 +464,8 @@ function showDeleteProjectB(e) {
 	var projectID = $(this).closest('tr').attr('id');
 	$("#calendar-top")[0].style.WebkitFilter = 'blur(4px)';
 	$("#calendar-top")[0].style.filter= 'blur(4px)';
-	$("#login-top")[0].style.WebkitFilter = 'blur(4px)';
-	$("#login-top")[0].style.filter= 'blur(4px)';
+	// $("#login-top")[0].style.WebkitFilter = 'blur(4px)';
+	// $("#login-top")[0].style.filter= 'blur(4px)';
 }
 
 function hideDeleteProject(e) {
@@ -473,8 +473,8 @@ function hideDeleteProject(e) {
 	$("#delete-form").css("display", "none");
 	$("#calendar-top")[0].style.WebkitFilter = 'blur(0px)';
 	$("#calendar-top")[0].style.filter= 'blur(0px)';
-	$("#login-top")[0].style.WebkitFilter = 'blur(0px)';
-	$("#login-top")[0].style.filter= 'blur(0px)';
+	// $("#login-top")[0].style.WebkitFilter = 'blur(0px)';
+	// $("#login-top")[0].style.filter= 'blur(0px)';
 	$("#project-bottom-B")[0].style.WebkitFilter = 'blur(0px)';
 	$("#project-bottom-B")[0].style.filter= 'blur(0px)';
 }
@@ -484,8 +484,8 @@ function hideDeleteProjectB(e) {
 	$("#delete-formB").css("display", "none");
 	$("#calendar-top")[0].style.WebkitFilter = 'blur(0px)';
 	$("#calendar-top")[0].style.filter= 'blur(0px)';
-	$("#login-top")[0].style.WebkitFilter = 'blur(0px)';
-	$("#login-top")[0].style.filter= 'blur(0px)';
+	// $("#login-top")[0].style.WebkitFilter = 'blur(0px)';
+	// $("#login-top")[0].style.filter= 'blur(0px)';
 	$("#project-bottom-B")[0].style.WebkitFilter = 'blur(0px)';
 	$("#project-bottom-B")[0].style.filter= 'blur(0px)';
 }
