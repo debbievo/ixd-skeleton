@@ -135,24 +135,24 @@
 					<table id="listView">
 						<thead>
 						<tr id="listTitles" style="border: 1px solid rgba(91,188,250); background:rgba(91,188,250); color: #f7fbff;">
-							<th><span id="currentDay"></span></th>
+							<th style="border: 1px solid rgba(91,188,250);"><span id="currentDay"></span></th>
 
-							<th>
+							<th style="border: 1px solid rgba(91,188,250);">
 									{{#if page_B}}
-										<td>
+										<td style="border: 1px solid rgba(91,188,250);">
 											<a href="/deleteTaskB" title="Delete Project" style="float:right; filter:drop-shadow(3px 3px 0px #2a6a93); color:#f7fbff;" class="deleteScreenB" aria-label="Delete Tasks">
 												<i class="fas fa-trash"></i>
 											</a>
 										</td>
 									{{else}}
-										<td>
+										<td style="border: 1px solid rgba(91,188,250);">
 											<a href="/deleteTask" title="Delete Project" style="float:right; filter:drop-shadow(2px 2px 0px #2a6a93); color:#f7fbff" class="deleteScreen" aria-label="Delete Tasks">
 												<i class="fas fa-trash"></i>
 											</a>
 										</td>
 									{{/if}}
 							</th>
-							 <th style="float:right">Due in</th>
+							 <th style="float:right; border: 1px solid rgba(91,188,250);">Due in</th>
 							<!-- <th><i title="Project Streak" class="fa fa-bolt" aria-hidden="true"></i></th> -->
 						</tr>
 					</thead>
