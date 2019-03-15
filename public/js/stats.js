@@ -59,7 +59,7 @@ function initializePage() {
 	        labels: ["Complete", "In Progress"],
 	        datasets: [{
 							data: [$("input:checkbox:checked").length, $("input:checkbox:not(:checked)").length],
-				backgroundColor: [ 'rgba(66, 244, 140, 0.8)', 'rgba(238, 238, 238, 0.8)' ]
+				backgroundColor: [ 'rgb(42, 106, 147)', 'rgba(238, 238, 238, 0.8)' ]
 	        }],
 	    },
 	    // Configuration options go here
