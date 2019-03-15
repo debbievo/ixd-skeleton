@@ -170,3 +170,7 @@ filter: 'blur(4px)';
   width: 100%;
 	z-index:3;
 }
+
+.fas{
+	filter:drop-shadow(3px 3px 0px #2a6a93);
+}

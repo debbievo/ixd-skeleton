@@ -66,7 +66,7 @@
 	  				  <button type= "button" style="text-align: left; margin-top" class="logout-button" id="logout">Logout</button>
 	  		  </td>
 				<td width="33%">
-					<center><a href="/faq" title="FAQ" style="color:#dee2e6;">
+					<center><a href="/faq" title="FAQ" style="color:#dee2e6; filter:drop-shadow(3px 3px 0px #2a6a93);">
 						<i class="fa fa-question-circle fa-2x"></i>
 					</a></center>
 					</td>
@@ -84,11 +84,11 @@
 			<h1 id=progress style="text-align:center;">
 	{{#if page_A}}
 				<a href="statsB" title="Stats Page" style="float:left" id="statsScreenB" aria-label="Stats Screen">
-					<i class="fas fa-chart-pie" style="color:#dee2e6;"></i>
+					<i class="fas fa-chart-pie" style="color:#dee2e6; filter:drop-shadow(3px 3px 0px #2a6a93)"></i>
 				</a>
 	{{else}}
 				<a href="stats" title="Stats Page" style="float:left" id="statsScreen" aria-label="Stats Screen">
-					<i class="fas fa-chart-pie" style="color:#dee2e6;"></i>
+					<i class="fas fa-chart-pie" style="color:#dee2e6; filter:drop-shadow(3px 3px 0px #2a6a93)"></i>
 				</a>
 	{{/if}}
 
@@ -96,11 +96,11 @@
 
 	{{#if page_B}}
   				<a href="/addTaskB" title="Add Project" id="addScreenB" style="float:right" aria-label="Add Task">
-  				  <i class="fas fa-plus" style="color:#dee2e6;"></i>
+  				  <i class="fas fa-plus" style="color:#dee2e6; filter:drop-shadow(3px 3px 0px #2a6a93);"></i>
   			  </a>
 	{{else}}
 					<a href="/addTask" title="Add Project" id="addScreen" style="float:right" aria-label="Add Task">
-  				  <i class="fas fa-plus" style="color:#dee2e6;"></i>
+  				  <i class="fas fa-plus" style="color:#dee2e6; filter:drop-shadow(3px 3px 0px #2a6a93);"></i>
   			  </a>
 	{{/if}}
 
@@ -134,19 +134,19 @@
 				<p class = "addTask">
 					<table id="listView">
 						<thead>
-						<tr id="listTitles" style="border-bottom: 1px solid #ddd; background:#FFF;">
+						<tr id="listTitles" style="border: 1px solid rgba(91,188,250); background:rgba(91,188,250); color: #f7fbff;">
 							<th><span id="currentDay"></span></th>
 
 							<th>
 									{{#if page_B}}
 										<td>
-											<a href="/deleteTaskB" title="Delete Project" style="float:right" class="deleteScreenB" aria-label="Delete Tasks">
+											<a href="/deleteTaskB" title="Delete Project" style="float:right; filter:drop-shadow(3px 3px 0px #2a6a93); color:#f7fbff;" class="deleteScreenB" aria-label="Delete Tasks">
 												<i class="fas fa-trash"></i>
 											</a>
 										</td>
 									{{else}}
 										<td>
-											<a href="/deleteTask" title="Delete Project" style="float:right" class="deleteScreen" aria-label="Delete Tasks">
+											<a href="/deleteTask" title="Delete Project" style="float:right; filter:drop-shadow(2px 2px 0px #2a6a93); color:#f7fbff" class="deleteScreen" aria-label="Delete Tasks">
 												<i class="fas fa-trash"></i>
 											</a>
 										</td>
@@ -158,7 +158,7 @@
 					</thead>
 					<tbody>
 						{{#each projectList}}
-						<tr class="project" id={{projectID}} style="border-bottom: 1px solid #ddd;">
+						<tr class="project" id={{projectID}} style="border: 1px solid rgba(91,188,250,0.5);">
 							<td class="pName"><input type="checkbox" name="taskCheckbox" class="check" id={{checkID}} />&nbsp;
 								<p class="projName" style="display:inline;">{{name}} </p>
 							</td>
