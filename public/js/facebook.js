@@ -34,7 +34,7 @@ function changeUser(response) {
   var currentLoc = window.location.pathname;
   //console.log(currentLoc);
   //console.log(typeof(currentLoc));
-  if(currentLoc == "/page_A"){
+  if(currentLoc == "/"){
       $("#project-bottom-B")[0].style.WebkitFilter = 'blur(0px)';
       $("#project-bottom-B")[0].style.filter= 'blur(0px)';
   }
